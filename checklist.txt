@@ -1,0 +1,11 @@
+CHECKLIST
+- Landing [ ]
+- Email Form [ ]
+- Mail Campagin [ ]
+
+WORK QUEUE
+- Adding Image [ ]
+- Adding Video [done]
+- Changing Background [ ]
+- Adding Texture [ ]
+- Curving Text [ ]
