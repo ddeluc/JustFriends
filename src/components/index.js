@@ -4,5 +4,6 @@ import About from "./About";
 import Work from "./Work";
 import Contact from "./Contact";
 import Hero from "./Hero";
+import Home from "./Home";
 
-export { Navbar, Landing, About, Work, Contact, Hero };
+export { Navbar, Landing, About, Work, Contact, Hero, Home };

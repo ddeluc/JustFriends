@@ -14,6 +14,7 @@ import kuroko1 from '../assets/videos/Kuroko1.mp4';
 import cowboy1 from '../assets/videos/Cowboy1.mp4';
 
 const videoSources = [
+  {title: whiteNoise, opacity: 50},
   {title: akiraClip1, opacity: 50},
   {title: champlooClip1, opacity: 50},
   {title: oceanWaves1, opacity: 50},
@@ -30,7 +31,7 @@ const demobox = demomode ? styles.demo.landing : {};
 const DURATION = 0.05;
 const STAGGER = 0.025;
 
-const Landing = ({ setOnLanding, state, setState }) => {
+const Home = ({ setOnLanding }) => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
 
   const titleEng = "Just Friends.";
@@ -40,26 +41,21 @@ const Landing = ({ setOnLanding, state, setState }) => {
   const subTitleJap2 = "思 い 出 づ く り"
   const subTitleEng2 = "Creating memories."
 
-  const updateState = () => {
-    if (state == 1)
-      setState(2)
-  }
-
   const handleVideoEnd = () => {    
     setCurrentVideoIndex((currentVideoIndex + 1)%videoSources.length);    
   };
 
-  if (currentVideoIndex == 0 ) {
+  if (currentVideoIndex == 0) {
     return (
       <section 
         className={`relative flex flex-row w-full h-screen m-auto bg-black justify-center items-center p-8`}
         style={demobox}
       >
         <video
-          className={`object-cover w-full h-full rounded-3xl brightness-${50}`}
+          className={`object-cover w-full h-full rounded-3xl brightness-${videoSources[currentVideoIndex].opacity}`}
           // style={demobox}
           // style={{boxShadow: '0 0 30px #ffffff'}}
-          src={whiteNoise} onEnded={handleVideoEnd} autoPlay muted 
+          src={videoSources[currentVideoIndex].title} onEnded={handleVideoEnd} autoPlay muted 
         />  
         <div
           className={`flex flex-col text-[72px] text-red-500 justify-end font-bold cursor-default absolute select-none`}
@@ -86,84 +82,32 @@ const Landing = ({ setOnLanding, state, setState }) => {
           // style={{boxShadow: '0 0 30px #ffffff'}}
           src={videoSources[currentVideoIndex].title} onEnded={handleVideoEnd} autoPlay muted 
         />
-        <motion.div 
-          className={`flex flex-col justify-end font-bold cursor-default absolute select-none`}
-          style={demobox}
-          onClick={() => {setOnLanding(false)}}
-          initial="initial"
-          whileHover="hovered"
-        >
-          <motion.div
-            className={`text-red-500 text-[72px] absolute z-10`}
-            style={demobox}
-            variants={{
-              hovered: { 
-                y: 2, 
-                x: 2,
-                transition: {
-                  type: 'spring',
-                  bounce: 0,
-                  duration: 0.1
-                }
-              }
-            }}          
-          >
-            {titleEng}
-          </motion.div>
-          <motion.div 
-            className={`text-yellow-300 text-[72px] z-20`}
-            style={demobox}
-            variants={{            
-              hovered: { 
-                y: -4, 
-                x: -4,
-                transition: {
-                  type: 'spring',
-                  bounce: 0,
-                  duration: 0.1
-                }
-              }
-            }}  
-          >
-            {titleEng}
-          </motion.div>
-          <motion.div
-            className={`absolute block overflow-hidden whitespace-nowrap bottom-0 right-0 translate-y-4 text-[24px] mr-4`}
-            style={demobox}
-          >
-            <div>
-              {subTitleJap2.split("").map((l, i) => (
-                <motion.span
-                  variants={{
-                    initial: {
-                      y: "-100%",
-                    },
-                    hovered: {
-                      y: 0,
-                    },
-                  }}
-                  transition={{
-                    duration: DURATION,
-                    ease: "easeInOut",
-                    delay: STAGGER * i,
-                  }}
-                  className="inline-block"
-                  key={i}
-                >
-                  {l}
-                </motion.span>
-              ))}
-            </div>            
-          </motion.div>
-        </motion.div>     
-        <div className={`absolute flex flex-col inset-16 text-[36px] font-extrabold opacity-40 select-none`}> 
-          <div>
-            {currentVideoIndex != 0 ? titleJap : ""}
-          </div>    
+        <div style={demobox} className={`absolute flex flex-col inset-16 text-[36px] font-extrabold select-none`}> 
+          <div style={demobox} className={`flex flex-row`}>
+            <div className={`w-1/3 opacity-40`} style={demobox}>
+              {currentVideoIndex != 0 ? titleJap : ""}
+            </div>
+            <div className={`w-1/3 flex justify-center text-[40px] text-yellow-300`} style={demobox}>
+              {titleEng}
+            </div>
+            <div className={`w-1/3 flex justify-end text-[24px] items-center font-semibold`} style={demobox}>
+              <div
+                className={`flex flex-row space-x-8`}
+              >
+                <div>
+                  Volumes
+                </div>
+                <div>
+                  About
+                </div>
+              </div>
+            </div>
+          </div>
+              
         </div>         
       </section>
     );
   };
 };
 
-export default Landing;
+export default Home;
