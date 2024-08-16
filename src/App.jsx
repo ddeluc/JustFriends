@@ -13,13 +13,14 @@ import {
 
 const App = () => {
   const [onLanding, setOnLanding] = useState(true);
-  const [state, setState] = useState(1);
+  const [state, setState] = useState(0);
+  const [nextState, setNextState] = useState(1);
   const [active, setActive] = useState("");
 
   if (onLanding) {
     return (
       <>
-        <Landing setOnLanding={setOnLanding} setState={setState} state={state}/>
+        <Landing setOnLanding={setOnLanding} setState={setState} state={state} nextState={nextState} setNextState={setNextState}/>
       </>
     )
   } else {

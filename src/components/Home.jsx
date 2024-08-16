@@ -14,12 +14,8 @@ import kuroko1 from '../assets/videos/Kuroko1.mp4';
 import cowboy1 from '../assets/videos/Cowboy1.mp4';
 
 const videoSources = [
-  {title: whiteNoise, opacity: 50},
-  {title: akiraClip1, opacity: 50},
-  {title: champlooClip1, opacity: 50},
   {title: oceanWaves1, opacity: 50},
   {title: kuroko1, opacity: 50},
-  {title: cowboy1, opacity: 50},
 ]
 
 import Title from "./Title";
@@ -45,27 +41,6 @@ const Home = ({ setOnLanding }) => {
     setCurrentVideoIndex((currentVideoIndex + 1)%videoSources.length);    
   };
 
-  if (currentVideoIndex == 0) {
-    return (
-      <section 
-        className={`relative flex flex-row w-full h-screen m-auto bg-black justify-center items-center p-8`}
-        style={demobox}
-      >
-        <video
-          className={`object-cover w-full h-full rounded-3xl brightness-${videoSources[currentVideoIndex].opacity}`}
-          // style={demobox}
-          // style={{boxShadow: '0 0 30px #ffffff'}}
-          src={videoSources[currentVideoIndex].title} onEnded={handleVideoEnd} autoPlay muted 
-        />  
-        <div
-          className={`flex flex-col text-[72px] text-red-500 justify-end font-bold cursor-default absolute select-none`}
-          style={demobox}
-        >
-          {titleJap}
-        </div>       
-      </section>
-    );    
-  } else {
     return (
       <section 
         className={`relative flex flex-row w-full h-screen m-auto bg-black justify-center items-center p-8`}
@@ -85,7 +60,7 @@ const Home = ({ setOnLanding }) => {
         <div style={demobox} className={`absolute flex flex-col inset-16 text-[36px] font-extrabold select-none`}> 
           <div style={demobox} className={`flex flex-row`}>
             <div className={`w-1/3 opacity-40`} style={demobox}>
-              {currentVideoIndex != 0 ? titleJap : ""}
+              {titleJap}
             </div>
             <div className={`w-1/3 flex justify-center text-[40px] text-yellow-300`} style={demobox}>
               {titleEng}
@@ -108,6 +83,5 @@ const Home = ({ setOnLanding }) => {
       </section>
     );
   };
-};
 
 export default Home;

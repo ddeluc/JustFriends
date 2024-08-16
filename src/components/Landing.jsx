@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
@@ -16,12 +16,11 @@ import cowboy1 from '../assets/videos/Cowboy1.mp4';
 const videoSources = [
   {title: akiraClip1, opacity: 50},
   {title: champlooClip1, opacity: 50},
-  {title: oceanWaves1, opacity: 50},
-  {title: kuroko1, opacity: 50},
   {title: cowboy1, opacity: 50},
 ]
 
 import Title from "./Title";
+import Home from "./Home";
 import { HannyaCanvas } from "./canvas";
 import { init } from "@emailjs/browser";
 
@@ -30,7 +29,7 @@ const demobox = demomode ? styles.demo.landing : {};
 const DURATION = 0.05;
 const STAGGER = 0.025;
 
-const Landing = ({ setOnLanding, state, setState }) => {
+const Landing = ({ setOnLanding, state, setState, nextState, setNextState }) => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
 
   const titleEng = "Just Friends.";
@@ -40,16 +39,20 @@ const Landing = ({ setOnLanding, state, setState }) => {
   const subTitleJap2 = "思 い 出 づ く り"
   const subTitleEng2 = "Creating memories."
 
-  const updateState = () => {
-    if (state == 1)
-      setState(2)
+  useEffect(() => {
+
+  }, []);  
+
+  const updateState = (next) => {
+    setNextState(next);
+    setState(0);
   }
 
   const handleVideoEnd = () => {    
     setCurrentVideoIndex((currentVideoIndex + 1)%videoSources.length);    
   };
 
-  if (currentVideoIndex == 0 ) {
+  if (state == 0) {
     return (
       <section 
         className={`relative flex flex-row w-full h-screen m-auto bg-black justify-center items-center p-8`}
@@ -57,9 +60,7 @@ const Landing = ({ setOnLanding, state, setState }) => {
       >
         <video
           className={`object-cover w-full h-full rounded-3xl brightness-${50}`}
-          // style={demobox}
-          // style={{boxShadow: '0 0 30px #ffffff'}}
-          src={whiteNoise} onEnded={handleVideoEnd} autoPlay muted 
+          src={whiteNoise} onEnded={() => setState(nextState)} autoPlay muted 
         />  
         <div
           className={`flex flex-col text-[72px] text-red-500 justify-end font-bold cursor-default absolute select-none`}
@@ -69,7 +70,7 @@ const Landing = ({ setOnLanding, state, setState }) => {
         </div>       
       </section>
     );    
-  } else {
+  } else if (state == 1) {
     return (
       <section 
         className={`relative flex flex-row w-full h-screen m-auto bg-black justify-center items-center p-8`}
@@ -89,7 +90,7 @@ const Landing = ({ setOnLanding, state, setState }) => {
         <motion.div 
           className={`flex flex-col justify-end font-bold cursor-default absolute select-none`}
           style={demobox}
-          onClick={() => {setOnLanding(false)}}
+          onClick={() => {updateState(2)}}
           initial="initial"
           whileHover="hovered"
         >
@@ -158,12 +159,16 @@ const Landing = ({ setOnLanding, state, setState }) => {
         </motion.div>     
         <div className={`absolute flex flex-col inset-16 text-[36px] font-extrabold opacity-40 select-none`}> 
           <div>
-            {currentVideoIndex != 0 ? titleJap : ""}
+            {titleJap}
           </div>    
         </div>         
       </section>
     );
-  };
+  } else {
+    return (
+      <Home />
+    )
+  }
 };
 
 export default Landing;
