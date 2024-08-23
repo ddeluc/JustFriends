@@ -57,9 +57,9 @@ const Home = ({ setOnLanding }) => {
           // style={{boxShadow: '0 0 30px #ffffff'}}
           src={videoSources[currentVideoIndex].title} onEnded={handleVideoEnd} autoPlay muted 
         />
-        <div style={demobox} className={`absolute flex flex-col inset-16 text-[36px] font-extrabold select-none`}> 
+        <div style={demobox} className={`absolute flex flex-col inset-16 select-none`}> 
           <div style={demobox} className={`flex flex-row`}>
-            <div className={`w-1/3 opacity-40`} style={demobox}>
+            <div className={`w-1/3 opacity-40 font-extrabold text-[36px]`} style={demobox}>
               {titleJap}
             </div>
             <div className={`w-1/3 flex justify-center text-[40px] text-yellow-300`} style={demobox}>
@@ -78,7 +78,14 @@ const Home = ({ setOnLanding }) => {
               </div>
             </div>
           </div>
-              
+          <div style={demobox} className={`h-full flex flex-row align-middle justify-center py-12`}>
+            <div 
+              style={{border: '2px solid #ffffff'}} 
+              className={`flex items-center justify-center w-2/3 text-[24px]`}
+            >
+              Sign Up Form
+            </div>
+          </div>
         </div>         
       </section>
     );

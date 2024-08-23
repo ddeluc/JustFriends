@@ -32,7 +32,7 @@ const STAGGER = 0.025;
 const Landing = ({ setOnLanding, state, setState, nextState, setNextState }) => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
 
-  const titleEng = "Just Friends.";
+  const titleEng = "JUST FRIENDS.";
   const titleJap = "友情"
   const subTitleJap1 = "ゆっくりと"
   const subTitleEng1 = "Taking it slow."
@@ -87,8 +87,8 @@ const Landing = ({ setOnLanding, state, setState, nextState, setNextState }) => 
           // style={{boxShadow: '0 0 30px #ffffff'}}
           src={videoSources[currentVideoIndex].title} onEnded={handleVideoEnd} autoPlay muted 
         />
-        <motion.div 
-          className={`flex flex-col justify-end font-bold cursor-default absolute select-none`}
+        <motion.div  
+          className={`flex flex-col justify-end cursor-default absolute select-none font-shrikhand`}
           style={demobox}
           onClick={() => {updateState(2)}}
           initial="initial"
@@ -148,7 +148,7 @@ const Landing = ({ setOnLanding, state, setState, nextState, setNextState }) => 
                     ease: "easeInOut",
                     delay: STAGGER * i,
                   }}
-                  className="inline-block"
+                  className={`inline-block text-[28px] font-bold mx-0.5`}
                   key={i}
                 >
                   {l}

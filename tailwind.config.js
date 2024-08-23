@@ -24,6 +24,10 @@ module.exports = {
       backgroundImage: {
         "hero-pattern": "url('/src/assets/animeclouds.jpeg')",
       },
+      fontFamily: {
+        'shrikhand': ['Shrikhand', 'serif'],
+        'poppins': ['Poppins', 'sans-serif']
+      }
     },
   },
   plugins: [],
