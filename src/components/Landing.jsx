@@ -76,15 +76,8 @@ const Landing = ({ setOnLanding, state, setState, nextState, setNextState }) => 
         className={`relative flex flex-row w-full h-screen m-auto bg-black justify-center items-center p-8`}
         style={demobox}
       >
-        {/* <video
-          className={`absolute object-cover w-full h-full rounded-3xl brightness-50`}
-          style={demobox}
-          src={whiteNoise} loop autoPlay muted 
-        />  */}
         <video
           className={`object-cover w-full h-full rounded-3xl brightness-${videoSources[currentVideoIndex].opacity}`}
-          // style={demobox}
-          // style={{boxShadow: '0 0 30px #ffffff'}}
           src={videoSources[currentVideoIndex].title} onEnded={handleVideoEnd} autoPlay muted 
         />
         <motion.div  
