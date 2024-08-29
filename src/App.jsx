@@ -21,7 +21,7 @@ const App = () => {
   if (onLanding) {
     return (
       <>
-        <Landing setOnLanding={setOnLanding} setState={setState} state={state} nextState={nextState} setNextState={setNextState}/>
+        <Landing setOnLanding={setOnLanding} setState={setState} state={state} nextState={nextState} setNextState={setNextState}/>     
       </>
     )
   } else {
