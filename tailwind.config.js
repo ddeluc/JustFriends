@@ -12,6 +12,15 @@ module.exports = {
         "black-200": "#090325",
         "white-100": "#f3f3f3",
       },
+      maxHeight: {
+        '172': '43rem',
+      },  
+      brightness: {
+        25: '0.25',
+        35: '0.35',
+        40: '0.4',
+        60: '0.6',
+      },
       boxShadow: {
         card: "0px 35px 120px -15px #211e35",
       },

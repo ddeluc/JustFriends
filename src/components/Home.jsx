@@ -12,6 +12,11 @@ import oceanWaves1 from '../assets/videos/oceanWaves1.mp4';
 import whiteNoise from '../assets/videos/WhiteNoise/whiteNoise.mp4'
 import kuroko1 from '../assets/videos/Kuroko1.mp4';
 import cowboy1 from '../assets/videos/Cowboy1.mp4';
+import cityTrain from '../assets/videos/CityTrain.mp4';
+
+import volume2 from '../assets/volumes/vol2.mp4';
+import volume4 from '../assets/volumes/vol4.mp4';
+
 
 const videoSources = [
   {title: oceanWaves1, opacity: 50},
@@ -43,50 +48,33 @@ const Home = ({ setOnLanding }) => {
 
     return (
       <section 
-        className={`relative flex flex-row w-full h-screen m-auto bg-black justify-center items-center p-8`}
+        className={`relative w-full h-screen mx-auto flex items-center bg-black`}
         style={demobox}
       >
-        {/* <video
-          className={`absolute object-cover w-full h-full rounded-3xl brightness-50`}
-          style={demobox}
-          src={whiteNoise} loop autoPlay muted 
-        />  */}
-        <video
-          className={`object-cover w-full h-full rounded-3xl brightness-${videoSources[currentVideoIndex].opacity}`}
-          // style={demobox}
-          // style={{boxShadow: '0 0 30px #ffffff'}}
-          src={videoSources[currentVideoIndex].title} onEnded={handleVideoEnd} autoPlay muted 
-        />
-        <div style={demobox} className={`absolute flex flex-col inset-16 select-none`}> 
-          <div style={demobox} className={`flex flex-row`}>
-            <div className={`w-1/3 opacity-40 font-extrabold text-[36px]`} style={demobox}>
-              {titleJap}
+               
+        {/* <div className={`absolute flex flex-col inset-8 select-none`}> 
+          <video
+            style={demobox}
+            className={`object-cover w-full h-full absolute rounded-3xl brightness-40`}
+            src={volume4} onEnded={handleVideoEnd} autoPlay muted 
+          />          
+        </div> */}
+
+        
+        <div style={demobox} className={`absolute max-h-172 flex items-center h-full w-full`}>
+          <div style={demobox} className={`absolute inset-0 max-h-172 max-w-5xl mx-auto flex flex-row justify-evenly gap-5 my-8`}>
+            <div className={`text-yellow-300 text-[40px] z-20 font-shrikhand`}>
+              About
+            </div >
+            <div className={`text-yellow-300 text-[40px] z-20 font-shrikhand`}>
+              Volumes
             </div>
-            <div className={`w-1/3 flex justify-center text-[40px] text-yellow-300`} style={demobox}>
-              {titleEng}
-            </div>
-            <div className={`w-1/3 flex justify-end text-[24px] items-center font-semibold`} style={demobox}>
-              <div
-                className={`flex flex-row space-x-8`}
-              >
-                <div>
-                  Volumes
-                </div>
-                <div>
-                  About
-                </div>
-              </div>
+            <div className={`text-yellow-300 text-[40px] z-20 font-shrikhand`}>
+              Radio
             </div>
           </div>
-          <div style={demobox} className={`h-full flex flex-row align-middle justify-center py-12`}>
-            <div 
-              style={{border: '2px solid #ffffff'}} 
-              className={`flex items-center justify-center w-2/3 text-[24px]`}
-            >
-              Sign Up Form
-            </div>
-          </div>
-        </div>         
+          <HannyaCanvas hannyaPos={0} />
+        </div>                 
       </section>
     );
   };

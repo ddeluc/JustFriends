@@ -9,9 +9,9 @@ import { styles } from "../../styles";
 import CanvasLoader from "../Loader";
 import { demomode } from "../../constants";
 
-const demobox = demomode ? styles.demo.landing : {};
+const demobox = demomode ? styles.demo.canvas : {};
 
-const Hannya = ({ hannyaPos }) => {
+const Hannya = () => {
   const hannya = useGLTF("./solocup/scene.gltf");
   const meshRef = useRef();
   const groupRef = useRef();
@@ -21,45 +21,45 @@ const Hannya = ({ hannyaPos }) => {
 
   const cameraVector = new THREE.Vector3();
   let lerpPosX = 0;
-  let lerpPosZ = -7;
+  let lerpPosZ = 0;
   let lerpRotY = 0;
   let lerpRotX = 0;
 
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
     // groupRef.current.rotation.x = -Math.cos(t * 3 / 2) / 6 + Math.PI/10;
-    groupRef.current.rotation.y = t / 2;
+    // groupRef.current.rotation.y = t / 2;
 
     cameraVector.set(state.mouse.x * -1.05, state.mouse.y * -1.05, state.camera.position.z)
-    state.camera.position.lerp(cameraVector, 0.025)
+    state.camera.position.lerp(cameraVector, 0.05)
     state.camera.lookAt(0, 0, 0)
 
-    if (hannyaPos == 3) {
-      lerpPosX = -2;
-      lerpPosZ = 3;
-      lerpRotY = Math.PI/4;
-      lerpRotX = 0;
-    } else if (hannyaPos == 1) {
-      lerpPosX = 2;
-      lerpPosZ = 3;
-      lerpRotY = -Math.PI/4;
-      lerpRotX = 0;
-    } else if (hannyaPos == 2) {
-      lerpPosX = 0;
-      lerpPosZ = -3;
-      lerpRotY = 0;
-      lerpRotX = -Math.PI/6;
-    } else {
-      lerpPosX = 0;
-      lerpPosZ = -3;
-      lerpRotY = 0;
-      lerpRotX = 0;
-    }
+    // if (hannyaPos == 3) {
+    //   lerpPosX = -2;
+    //   lerpPosZ = 3;
+    //   lerpRotY = Math.PI/4;
+    //   lerpRotX = 0;
+    // } else if (hannyaPos == 1) {
+    //   lerpPosX = 2;
+    //   lerpPosZ = 3;
+    //   lerpRotY = -Math.PI/4;
+    //   lerpRotX = 0;
+    // } else if (hannyaPos == 2) {
+    //   lerpPosX = 0;
+    //   lerpPosZ = -3;
+    //   lerpRotY = 0;
+    //   lerpRotX = -Math.PI/6;
+    // } else {
+    //   lerpPosX = 0;
+    //   lerpPosZ = -3;
+    //   lerpRotY = 0;
+    //   lerpRotX = 0;
+    // }
 
-    groupRef.current.position.x = MathUtils.lerp(groupRef.current.position.x, lerpPosX, 0.025);
-    groupRef.current.position.z = MathUtils.lerp(groupRef.current.position.z, lerpPosZ, 0.025);
-    groupRef.current.rotation.y = MathUtils.lerp(groupRef.current.rotation.y, lerpRotY, 0.025);
-    groupRef.current.rotation.x = MathUtils.lerp(groupRef.current.rotation.x, lerpRotX, 0.025);
+    // groupRef.current.position.x = MathUtils.lerp(groupRef.current.position.x, lerpPosX, 0.025);
+    // groupRef.current.position.z = MathUtils.lerp(groupRef.current.position.z, lerpPosZ, 0.025);
+    // groupRef.current.rotation.y = MathUtils.lerp(groupRef.current.rotation.y, lerpRotY, 0.025);
+    // groupRef.current.rotation.x = MathUtils.lerp(groupRef.current.rotation.x, lerpRotX, 0.025);
 
     // const lightx = topLightRef.current.position.x + state.mouse.x * 1.25;
     // const leftLighty = leftSidetLightRef.current.position.y + state.mouse.y * 0.5;
@@ -76,7 +76,7 @@ const Hannya = ({ hannyaPos }) => {
       <mesh
         ref={meshRef}
         scale={20}
-        rotation={[Math.PI/12, 0, 0]}
+        rotation={[0, -Math.PI/2, 0]}
         position={[0, 0, 0]}>
 
         {/* OBJECT */}
@@ -86,8 +86,8 @@ const Hannya = ({ hannyaPos }) => {
         {/* <axesHelper args={[5]} /> */}
 
         {/* LIGHT */}
-        <spotLight ref={topLightRef} position={[0, 100, 25]} intensity={2} />
-        <spotLight ref={leftSidetLightRef} position={[20, -20, 4]} angle={0.15} intensity={0.5} />
+        <spotLight ref={topLightRef} position={[0, 100, 25]} intensity={1} />
+        <spotLight ref={leftSidetLightRef} position={[20, -20, 4]} angle={0.15} intensity={0.2} />
         {/* <spotLight ref={rightSideLightRef} position={[-20, -20, 4]} angle={0.15} intensity={0.5} /> */}
       </mesh>
     </group>
@@ -99,12 +99,13 @@ const HannyaCanvas = ({ hannyaPos }) => {
 
   return (
     <Canvas
-      className={`border-6 border-red-500 absolute`}
+      className={`border-6 border-red-500 absolute `}
+      style={demobox}
       shadows
       camera={{ position: [0, 0, 10], fov: 30 }}
       >
       <Suspense fallback={<CanvasLoader />}>
-        <Hannya hannyaPos={hannyaPos}/>
+        <Hannya />
         <Environment preset="city" />
       </Suspense>
     </Canvas>
