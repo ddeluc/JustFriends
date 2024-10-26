@@ -23,9 +23,9 @@ const videoSources = [
   {title: kuroko1, opacity: 50},
 ]
 
-import Title from "./Title";
 import { HannyaCanvas } from "./canvas";
 import { init } from "@emailjs/browser";
+import MenuItem from "./MenuItem";
 
 const demobox = demomode ? styles.demo.landing : {};
 
@@ -62,16 +62,19 @@ const Home = ({ setOnLanding }) => {
 
         
         <div style={demobox} className={`absolute max-h-172 flex items-center h-full w-full`}>
-          <div style={demobox} className={`absolute inset-0 max-h-172 max-w-5xl mx-auto flex flex-row justify-evenly gap-5 my-8`}>
-            <div className={`text-yellow-300 text-[40px] z-20 font-shrikhand`}>
+          <div style={demobox} className={`absolute inset-0 max-h-172 max-w-5xl mx-auto flex items-start justify-evenly gap-5 my-8`}>
+            {/* <div className={`text-yellow-300 text-[45px] z-20 font-shrikhand`}>
               About
             </div >
-            <div className={`text-yellow-300 text-[40px] z-20 font-shrikhand`}>
+            <div className={`text-yellow-300 text-[45px] z-20 font-shrikhand`}>
               Volumes
             </div>
-            <div className={`text-yellow-300 text-[40px] z-20 font-shrikhand`}>
+            <div className={`text-yellow-300 text-[45px] z-20 font-shrikhand`}>
               Radio
-            </div>
+            </div> */}
+            <MenuItem titleEng={"About"} titleJap={"話"} xMovement={31}/>
+            <MenuItem titleEng={"Volumes"} titleJap={"章"} xMovement={40}/>
+            <MenuItem titleEng={"Radio"} titleJap={"音楽"} xMovement={18}/>
           </div>
           <HannyaCanvas hannyaPos={0} />
         </div>                 
