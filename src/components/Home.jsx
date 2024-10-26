@@ -34,6 +34,7 @@ const STAGGER = 0.025;
 
 const Home = ({ setOnLanding }) => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [hoveredItem, setHoveredItem] = useState("None");
 
   const titleEng = "Just Friends.";
   const titleJap = "友情"
@@ -72,11 +73,11 @@ const Home = ({ setOnLanding }) => {
             <div className={`text-yellow-300 text-[45px] z-20 font-shrikhand`}>
               Radio
             </div> */}
-            <MenuItem titleEng={"About"} titleJap={"話"} xMovement={31}/>
-            <MenuItem titleEng={"Volumes"} titleJap={"章"} xMovement={40}/>
-            <MenuItem titleEng={"Radio"} titleJap={"音楽"} xMovement={18}/>
+            <MenuItem titleEng={"About"} titleJap={"話"} xMovement={31} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem}/>
+            <MenuItem titleEng={"Volumes"} titleJap={"章"} xMovement={40} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem}/>
+            <MenuItem titleEng={"Radio"} titleJap={"音楽"} xMovement={18} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem}/>
           </div>
-          <HannyaCanvas hannyaPos={0} />
+          <HannyaCanvas hoveredItem={hoveredItem}/>
         </div>                 
       </section>
     );

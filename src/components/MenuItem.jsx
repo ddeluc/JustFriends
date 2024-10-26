@@ -6,7 +6,7 @@ import { demomode } from "../constants";
 
 const demobox = demomode ? styles.demo.landing : {};
 
-const MenuItem = ({ titleEng, titleJap, xMovement }) => {
+const MenuItem = ({ titleEng, titleJap, xMovement, setHoveredItem, hoveredItem }) => {
 
   return (
     <motion.a 
@@ -15,8 +15,12 @@ const MenuItem = ({ titleEng, titleJap, xMovement }) => {
       style={demobox}
       initial="initial"
       whileHover="hovered"
+      onHoverStart={() => setHoveredItem(titleEng)}
+      onHoverEnd={() => setHoveredItem("None")}
+      onClick={() => console.log(hoveredItem)}
     >
       <motion.div
+        className={``}
         style={demobox}
         variants={{
           initial: { opacity: 1, y: 0 },
