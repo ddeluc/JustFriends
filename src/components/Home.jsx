@@ -13,6 +13,7 @@ import whiteNoise from '../assets/videos/WhiteNoise/whiteNoise.mp4'
 import kuroko1 from '../assets/videos/Kuroko1.mp4';
 import cowboy1 from '../assets/videos/Cowboy1.mp4';
 import cityTrain from '../assets/videos/CityTrain.mp4';
+import farine from '../assets/videos/farinefiveroses.mp4';
 
 import volume2 from '../assets/volumes/vol2.mp4';
 import volume4 from '../assets/volumes/vol4.mp4';
@@ -57,7 +58,7 @@ const Home = ({ setOnLanding }) => {
           <video
             style={demobox}
             className={`object-cover w-full h-full absolute rounded-3xl brightness-40`}
-            src={volume4} onEnded={handleVideoEnd} autoPlay muted 
+            src={farine} onEnded={handleVideoEnd} autoPlay muted 
           />          
         </div> */}
 
@@ -77,6 +78,9 @@ const Home = ({ setOnLanding }) => {
             <MenuItem titleEng={"Volumes"} titleJap={"章"} xMovement={40} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem}/>
             <MenuItem titleEng={"Radio"} titleJap={"音楽"} xMovement={18} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem}/>
           </div>
+          {/* <div style={demobox} className={`absolute m-8 rotate-45`}>
+            test
+          </div> */}
           <HannyaCanvas hoveredItem={hoveredItem}/>
         </div>                 
       </section>
