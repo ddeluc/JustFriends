@@ -35,6 +35,8 @@ export const navLinks = [
   }
 ];
 
+export const aboutText = "Our Volumes are the heart and soul of Just Friends. These are our special events where people come together to network, socialize, and create unforgettable memories. Each volume is unique, blending cinematic elements with the vibrant energy of our community."
+
 export const suffixWords = [
   "la catena",
   "il silenzio",
@@ -45,4 +47,4 @@ export const suffixWords = [
   "l'incantesimo"
 ];
 
-export const demomode = false;
+export const demomode = true;

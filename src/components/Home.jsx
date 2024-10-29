@@ -8,6 +8,7 @@ import { demomode } from "../constants";
 
 import TitleItems from "./TitleItems";
 import TitleVideos from "./TitleVideos";
+import About from "./About";
 
 import akiraClip1 from '../assets/videos/Akira1.mp4';
 import champlooClip1 from '../assets/videos/SamuraiChamploo1.mp4';
@@ -54,10 +55,15 @@ const Home = ({ setOnLanding }) => {
       style={demobox}
     >       
       <div style={demobox} className={`absolute max-h-172 flex items-center h-full w-full`}>
-        <TitleItems hoveredItem={hoveredItem} />
+        {selectedItem == "None" ? <TitleItems hoveredItem={hoveredItem} /> 
+        : 
+        <div style={demobox} className={`absolute inset-0 max-h-172 max-w-5xl mx-auto grid grid-cols-3 gap-5 my-8`}>
+          <About />           
+        </div>
+        }
         <HannyaCanvas hoveredItem={hoveredItem}/>                   
       </div>    
-        <TitleVideos setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem} />
+        {selectedItem == "None" ? <TitleVideos setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem} /> : <></> }
     </section>
   );
 };
