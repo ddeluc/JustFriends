@@ -35,7 +35,7 @@ const Hannya = ({ hoveredItem, selectedItem }) => {
     // meshRef.current.rotation.x = -Math.cos(t) / 16;
     // meshRef.current.rotation.y = -Math.sin(t) / 16 - Math.PI/2;
 
-    // cameraVector.set(state.mouse.x * -2, state.mouse.y * -2, state.camera.position.z)
+    // meshRef.set(state.mouse.x * -2, state.mouse.y * -2, state.camera.position.z)
     // state.camera.position.lerp(cameraVector, 0.05)
     // state.camera.lookAt(0, 0, 0)
 
@@ -44,7 +44,7 @@ const Hannya = ({ hoveredItem, selectedItem }) => {
       lerpPosY = 0;
       lerpPosZ = 0;
       lerpRotY = -2*Math.PI/5;
-      lerpRotX = -Math.PI/12;
+      lerpRotX = -Math.PI/8;
       lerpRotZ = 0;
 
     } else if (hoveredItem == "Volumes") {
@@ -52,7 +52,7 @@ const Hannya = ({ hoveredItem, selectedItem }) => {
       lerpPosY = 0;
       lerpPosZ = 0;
       lerpRotY = -Math.PI/2;
-      lerpRotX = 0;
+      lerpRotX = -Math.PI/10;
       lerpRotZ = Math.PI/12;
 
     } else if (hoveredItem == "Join") {
@@ -60,7 +60,7 @@ const Hannya = ({ hoveredItem, selectedItem }) => {
       lerpPosY = 0;
       lerpPosZ = 0;
       lerpRotY = -3*Math.PI/5;
-      lerpRotX = -Math.PI/12;
+      lerpRotX = -Math.PI/8;
       lerpRotZ = 0;
 
     } else {
@@ -83,7 +83,7 @@ const Hannya = ({ hoveredItem, selectedItem }) => {
     meshRef.current.position.y = MathUtils.lerp(meshRef.current.position.y, lerpPosY, 0.025);
     meshRef.current.position.z = MathUtils.lerp(meshRef.current.position.z, lerpPosZ, 0.025);
     meshRef.current.rotation.y = MathUtils.lerp(meshRef.current.rotation.y, lerpRotY, 0.05);
-    meshRef.current.rotation.x = MathUtils.lerp(meshRef.current.rotation.x, lerpRotX, 0.025);
+    meshRef.current.rotation.x = MathUtils.lerp(meshRef.current.rotation.x, lerpRotX, 0.05);
     meshRef.current.rotation.z = MathUtils.lerp(meshRef.current.rotation.z, lerpRotZ, 0.05);
   })
 
@@ -132,11 +132,25 @@ const Video = () => {
   );
 }
 
-const PolaroidImage = ({ image, rotation, position, scale, ref }) => {
+const PolaroidImage = ({ image, rotation, position, scale, lerpSpeed, initialPosition }) => {
   const texture = useLoader(THREE.TextureLoader, image);
+  const polRef = useRef();
+
+  let lerpPosX, lerpPosY, lerpPosZ, lerpRotY, lerpRotX, lerpRotZ;
+
+  useFrame((state) => {
+
+    lerpPosX = position[0];
+    lerpPosY = position[1];
+    lerpPosZ = position[2];
+
+    polRef.current.position.x = MathUtils.lerp(polRef.current.position.x, lerpPosX, lerpSpeed);
+    polRef.current.position.y = MathUtils.lerp(polRef.current.position.y, lerpPosY, lerpSpeed);
+    polRef.current.position.z = MathUtils.lerp(polRef.current.position.z, lerpPosZ, lerpSpeed);
+  })
 
   return (
-    <group ref={ref} rotation={rotation} position={position} scale={scale}>
+    <group ref={polRef} rotation={rotation} position={initialPosition} scale={scale}>
       {/* Border Plane */}
       <mesh position={[0, 0, -0.01]}>
         <planeGeometry args={[3.3, 3.3]} /> {/* Slightly larger for the border effect */}
@@ -167,10 +181,10 @@ const PolaroidClusterAbout = () => {
 
   return (
     <group>
-      <PolaroidImage image={testImage} rotation={[0, 0, Math.PI/6]} position={[-4.5, 1, -2.3]} scale={0.7} />
-      <PolaroidImage image={testImage} rotation={[0, 0, -Math.PI/6]} position={[-4.5, -1, -2.2]} scale={0.7} />
-      <PolaroidImage image={testImage} rotation={[0, 0, -Math.PI/6]} position={[-2.7, 1.2, -2.1]} scale={0.7} />
-      <PolaroidImage image={testImage} rotation={[0, 0, Math.PI/16]} position={[-2.5, -1, -2]} scale={0.7} />
+      <PolaroidImage image={testImage} rotation={[0, 0, Math.PI/6]} position={[-4.5, 1, -2.3]} scale={0.7} lerpSpeed={0.05} initialPosition={[-6, 5, 0]} />
+      <PolaroidImage image={testImage} rotation={[0, 0, -Math.PI/6]} position={[-4.5, -1, -2.2]} scale={0.7} lerpSpeed={0.06} initialPosition={[-5, -5, 0]} />
+      <PolaroidImage image={testImage} rotation={[0, 0, -Math.PI/6]} position={[-2.7, 1.2, -2.1]} scale={0.7} lerpSpeed={0.07} initialPosition={[2, 5, 0]} />
+      <PolaroidImage image={testImage} rotation={[0, 0, Math.PI/16]} position={[-2.5, -1, -2]} scale={0.7} lerpSpeed={0.08} initialPosition={[3, -3, 0]} />
     </group>
   )
 }

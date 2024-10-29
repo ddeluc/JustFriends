@@ -30,27 +30,42 @@ const TitleItems = ({ hoveredItem }) => {
             className={`top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-50`}
             src={akiraClip1} onEnded={handleVideoEnd} autoPlay muted loop
           />
-          : <></>
+          : 
+          <video
+            style={demobox}
+            className={`top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-25 grayscale`}
+            src={akiraClip1} onEnded={handleVideoEnd} autoPlay muted loop
+          />
         }               
       </div >
       <div style={demobox} className={`relative text-yellow-300 text-center text-[45px] font-shrikhand`}>
         {hoveredItem == "Volumes" ?
-            <video
+          <video
             style={demobox}
             className={`top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-50`}
-            src={oceanWaves1} onEnded={handleVideoEnd} autoPlay muted loop
+            src={champlooClip1} onEnded={handleVideoEnd} autoPlay muted loop
           />
-          : <></>
+          : 
+          <video
+            style={demobox}
+            className={`top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-25 grayscale`}
+            src={champlooClip1} onEnded={handleVideoEnd} autoPlay muted loop
+          />
         }      
       </div>
       <div style={demobox} className={`relative text-yellow-300 text-center text-[45px] font-shrikhand`}>
         {hoveredItem == "Join" ?
-            <video
+          <video
             style={demobox}
-            className={`top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-50`}
+            className={`top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-50 `}
             src={cityTrain} onEnded={handleVideoEnd} autoPlay muted loop
           />
-          : <></>
+          : 
+          <video
+            style={demobox}
+            className={`top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-25 grayscale`}
+            src={cityTrain} onEnded={handleVideoEnd} autoPlay muted loop
+          />
         }
       </div>                       
     </div>

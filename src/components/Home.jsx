@@ -59,7 +59,8 @@ const Home = ({ setOnLanding }) => {
         {selectedItem == "None" ? <TitleItems hoveredItem={hoveredItem} /> 
         : 
         <div style={demobox} className={`absolute inset-0 max-h-172 max-w-5xl mx-auto grid grid-cols-3 gap-5 my-8`}>
-          <About selectedItem={selectedItem} hoveredItem={hoveredItem} />           
+          {/* <About selectedItem={selectedItem} hoveredItem={hoveredItem} />  */}
+          <Join />      
         </div>
         }
         <HannyaCanvas hoveredItem={hoveredItem} selectedItem={selectedItem} />                   

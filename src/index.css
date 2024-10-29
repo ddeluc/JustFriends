@@ -20,6 +20,18 @@
   font-style: normal;
 }
 
+.grayscale {
+  filter: grayscale(100%), brightness(25%);
+}
+
+.hover\:play-video {
+  pointer-events: none;
+}
+
+video:hover {
+  animation-play-state: running;
+}
+
 .hash-span {
   display: block;
 }
