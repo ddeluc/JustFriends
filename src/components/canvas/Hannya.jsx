@@ -12,13 +12,14 @@ import { demomode } from "../../constants";
 import { color } from "framer-motion";
 import { shininess } from "three/examples/jsm/nodes/Nodes.js";
 
-import img from "../../assets/images/planeimage.jpg";
+import testImage from "../../assets/images/planeimage.jpg";
 import cowboy1 from "../../assets/videos/Cowboy1.mp4";
 
 
 const demobox = demomode ? styles.demo.canvas : {};
 
-const Hannya = ({ hoveredItem }) => {
+const Hannya = ({ hoveredItem, selectedItem }) => {
+
   const hannya = useGLTF("./solocup/scene.gltf");
   const meshRef = useRef();
   const topLightRef = useRef();
@@ -69,7 +70,13 @@ const Hannya = ({ hoveredItem }) => {
       lerpRotY = -Math.PI/2;
       lerpRotX = 0;
       lerpRotZ = 0;
+    }
 
+    if (selectedItem == "About") {
+      lerpPosZ = 0.8;
+      lerpPosX = -2.5;
+    } else if (selectedItem == "Join") {
+      lerpPosZ = 0.8;
     }
 
     meshRef.current.position.x = MathUtils.lerp(meshRef.current.position.x, lerpPosX, 0.05);
@@ -78,36 +85,26 @@ const Hannya = ({ hoveredItem }) => {
     meshRef.current.rotation.y = MathUtils.lerp(meshRef.current.rotation.y, lerpRotY, 0.05);
     meshRef.current.rotation.x = MathUtils.lerp(meshRef.current.rotation.x, lerpRotX, 0.025);
     meshRef.current.rotation.z = MathUtils.lerp(meshRef.current.rotation.z, lerpRotZ, 0.05);
-
-    // const lightx = topLightRef.current.position.x + state.mouse.x * 1.25;
-    // const leftLighty = leftSidetLightRef.current.position.y + state.mouse.y * 0.5;
-    // const rightLighty = rightSideLightRef.current.position.y + state.mouse.y * 0.5;
-
-    // topLightRef.current.position.x = THREE.MathUtils.clamp(lightx, -60, 60);
-    // leftSidetLightRef.current.position.y = THREE.MathUtils.clamp(leftLighty, -40, 0);
-    // rightSideLightRef.current.position.y = THREE.MathUtils.clamp(rightLighty, -40, 0);
   })
 
   return (
+    <mesh
+      ref={meshRef}
+      scale={20}
+      rotation={[0, 0, 0]}
+      position={[0, 0, 0]}>
+        
+      {/* OBJECT */}
+      <primitive
+        object={hannya.scene}
+      />
+      {/* <axesHelper args={[5]} /> */}
 
-      <mesh
-        ref={meshRef}
-        scale={20}
-        rotation={[0, 0, 0]}
-        position={[0, 0, 0]}>
-          
-        {/* OBJECT */}
-        <primitive
-          object={hannya.scene}
-        />
-        {/* <axesHelper args={[5]} /> */}
-
-        {/* LIGHT */}
-        {/* <spotLight ref={topLightRef} position={[0, 100, 25]} intensity={1} />
-        <spotLight ref={leftSidetLightRef} position={[20, -20, 4]} angle={0.15} intensity={0.2} />
-        <spotLight ref={rightSideLightRef} position={[-20, -20, 4]} angle={0.15} intensity={0.5} /> */}
-      </mesh>
-
+      {/* LIGHT */}
+      {/* <spotLight ref={topLightRef} position={[0, 100, 25]} intensity={1} />
+      <spotLight ref={leftSidetLightRef} position={[20, -20, 4]} angle={0.15} intensity={0.2} />
+      <spotLight ref={rightSideLightRef} position={[-20, -20, 4]} angle={0.15} intensity={0.5} /> */}
+    </mesh>
   )
 };
 
@@ -125,21 +122,21 @@ const Video = () => {
 
   return (
     
-      <mesh >
-        <planeGeometry  /> {/* Slightly smaller than the border plane */}
-        <meshStandardMaterial >
-          <videoTexture attach="map" args={[video]} />
-          <videoTexture attach="emissiveMap" args={[video]} />
-        </meshStandardMaterial>
-      </mesh>
+    <mesh >
+      <planeGeometry  /> {/* Slightly smaller than the border plane */}
+      <meshStandardMaterial >
+        <videoTexture attach="map" args={[video]} />
+        <videoTexture attach="emissiveMap" args={[video]} />
+      </meshStandardMaterial>
+    </mesh>
   );
 }
 
-const PolaroidImage = () => {
-  const texture = useLoader(THREE.TextureLoader, img);
+const PolaroidImage = ({ image, rotation, position, scale, ref }) => {
+  const texture = useLoader(THREE.TextureLoader, image);
 
   return (
-    <group rotation={[0, 0, 0]}>
+    <group ref={ref} rotation={rotation} position={position} scale={scale}>
       {/* Border Plane */}
       <mesh position={[0, 0, -0.01]}>
         <planeGeometry args={[3.3, 3.3]} /> {/* Slightly larger for the border effect */}
@@ -166,7 +163,19 @@ const PolaroidImage = () => {
   );
 }
 
-const HannyaCanvas = ({ hoveredItem }) => {
+const PolaroidClusterAbout = () => {
+
+  return (
+    <group>
+      <PolaroidImage image={testImage} rotation={[0, 0, Math.PI/6]} position={[-4.5, 1, -2.3]} scale={0.7} />
+      <PolaroidImage image={testImage} rotation={[0, 0, -Math.PI/6]} position={[-4.5, -1, -2.2]} scale={0.7} />
+      <PolaroidImage image={testImage} rotation={[0, 0, -Math.PI/6]} position={[-2.7, 1.2, -2.1]} scale={0.7} />
+      <PolaroidImage image={testImage} rotation={[0, 0, Math.PI/16]} position={[-2.5, -1, -2]} scale={0.7} />
+    </group>
+  )
+}
+
+const HannyaCanvas = ({ hoveredItem, selectedItem }) => {
   const backgroundColor = new THREE.Color('#ffffff');
 
   return (
@@ -184,7 +193,8 @@ const HannyaCanvas = ({ hoveredItem }) => {
         <spotLight position={[-20, -20, 4]} angle={0.15} intensity={0.5} /> */}
         {/* <PolaroidImage /> */}
         {/* <Video /> */}
-        <Hannya hoveredItem={hoveredItem} />
+        <Hannya hoveredItem={hoveredItem} selectedItem={selectedItem} />
+        {selectedItem == "About" ? <PolaroidClusterAbout /> : <></> }
         <Environment preset="city" rotation={[0, Math.PI / 2, 0]} position={[0, -3, 0]}/>
         {/* <OrbitControls /> */}
       </Suspense>

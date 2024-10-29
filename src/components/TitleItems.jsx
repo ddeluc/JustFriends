@@ -27,7 +27,7 @@ const TitleItems = ({ hoveredItem }) => {
         {hoveredItem == "About" ?
           <video
             style={demobox}
-            className={`top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-75`}
+            className={`top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-50`}
             src={akiraClip1} onEnded={handleVideoEnd} autoPlay muted loop
           />
           : <></>
@@ -37,7 +37,7 @@ const TitleItems = ({ hoveredItem }) => {
         {hoveredItem == "Volumes" ?
             <video
             style={demobox}
-            className={`top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-75`}
+            className={`top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-50`}
             src={oceanWaves1} onEnded={handleVideoEnd} autoPlay muted loop
           />
           : <></>
@@ -47,7 +47,7 @@ const TitleItems = ({ hoveredItem }) => {
         {hoveredItem == "Join" ?
             <video
             style={demobox}
-            className={`top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-75`}
+            className={`top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-50`}
             src={cityTrain} onEnded={handleVideoEnd} autoPlay muted loop
           />
           : <></>

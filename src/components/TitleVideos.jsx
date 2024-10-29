@@ -23,13 +23,13 @@ const TitleVideos = ({ setHoveredItem, hoveredItem, setSelectedItem }) => {
     <div style={demobox} className={`absolute max-h-172 flex items-center h-full w-full`}>
       <div style={demobox} className={`absolute inset-0 max-h-172 max-w-5xl mx-auto grid grid-cols-3 gap-5 my-8 pt-4`}>
         <div style={demobox} className={`relative text-yellow-300 text-center text-[45px] font-shrikhand`}>
-          <MenuItem titleEng={"About"} titleJap={"話"} xMovement={0} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem}/>
+          <MenuItem titleEng={"About"} titleJap={"話"} xMovement={35} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem}/>
         </div >
         <div style={demobox} className={`relative text-yellow-300 text-center text-[45px] font-shrikhand`}>
-          <MenuItem titleEng={"Volumes"} titleJap={"章"} xMovement={0} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem}/>
+          <MenuItem titleEng={"Volumes"} titleJap={"章"} xMovement={35} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem}/>
         </div>
         <div style={demobox} className={`relative text-yellow-300 text-center text-[45px] font-shrikhand`}>
-          <MenuItem titleEng={"Join"} titleJap={"音楽"} xMovement={0} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem}/>
+          <MenuItem titleEng={"Join"} titleJap={"音楽"} xMovement={30} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem}/>
         </div>            
       </div>                  
     </div> 

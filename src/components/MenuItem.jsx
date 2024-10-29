@@ -17,7 +17,7 @@ const MenuItem = ({ titleEng, titleJap, xMovement, setHoveredItem, hoveredItem, 
       whileHover="hovered"
       onHoverStart={() => setHoveredItem(titleEng)}
       onHoverEnd={() => setHoveredItem("None")}
-      onClick={() => setSelectedItem(titleEng)}
+      onClick={() => {setSelectedItem(hoveredItem); console.log("About Clicked")}}
     >
       <motion.div
         className={``}
@@ -42,7 +42,7 @@ const MenuItem = ({ titleEng, titleJap, xMovement, setHoveredItem, hoveredItem, 
         transition={{
           type: 'spring',
           bounce: 0,
-          duration: 0.2
+          duration: 0.3
         }}
       >
         {titleJap}
