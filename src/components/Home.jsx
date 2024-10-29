@@ -49,6 +49,7 @@ const Home = ({ setOnLanding }) => {
   };
 
     return (
+      <>
       <section 
         className={`relative w-full h-screen mx-auto flex items-center bg-black`}
         style={demobox}
@@ -64,26 +65,57 @@ const Home = ({ setOnLanding }) => {
 
         
         <div style={demobox} className={`absolute max-h-172 flex items-center h-full w-full`}>
-          <div style={demobox} className={`absolute inset-0 max-h-172 max-w-5xl mx-auto flex items-start justify-evenly gap-5 my-8`}>
-            {/* <div className={`text-yellow-300 text-[45px] z-20 font-shrikhand`}>
-              About
+          <div style={demobox} className={`absolute inset-0 max-h-172 max-w-5xl mx-auto grid grid-cols-3 gap-5 my-8`}>
+            <div style={demobox} className={`relative text-yellow-300 text-center text-[45px] font-shrikhand`}>
+              <video
+                style={demobox}
+                className={`top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-50`}
+                src={akiraClip1} onEnded={handleVideoEnd} autoPlay muted loop
+              />                   
+              {/* <MenuItem titleEng={"About"} titleJap={"話"} xMovement={0} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem}/> */}
             </div >
-            <div className={`text-yellow-300 text-[45px] z-20 font-shrikhand`}>
-              Volumes
+            <div style={demobox} className={`relative text-yellow-300 text-center text-[45px] font-shrikhand`}>
+              <video
+                style={demobox}
+                className={`top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-50`}
+                src={champlooClip1} onEnded={handleVideoEnd} autoPlay muted loop
+              />  
+              {/* <MenuItem titleEng={"Volumes"} titleJap={"章"} xMovement={0} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem}/> */}
             </div>
-            <div className={`text-yellow-300 text-[45px] z-20 font-shrikhand`}>
-              Radio
-            </div> */}
-            <MenuItem titleEng={"About"} titleJap={"話"} xMovement={31} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem}/>
-            <MenuItem titleEng={"Volumes"} titleJap={"章"} xMovement={40} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem}/>
-            <MenuItem titleEng={"Radio"} titleJap={"音楽"} xMovement={18} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem}/>
+            <div style={demobox} className={`relative text-yellow-300 text-center text-[45px] font-shrikhand`}>
+              <video
+                style={demobox}
+                className={`top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-50`}
+                src={cityTrain} onEnded={handleVideoEnd} autoPlay muted loop
+              />
+              {/* <MenuItem titleEng={"Join"} titleJap={"音楽"} xMovement={0} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem}/> */}
+            </div>                       
           </div>
-          {/* <div style={demobox} className={`absolute m-8 rotate-45`}>
-            test
-          </div> */}
-          <HannyaCanvas hoveredItem={hoveredItem}/>
-        </div>                 
+          <HannyaCanvas hoveredItem={hoveredItem}/>                   
+        </div>
+
+        
+        
+        
+        <div style={demobox} className={`absolute max-h-172 flex items-center h-full w-full`}>
+          <div style={demobox} className={`absolute inset-0 max-h-172 max-w-5xl mx-auto grid grid-cols-3 gap-5 my-8 pt-4`}>
+            <div style={demobox} className={`relative text-yellow-300 text-center text-[45px] font-shrikhand`}>
+              <MenuItem titleEng={"About"} titleJap={"話"} xMovement={0} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem}/>
+            </div >
+            <div style={demobox} className={`relative text-yellow-300 text-center text-[45px] font-shrikhand`}>
+              <MenuItem titleEng={"Volumes"} titleJap={"章"} xMovement={0} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem}/>
+            </div>
+            <div style={demobox} className={`relative text-yellow-300 text-center text-[45px] font-shrikhand`}>
+              <MenuItem titleEng={"Join"} titleJap={"音楽"} xMovement={0} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem}/>
+            </div>            
+          </div>                  
+        </div>
+        
+                           
       </section>
+        
+
+      </>
     );
   };
 
