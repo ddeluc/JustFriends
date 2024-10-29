@@ -6,7 +6,7 @@ import { demomode } from "../constants";
 
 const demobox = demomode ? styles.demo.landing : {};
 
-const MenuItem = ({ titleEng, titleJap, xMovement, setHoveredItem, hoveredItem }) => {
+const MenuItem = ({ titleEng, titleJap, xMovement, setHoveredItem, hoveredItem, setSelectedItem }) => {
 
   return (
     <motion.a 
@@ -17,7 +17,7 @@ const MenuItem = ({ titleEng, titleJap, xMovement, setHoveredItem, hoveredItem }
       whileHover="hovered"
       onHoverStart={() => setHoveredItem(titleEng)}
       onHoverEnd={() => setHoveredItem("None")}
-      onClick={() => console.log(hoveredItem)}
+      onClick={() => setSelectedItem(titleEng)}
     >
       <motion.div
         className={``}
