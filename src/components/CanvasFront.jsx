@@ -14,6 +14,8 @@ import cowboy1 from '../assets/videos/Cowboy1.mp4';
 import cityTrain from '../assets/videos/CityTrain.mp4';
 import farine from '../assets/videos/farinefiveroses.mp4';
 
+import { aboutText } from "../constants";
+
 
 const demobox = demomode ? styles.demo.front : {};
 
@@ -36,24 +38,40 @@ const CanvasFront = ({ setHoveredItem, hoveredItem, setSelectedItem, selectedIte
           </div>
         </div>
         :
-        <div style={demobox} className={`absolute flex inset-0 max-h-172 max-w-5xl mx-auto gap-5 my-12`}>          
-          <div style={demobox} className={`w-1/2 my-12 p-6 translate-x-12 flex flex-col text-[24px] ml-12`}>
-            <div style={demobox} className={`text-[45px]`}>
-              Subscribe to our Newsletter.
+        <>
+          {selectedItem == "Join" ? 
+            <div style={demobox} className={`absolute flex inset-0 max-h-172 max-w-5xl mx-auto gap-5 my-12`}>          
+              <div style={demobox} className={`w-3/5 my-12 p-6 translate-x-12 flex flex-col text-[24px] ml-12`}>
+                <div style={demobox} className={`text-[45px]`}>
+                  Subscribe to our Newsletter.
+                </div>
+                <div style={demobox} className={``}>
+                  Subscribe to our newletter and stay updated.
+                </div>
+                <input style={demobox} className={`w-full`} />
+                <div style={demobox}>
+                  <button>Submit</button>
+                </div>
+              </div>
             </div>
-            <div style={demobox} className={``}>
-              Subscribe to our newletter and stay updated.
-            </div>
-            <input style={demobox} className={`w-full`} />
-            <div style={demobox}>
-              <button>Submit</button>
-            </div>
-          </div>
-        </div>        
-        }          
+          :
+            <>
+              <div style={demobox} className={`absolute flex justify-end inset-0 max-h-172 max-w-5xl mx-auto gap-5 my-12`}>      
+                <div style={demobox} className={`w-7/12 my-12 flex items-center justify-center text-[24px]`}>
+                  {aboutText}        
+                </div>      
+              </div>
+            </>    
+          }               
+        </> 
+      }     
       </div>                       
     </div> 
   )
 }
 
 export default CanvasFront;
+
+
+
+
