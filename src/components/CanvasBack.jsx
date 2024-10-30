@@ -11,6 +11,9 @@ import kuroko1 from '../assets/videos/Kuroko1.mp4';
 import cowboy1 from '../assets/videos/Cowboy1.mp4';
 import cityTrain from '../assets/videos/CityTrain.mp4';
 import farine from '../assets/videos/farinefiveroses.mp4';
+import vol4 from '../assets/volumes/vol4short.mp4';
+import vol2 from '../assets/volumes/vol2short.mp4';
+import promo from '../assets/volumes/promo1.mp4';
 
 
 const demobox = demomode ? styles.demo.landing : {};
@@ -28,13 +31,13 @@ const CanvasBack = ({ hoveredItem, selectedItem }) => {
           <video
             style={demobox}
             className={`top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-85`}
-            src={akiraClip1} onEnded={handleVideoEnd} autoPlay muted loop
+            src={vol4} onEnded={handleVideoEnd} autoPlay muted loop
           />
           : 
           <video
             style={demobox}
             className={`top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-50 grayscale`}
-            src={akiraClip1} onEnded={handleVideoEnd} autoPlay muted loop
+            src={vol4} onEnded={handleVideoEnd} autoPlay muted loop
           />
         }               
       </div >
@@ -53,13 +56,13 @@ const CanvasBack = ({ hoveredItem, selectedItem }) => {
               <video
                 style={demobox}
                 className={`top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-85`}
-                src={champlooClip1} onEnded={handleVideoEnd} autoPlay muted loop
+                src={vol2} onEnded={handleVideoEnd} autoPlay muted loop
               />
               : 
               <video
                 style={demobox}
                 className={`top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-50 grayscale`}
-                src={champlooClip1} onEnded={handleVideoEnd} autoPlay muted loop
+                src={vol2} onEnded={handleVideoEnd} autoPlay muted loop
               />
             }    
           </>
@@ -71,13 +74,13 @@ const CanvasBack = ({ hoveredItem, selectedItem }) => {
           <video
             style={demobox}
             className={`top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-85`}
-            src={cityTrain} onEnded={handleVideoEnd} autoPlay muted loop
+            src={promo} onEnded={handleVideoEnd} autoPlay muted loop
           />
           : 
           <video
             style={demobox}
             className={`top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-50 grayscale`}
-            src={cityTrain} onEnded={handleVideoEnd} autoPlay muted loop
+            src={promo} onEnded={handleVideoEnd} autoPlay muted loop
           />
         }
       </div>                       

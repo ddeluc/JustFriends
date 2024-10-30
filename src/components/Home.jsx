@@ -55,6 +55,10 @@ const Home = ({ setOnLanding }) => {
       className={`relative w-full h-screen mx-auto flex items-center bg-primary`}
       style={demobox}
     > 
+      {/* <video
+        className={`object-cover w-full h-full rounded-3xl brightness-60`}
+        src={cityTrain} onEnded={() => setState(nextState)} muted loop
+      /> */}
       
       <div style={demobox} className={`absolute max-h-172 flex items-center h-full w-full`}>
         {selectedItem == "None" ? <CanvasBack hoveredItem={hoveredItem} selectedItem={selectedItem} /> 
