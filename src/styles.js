@@ -19,6 +19,7 @@ const styles = {
       landing: {border: '2px solid #35e664', boxShadow: '0 0 10px #35e664'},
       title: {border: '2px solid #10e6bb', boxShadow: '0 0 10px #10e6bb'},
       canvas: {border: '2px solid #e635d7', boxShadow: '0 0 10px #e635d7'},
+      front: {border: '2px solid #0328fc', boxShadow: '0 0 10px #0328fc'},
     }
   };
   

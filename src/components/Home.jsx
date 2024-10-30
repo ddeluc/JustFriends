@@ -55,17 +55,19 @@ const Home = ({ setOnLanding }) => {
       className={`relative w-full h-screen mx-auto flex items-center bg-black`}
       style={demobox}
     > 
+      
       <div style={demobox} className={`absolute max-h-172 flex items-center h-full w-full`}>
         {selectedItem == "None" ? <TitleItems hoveredItem={hoveredItem} /> 
         : 
         <div style={demobox} className={`absolute inset-0 max-h-172 max-w-5xl mx-auto grid grid-cols-3 gap-5 my-8`}>
           {/* <About selectedItem={selectedItem} hoveredItem={hoveredItem} />  */}
-          <Join />      
+          <Join />          
         </div>
         }
         <HannyaCanvas hoveredItem={hoveredItem} selectedItem={selectedItem} />                   
       </div>    
-      {selectedItem == "None" ? <TitleVideos setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem} /> : <></> } 
+      {/* {selectedItem == "None" ? <TitleVideos setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem} /> : <></> }      */}
+      <TitleVideos setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem} selectedItem={selectedItem} />
     </section>    
   );
 };

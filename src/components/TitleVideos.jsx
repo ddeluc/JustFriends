@@ -15,23 +15,43 @@ import cityTrain from '../assets/videos/CityTrain.mp4';
 import farine from '../assets/videos/farinefiveroses.mp4';
 
 
-const demobox = demomode ? styles.demo.landing : {};
+const demobox = demomode ? styles.demo.front : {};
 
-const TitleVideos = ({ setHoveredItem, hoveredItem, setSelectedItem }) => {
+const TitleVideos = ({ setHoveredItem, hoveredItem, setSelectedItem, selectedItem }) => {
 
   return (
     <div style={demobox} className={`absolute max-h-172 flex items-center h-full w-full`}>
-      <div style={demobox} className={`absolute inset-0 max-h-172 max-w-5xl mx-auto grid grid-cols-3 gap-5 my-8 pt-4`}>
-        <div style={demobox} className={`relative text-yellow-300 text-center text-[45px] font-shrikhand`}>
-          <MenuItem titleEng={"About"} titleJap={"話"} xMovement={35} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem}/>
-        </div >
-        <div style={demobox} className={`relative text-yellow-300 text-center text-[45px] font-shrikhand`}>
-          <MenuItem titleEng={"Volumes"} titleJap={"章"} xMovement={35} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem}/>
+      
+      <div style={demobox} className={`absolute inset-0 max-h-172 max-w-5xl mx-auto my-8`}>
+      {selectedItem == "None" ?
+        <div className={`absolute inset-0 max-h-172 max-w-5xl mx-auto grid grid-cols-3 gap-5`}>
+          <div style={demobox} className={`relative text-yellow-300 text-center text-[45px] font-shrikhand mt-4`}>
+            <MenuItem titleEng={"About"} titleJap={"話"} xMovement={35} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem}/>
+          </div >
+          <div style={demobox} className={`relative text-yellow-300 text-center text-[45px] font-shrikhand mt-4`}>
+            <MenuItem titleEng={"Volumes"} titleJap={"章"} xMovement={35} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem}/>
+          </div>
+          <div style={demobox} className={`relative text-yellow-300 text-center text-[45px] font-shrikhand mt-4`}>
+            <MenuItem titleEng={"Join"} titleJap={"音楽"} xMovement={30} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem}/>
+          </div>
         </div>
-        <div style={demobox} className={`relative text-yellow-300 text-center text-[45px] font-shrikhand`}>
-          <MenuItem titleEng={"Join"} titleJap={"音楽"} xMovement={30} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem}/>
-        </div>            
-      </div>                  
+        :
+        <div style={demobox} className={`absolute flex inset-0 max-h-172 max-w-5xl mx-auto gap-5 my-12`}>          
+          <div style={demobox} className={`w-1/2 my-12 p-6 translate-x-12 flex flex-col text-[24px] ml-12`}>
+            <div style={demobox} className={`text-[45px]`}>
+              Subscribe to our Newsletter.
+            </div>
+            <div style={demobox} className={``}>
+              Subscribe to our newletter and stay updated.
+            </div>
+            <input style={demobox} className={`w-full`} />
+            <div style={demobox}>
+              <button>Submit</button>
+            </div>
+          </div>
+        </div>        
+        }          
+      </div>                       
     </div> 
   )
 }

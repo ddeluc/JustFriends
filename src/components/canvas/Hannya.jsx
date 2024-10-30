@@ -181,10 +181,10 @@ const PolaroidClusterAbout = () => {
 
   return (
     <group>
-      <PolaroidImage image={testImage} rotation={[0, 0, Math.PI/6]} position={[-4.5, 1, -2.3]} scale={0.7} lerpSpeed={0.05} initialPosition={[-6, 5, 0]} />
-      <PolaroidImage image={testImage} rotation={[0, 0, -Math.PI/6]} position={[-4.5, -1, -2.2]} scale={0.7} lerpSpeed={0.06} initialPosition={[-5, -5, 0]} />
-      <PolaroidImage image={testImage} rotation={[0, 0, -Math.PI/6]} position={[-2.7, 1.2, -2.1]} scale={0.7} lerpSpeed={0.07} initialPosition={[2, 5, 0]} />
-      <PolaroidImage image={testImage} rotation={[0, 0, Math.PI/16]} position={[-2.5, -1, -2]} scale={0.7} lerpSpeed={0.08} initialPosition={[3, -3, 0]} />
+      <PolaroidImage image={testImage} rotation={[0, 0, Math.PI/6]} position={[-4.7, 1.5, -3]} scale={0.7} lerpSpeed={0.05} initialPosition={[-6, 5, -3]} />
+      <PolaroidImage image={testImage} rotation={[0, 0, -Math.PI/6]} position={[-4.5, -1, -2.8]} scale={0.7} lerpSpeed={0.06} initialPosition={[-5, -5, -2.8]} />
+      <PolaroidImage image={testImage} rotation={[0, 0, -Math.PI/6]} position={[-2.5, 1.4, -2.6]} scale={0.7} lerpSpeed={0.07} initialPosition={[-7, 5, -2.6]} />
+      <PolaroidImage image={testImage} rotation={[0, 0, Math.PI/16]} position={[-2.5, -1, -2.4]} scale={0.7} lerpSpeed={0.08} initialPosition={[-6, -3, -2.4]} />
     </group>
   )
 }
@@ -194,7 +194,7 @@ const HannyaCanvas = ({ hoveredItem, selectedItem }) => {
 
   return (
     <Canvas
-      className={`border-6 border-red-500 absolute z-100`}
+      className={`border-6 border-red-500 absolute`}
       style={demobox}
       shadows
       camera={{ position: [0, 0, 10], fov: 30 }}

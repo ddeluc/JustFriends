@@ -30,7 +30,7 @@ const About = ({ hoveredItem, selectedItem }) => {
     <>
       <video
         style={demobox}
-        className={`top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-40`}
+        className={`top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-50`}
         src={akiraClip1} autoPlay muted loop
       />
       <div style={demobox} className={`absolute flex justify-end inset-0 max-h-172 max-w-5xl mx-auto gap-5 my-12`}>      
