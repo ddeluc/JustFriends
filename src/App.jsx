@@ -20,10 +20,10 @@ const App = () => {
 
   if (onLanding) {
     return (
-      <>
+      <div className={`relative z-0 bg-primary`}>
         <Landing setOnLanding={setOnLanding} setState={setState} state={state} nextState={nextState} setNextState={setNextState}/>     
         {/* <Home /> */}
-      </>
+      </div>
     )
   } else {
     return (

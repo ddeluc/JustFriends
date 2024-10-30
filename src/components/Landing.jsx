@@ -62,7 +62,7 @@ const Landing = ({ setOnLanding, state, setState, nextState, setNextState }) => 
   if (state == 0) {
     return (
       <section 
-        className={`relative flex flex-row w-full h-screen m-auto bg-black justify-center items-center p-8`}
+        className={`relative flex flex-row w-full h-screen m-auto justify-center items-center p-8`}
         style={demobox}
       >
         <video
@@ -80,7 +80,7 @@ const Landing = ({ setOnLanding, state, setState, nextState, setNextState }) => 
   } else if (state == 1) {
     return (
       <section 
-        className={`relative flex flex-row w-full h-screen m-auto bg-black justify-center items-center p-8`}
+        className={`relative flex flex-row w-full h-screen m-auto justify-center items-center p-8`}
         style={demobox}
       >
         <video

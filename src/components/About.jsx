@@ -38,8 +38,7 @@ const About = ({ hoveredItem, selectedItem }) => {
           {aboutText}        
         </div>      
       </div>
-    </>
-    
+    </>    
   );
 };
 

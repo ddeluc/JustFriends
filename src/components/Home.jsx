@@ -6,8 +6,8 @@ import { landingHover } from "../utils/motion";
 import { suffixWords } from "../constants";
 import { demomode } from "../constants";
 
-import TitleItems from "./TitleItems";
-import TitleVideos from "./TitleVideos";
+import CanvasBack from "./CanvasBack";
+import CanvasFront from "./CanvasFront";
 import About from "./About";
 import Join from "./Join";
 
@@ -52,22 +52,22 @@ const Home = ({ setOnLanding }) => {
   
   return (
     <section 
-      className={`relative w-full h-screen mx-auto flex items-center bg-black`}
+      className={`relative w-full h-screen mx-auto flex items-center bg-primary`}
       style={demobox}
     > 
       
       <div style={demobox} className={`absolute max-h-172 flex items-center h-full w-full`}>
-        {selectedItem == "None" ? <TitleItems hoveredItem={hoveredItem} /> 
+        {selectedItem == "None" ? <CanvasBack hoveredItem={hoveredItem} selectedItem={selectedItem} /> 
         : 
         <div style={demobox} className={`absolute inset-0 max-h-172 max-w-5xl mx-auto grid grid-cols-3 gap-5 my-8`}>
           {/* <About selectedItem={selectedItem} hoveredItem={hoveredItem} />  */}
-          <Join />          
+          {/* <Join />           */}
         </div>
         }
         <HannyaCanvas hoveredItem={hoveredItem} selectedItem={selectedItem} />                   
       </div>    
       {/* {selectedItem == "None" ? <TitleVideos setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem} /> : <></> }      */}
-      <TitleVideos setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem} selectedItem={selectedItem} />
+      <CanvasFront setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem} selectedItem={selectedItem} />
     </section>    
   );
 };

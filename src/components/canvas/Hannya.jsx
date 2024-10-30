@@ -35,8 +35,8 @@ const Hannya = ({ hoveredItem, selectedItem }) => {
     // meshRef.current.rotation.x = -Math.cos(t) / 16;
     // meshRef.current.rotation.y = -Math.sin(t) / 16 - Math.PI/2;
 
-    // meshRef.set(state.mouse.x * -2, state.mouse.y * -2, state.camera.position.z)
-    // state.camera.position.lerp(cameraVector, 0.05)
+    // cameraVector.set(state.mouse.x * -5, state.mouse.y * -5, state.camera.position.z)
+    // state.camera.position.lerp(cameraVector, 0.025)
     // state.camera.lookAt(0, 0, 0)
 
     if (hoveredItem == "About") {
@@ -130,6 +130,10 @@ const Video = () => {
       </meshStandardMaterial>
     </mesh>
   );
+}
+
+const EventPoster = () => {
+  
 }
 
 const PolaroidImage = ({ image, rotation, position, scale, lerpSpeed, initialPosition }) => {
