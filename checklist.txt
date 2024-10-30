@@ -1,11 +1,16 @@
-CHECKLIST
-- Landing [ ]
-- Email Form [ ]
-- Mail Campagin [ ]
-
 WORK QUEUE
-- Adding Image [ ]
-- Adding Video [done]
-- Changing Background [ ]
-- Adding Texture [ ]
+
+- Adding Video [X]
+- Changing Background [X]
+- Adding Noise Texture [ ] *
 - Curving Text [ ]
+- Proper Routing [ ]
+- Music [ ]
+- Menu Navigation [ ]
+- Red Solo [ ]
+- Channels [ ]
+    - Volumes [ ]
+    - Interviews [ ]
+    - Sign Up [ ]
+    - Radio [ ]
+    - Commercial Break [ ]

@@ -6,21 +6,32 @@ import { landingHover } from "../utils/motion";
 import { suffixWords } from "../constants";
 import { demomode } from "../constants";
 
+import CanvasBack from "./CanvasBack";
+import CanvasFront from "./CanvasFront";
+import About from "./About";
+import Join from "./Join";
+
 import akiraClip1 from '../assets/videos/Akira1.mp4';
 import champlooClip1 from '../assets/videos/SamuraiChamploo1.mp4';
 import oceanWaves1 from '../assets/videos/oceanWaves1.mp4';
 import whiteNoise from '../assets/videos/WhiteNoise/whiteNoise.mp4'
 import kuroko1 from '../assets/videos/Kuroko1.mp4';
 import cowboy1 from '../assets/videos/Cowboy1.mp4';
+import cityTrain from '../assets/videos/CityTrain.mp4';
+import farine from '../assets/videos/farinefiveroses.mp4';
+
+import volume2 from '../assets/volumes/vol2.mp4';
+import volume4 from '../assets/volumes/vol4.mp4';
+
 
 const videoSources = [
   {title: oceanWaves1, opacity: 50},
   {title: kuroko1, opacity: 50},
 ]
 
-import Title from "./Title";
 import { HannyaCanvas } from "./canvas";
 import { init } from "@emailjs/browser";
+import MenuItem from "./MenuItem";
 
 const demobox = demomode ? styles.demo.landing : {};
 
@@ -29,6 +40,8 @@ const STAGGER = 0.025;
 
 const Home = ({ setOnLanding }) => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [hoveredItem, setHoveredItem] = useState("None");
+  const [selectedItem, setSelectedItem] = useState("None")
 
   const titleEng = "Just Friends.";
   const titleJap = "友情"
@@ -36,59 +49,27 @@ const Home = ({ setOnLanding }) => {
   const subTitleEng1 = "Taking it slow."
   const subTitleJap2 = "思 い 出 づ く り"
   const subTitleEng2 = "Creating memories."
-
-  const handleVideoEnd = () => {    
-    setCurrentVideoIndex((currentVideoIndex + 1)%videoSources.length);    
-  };
-
-    return (
-      <section 
-        className={`relative flex flex-row w-full h-screen m-auto bg-black justify-center items-center p-8`}
-        style={demobox}
-      >
-        {/* <video
-          className={`absolute object-cover w-full h-full rounded-3xl brightness-50`}
-          style={demobox}
-          src={whiteNoise} loop autoPlay muted 
-        />  */}
-        <video
-          className={`object-cover w-full h-full rounded-3xl brightness-${videoSources[currentVideoIndex].opacity}`}
-          // style={demobox}
-          // style={{boxShadow: '0 0 30px #ffffff'}}
-          src={videoSources[currentVideoIndex].title} onEnded={handleVideoEnd} autoPlay muted 
-        />
-        <div style={demobox} className={`absolute flex flex-col inset-16 select-none`}> 
-          <div style={demobox} className={`flex flex-row`}>
-            <div className={`w-1/3 opacity-40 font-extrabold text-[36px]`} style={demobox}>
-              {titleJap}
-            </div>
-            <div className={`w-1/3 flex justify-center text-[40px] text-yellow-300`} style={demobox}>
-              {titleEng}
-            </div>
-            <div className={`w-1/3 flex justify-end text-[24px] items-center font-semibold`} style={demobox}>
-              <div
-                className={`flex flex-row space-x-8`}
-              >
-                <div>
-                  Volumes
-                </div>
-                <div>
-                  About
-                </div>
-              </div>
-            </div>
-          </div>
-          <div style={demobox} className={`h-full flex flex-row align-middle justify-center py-12`}>
-            <div 
-              style={{border: '2px solid #ffffff'}} 
-              className={`flex items-center justify-center w-2/3 text-[24px]`}
-            >
-              Sign Up Form
-            </div>
-          </div>
-        </div>         
-      </section>
-    );
-  };
+  
+  return (
+    <section 
+      className={`relative w-full h-screen mx-auto flex items-center bg-primary`}
+      style={demobox}
+    > 
+      
+      <div style={demobox} className={`absolute max-h-172 flex items-center h-full w-full`}>
+        {selectedItem == "None" ? <CanvasBack hoveredItem={hoveredItem} selectedItem={selectedItem} /> 
+        : 
+        <div style={demobox} className={`absolute inset-0 max-h-172 max-w-5xl mx-auto grid grid-cols-3 gap-5 my-8`}>
+          {/* <About selectedItem={selectedItem} hoveredItem={hoveredItem} />  */}
+          {/* <Join />           */}
+        </div>
+        }
+        <HannyaCanvas hoveredItem={hoveredItem} selectedItem={selectedItem} />                   
+      </div>    
+      {/* {selectedItem == "None" ? <TitleVideos setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem} /> : <></> }      */}
+      <CanvasFront setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem} selectedItem={selectedItem} />
+    </section>    
+  );
+};
 
 export default Home;

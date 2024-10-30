@@ -19,7 +19,7 @@ import farine from '../assets/videos/farinefiveroses.mp4';
 
 const demobox = demomode ? styles.demo.landing : {};
 
-const About = ({ hoveredItem, selectedItem }) => {
+const Volumes = ({ hoveredItem, selectedItem }) => {
   useEffect(() => {
     console.log(hoveredItem);
     console.log(selectedItem);
@@ -28,18 +28,11 @@ const About = ({ hoveredItem, selectedItem }) => {
 
   return (
     <>
-      <video
-        style={demobox}
-        className={`top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-50`}
-        src={akiraClip1} autoPlay muted loop
-      />
       <div style={demobox} className={`absolute flex justify-end inset-0 max-h-172 max-w-5xl mx-auto gap-5 my-12`}>      
-        <div style={demobox} className={`w-7/12 my-12 flex items-center justify-center text-[24px]`}>
-          {aboutText}        
-        </div>      
+             
       </div>
     </>    
   );
 };
 
-export default About;
+export default Volumes;
