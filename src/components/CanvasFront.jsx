@@ -41,27 +41,34 @@ const CanvasFront = ({ setHoveredItem, hoveredItem, setSelectedItem, selectedIte
         <>
           {selectedItem == "Join" ? 
             <div style={demobox} className={`absolute flex inset-0 max-h-172 max-w-5xl mx-auto gap-5 my-12`}>          
-              <div style={demobox} className={`w-3/5 my-12 p-6 translate-x-12 flex flex-col text-[24px] ml-12`}>
-                <div style={demobox} className={`text-[45px]`}>
+              <div style={demobox} className={`w-7/12 my-12 p-6 translate-x-20 flex flex-col gap-5 text-[24px] ml-12`}>
+                <div style={demobox} className={`text-[45px] font-shrikhand`}>
                   Subscribe to our Newsletter.
                 </div>
-                <div style={demobox} className={``}>
+                {/* <div style={demobox} className={`font-poppins`}>
                   Subscribe to our newletter and stay updated.
-                </div>
+                </div> */}
                 <input style={demobox} className={`w-full`} />
-                <div style={demobox}>
-                  <button>Submit</button>
+                <div style={demobox} className={`flex justify-end font-shrikhand`}>
+                  <button style={demobox} className={`p-3`}>
+                    SUBMIT
+                  </button>
                 </div>
               </div>
             </div>
           :
             <>
-              <div style={demobox} className={`absolute flex justify-end inset-0 max-h-172 max-w-5xl mx-auto gap-5 my-12`}>      
-                <div style={demobox} className={`w-7/12 my-12 flex items-center justify-center text-[24px]`}>
-                  {aboutText}        
-                </div>      
-              </div>
-            </>    
+              {selectedItem == "About" ? 
+                <div style={demobox} className={`absolute flex justify-end inset-0 max-h-172 max-w-5xl mx-auto gap-5 my-12 font-poppins`}>      
+                  <div style={demobox} className={`w-7/12 my-12 flex items-center justify-center text-[24px] mr-6`}>
+                    {aboutText}        
+                  </div>      
+                </div>
+              :
+                <>
+                </>
+              }            
+            </>           
           }               
         </> 
       }     
@@ -74,4 +81,10 @@ export default CanvasFront;
 
 
 
-
+<>
+  <div style={demobox} className={`absolute flex justify-end inset-0 max-h-172 max-w-5xl mx-auto gap-5 my-12`}>      
+    <div style={demobox} className={`w-7/12 my-12 flex items-center justify-center text-[24px]`}>
+      {aboutText}        
+    </div>      
+  </div>
+</> 

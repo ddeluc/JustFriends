@@ -10,7 +10,7 @@ const MenuItem = ({ titleEng, titleJap, xMovement, setHoveredItem, hoveredItem, 
 
   return (
     <motion.a 
-      className={`cursor-pointer block overflow-hidden whitespace-nowrap relative text-yellow-300 
+      className={`cursor-pointer block overflow-hidden whitespace-nowrap relative text-white 
       text-[45px] z-20 font-shrikhand select-none`} 
       style={demobox}
       initial="initial"

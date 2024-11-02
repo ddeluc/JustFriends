@@ -19,6 +19,10 @@ import kuroko1 from '../assets/videos/Kuroko1.mp4';
 import cowboy1 from '../assets/videos/Cowboy1.mp4';
 import cityTrain from '../assets/videos/CityTrain.mp4';
 import farine from '../assets/videos/farinefiveroses.mp4';
+import AkiraCity from '../assets/videos/AkiraCity.mp4';
+import AkiraCity1 from '../assets/videos/AkiraCity1.mp4';
+import AkiraCity2 from '../assets/videos/AkiraCity2.mp4';
+import AkiraCity3 from '../assets/videos/AkiraCity3.mp4';
 
 import volume2 from '../assets/volumes/vol2.mp4';
 import volume4 from '../assets/volumes/vol4.mp4';
@@ -55,10 +59,12 @@ const Home = ({ setOnLanding }) => {
       className={`relative w-full h-screen mx-auto flex items-center bg-primary`}
       style={demobox}
     > 
-      {/* <video
-        className={`object-cover w-full h-full rounded-3xl brightness-60`}
-        src={cityTrain} onEnded={() => setState(nextState)} muted loop
-      /> */}
+      <video
+        className={`object-cover w-full h-full brightness-35`}
+        src={oceanWaves1} onEnded={() => setState(nextState)} autoPlay muted loop
+      />
+
+      <div className={`absolute w-full h-full bg-custom-gradient`}/>
       
       <div style={demobox} className={`absolute max-h-172 flex items-center h-full w-full`}>
         <CanvasBack hoveredItem={hoveredItem} selectedItem={selectedItem} />         

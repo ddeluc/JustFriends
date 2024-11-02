@@ -112,7 +112,7 @@ const Landing = ({ setOnLanding, state, setState, nextState, setNextState }) => 
             {titleEng}
           </motion.div>
           <motion.div 
-            className={`text-yellow-300 text-[72px] z-20`}
+            className={`text-white text-[72px] z-20`}
             style={demobox}
             variants={{            
               hovered: { 

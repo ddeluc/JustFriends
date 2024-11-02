@@ -25,24 +25,33 @@ const CanvasBack = ({ hoveredItem, selectedItem }) => {
   const vidRef2 = useRef();
   const vidRef3 = useRef();
 
+  // vidRef1.current.playbackRate = 0.8;
+  // vidRef2.current.playbackRate = 0.8;
+  // vidRef3.current.playbackRate = 0.8;
+
   useEffect(() => {
-    // if (hoveredItem == "About") {
-    //   vidRef1.current.play();
-    // } else {
-    //   vidRef1.current.pause();
-    // }
+    vidRef1.current.playbackRate = 0.8;
+    vidRef2.current.playbackRate = 0.8;
+    vidRef3.current.playbackRate = 0.8;
 
-    // if (hoveredItem == "Volumes") {
-    //   vidRef2.current.play();
-    // } else {
-    //   vidRef2.current.pause();
-    // }
+  //   if (hoveredItem == "About") {
+  //     vidRef1.current.play();
+  //   } else {
+  //     vidRef1.current.pause();
+  //   }
 
-    // if (hoveredItem == "Join") {
-    //   vidRef3.current.play();
-    // } else {
-    //   vidRef3.current.pause();
-    // }
+  //   if (hoveredItem == "Volumes") {
+  //     vidRef2.current.play();
+  //   } else {
+  //     vidRef2.current.pause();
+  //   }
+
+  //   if (hoveredItem == "Join") {
+  //     vidRef3.current.play();
+  //   } else {
+  //     vidRef3.current.pause();
+  //   }
+
     if (selectedItem != "None") {
       vidRef1.current.play();
       vidRef2.current.play();
@@ -99,11 +108,32 @@ const CanvasBack = ({ hoveredItem, selectedItem }) => {
             src={vol4} autoPlay muted loop
           />
         : 
+        <>
+        {selectedItem == "Join" ?
           <video
             style={demobox}
             className={`top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-50`}
             src={promo} autoPlay muted loop
           />
+        :
+          <>
+            <div style={demobox} className={`relative text-yellow-300 text-center text-[45px] font-shrikhand`}>
+                    
+            </div >
+            <div style={demobox} className={`relative text-yellow-300 text-center text-[45px] font-shrikhand`}>        
+              <video
+                style={demobox}
+                ref={vidRef2}
+                className={`top-0 left-0 w-full h-full absolute object-fill rounded-3xl brightness-85`}
+                src={vol2} onEnded={handleVideoEnd} autoPlay muted loop
+              />        
+            </div>
+            <div style={demobox} className={`relative text-yellow-300 text-center text-[45px] font-shrikhand`}>
+              
+            </div> 
+          </>
+        }
+        </>          
         }
         </>
       }     
@@ -113,3 +143,4 @@ const CanvasBack = ({ hoveredItem, selectedItem }) => {
 }
 
 export default CanvasBack;
+

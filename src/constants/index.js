@@ -35,7 +35,11 @@ export const navLinks = [
   }
 ];
 
-export const aboutText = "Our Volumes are the heart and soul of Just Friends. These are our special events where people come together to network, socialize, and create unforgettable memories. Each volume is unique, blending cinematic elements with the vibrant energy of our community."
+export const aboutText = `Just Friends is a collective redefining the art of connection through curated events,
+  dynamic storytelling, and a passion for community. We create immersive experiences where networking meets creativity,
+  from discovering fresh music to exploring local businesses and culture. With a cinematic touch and a commitment to
+  meaningful impact, Just Friends isn’t just about gathering — it’s about building a network that supports, inspires, 
+  and gives back. Step into Just Friends, where every interaction is an opportunity to connect, grow, and elevate the community.`
 
 export const suffixWords = [
   "la catena",

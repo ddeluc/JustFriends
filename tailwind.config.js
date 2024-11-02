@@ -32,11 +32,14 @@ module.exports = {
       },
       backgroundImage: {
         "hero-pattern": "url('/src/assets/animeclouds.jpeg')",
-        "custom-gradient": "linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(1,24,65,1) 70%, rgba(8,58,147,1) 87%, rgba(6,108,179,1) 100%)",
+        "custom-gradient": "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(34,34,34,0.6923144257703081) 48%, rgba(0,0,0,1) 80%)",
       },
       fontFamily: {
         'shrikhand': ['Shrikhand', 'serif'],
-        'poppins': ['Poppins', 'sans-serif']
+        'poppins': ['Poppins', 'sans-serif'],
+        'montserrat': ['Montserrat', 'sans-serif'],
+        'lato': ['Lato', 'sans-serif'],
+        'coming-soon': ['Coming Soon', 'cursive']
       }
     },
   },

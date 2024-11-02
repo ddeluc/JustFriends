@@ -14,6 +14,12 @@ import { shininess } from "three/examples/jsm/nodes/Nodes.js";
 
 import testImage from "../../assets/images/planeimage.jpg";
 import cowboy1 from "../../assets/videos/Cowboy1.mp4";
+import photo1 from "../../assets/photos/photo4.png";
+import photo2 from "../../assets/photos/photo2.png";
+import photo3 from "../../assets/photos/photo8.png";
+import photo4 from "../../assets/photos/photo11.png";
+import photo5 from "../../assets/photos/photo9.png";
+import photo6 from "../../assets/photos/photo12.png";
 
 
 const demobox = demomode ? styles.demo.canvas : {};
@@ -74,7 +80,7 @@ const Hannya = ({ hoveredItem, selectedItem }) => {
 
     if (selectedItem == "About") {
       lerpPosZ = 0.8;
-      lerpPosX = -2.5;
+      lerpPosX = -3;
     } else if (selectedItem == "Join") {
       lerpPosZ = 0.8;
     }
@@ -181,16 +187,25 @@ const PolaroidImage = ({ image, rotation, position, scale, lerpSpeed, initialPos
   );
 }
 
-const PolaroidClusterAbout = () => {
+const PolaroidClusterAbout = ({ page }) => {
 
-  return (
-    <group>
-      <PolaroidImage image={testImage} rotation={[0, 0, Math.PI/6]} position={[-4.7, 1.5, -3]} scale={0.7} lerpSpeed={0.05} initialPosition={[-6, 5, -3]} />
-      <PolaroidImage image={testImage} rotation={[0, 0, -Math.PI/6]} position={[-4.5, -1, -2.8]} scale={0.7} lerpSpeed={0.06} initialPosition={[-5, -5, -2.8]} />
-      <PolaroidImage image={testImage} rotation={[0, 0, -Math.PI/6]} position={[-2.5, 1.4, -2.6]} scale={0.7} lerpSpeed={0.07} initialPosition={[-7, 5, -2.6]} />
-      <PolaroidImage image={testImage} rotation={[0, 0, Math.PI/16]} position={[-2.5, -1, -2.4]} scale={0.7} lerpSpeed={0.08} initialPosition={[-6, -3, -2.4]} />
-    </group>
-  )
+  if (page == "About") { 
+    return (
+      <group>
+        <PolaroidImage image={photo1} rotation={[0, 0, Math.PI/6]} position={[-5.2, 1.5, -3]} scale={0.7} lerpSpeed={0.05} initialPosition={[-6, 5, -3]} />
+        <PolaroidImage image={photo2} rotation={[0, 0, -Math.PI/6]} position={[-5, -1, -2.8]} scale={0.7} lerpSpeed={0.06} initialPosition={[-5, -5, -2.8]} />
+        <PolaroidImage image={photo3} rotation={[0, 0, -Math.PI/6]} position={[-3, 1.4, -2.6]} scale={0.7} lerpSpeed={0.07} initialPosition={[-7, 5, -2.6]} />
+        <PolaroidImage image={photo4} rotation={[0, 0, Math.PI/16]} position={[-3, -1, -2.4]} scale={0.7} lerpSpeed={0.08} initialPosition={[-6, -3, -2.4]} />
+      </group>
+    )
+  } else if (page == "Join") {
+    return (
+      <group>
+        <PolaroidImage image={photo1} rotation={[0, 0, Math.PI/9]} position={[-5.4, 2, -3]} scale={0.7} lerpSpeed={0.05} initialPosition={[-6, 5, -3]} />
+        <PolaroidImage image={photo2} rotation={[0, 0, -Math.PI/6]} position={[-5, -1.5, -2.8]} scale={0.7} lerpSpeed={0.06} initialPosition={[-5, -5, -2.8]} />
+      </group>
+    )
+  }
 }
 
 const HannyaCanvas = ({ hoveredItem, selectedItem }) => {
@@ -212,7 +227,8 @@ const HannyaCanvas = ({ hoveredItem, selectedItem }) => {
         {/* <PolaroidImage /> */}
         {/* <Video /> */}
         <Hannya hoveredItem={hoveredItem} selectedItem={selectedItem} />
-        {selectedItem == "About" ? <PolaroidClusterAbout /> : <></> }
+        {selectedItem == "About" ? <PolaroidClusterAbout page="About" /> : <></> }
+        {selectedItem == "Join" ? <PolaroidClusterAbout page="Join" /> : <></> }
         <Environment preset="city" rotation={[0, Math.PI / 2, 0]} position={[0, -3, 0]}/>
         {/* <OrbitControls /> */}
       </Suspense>
