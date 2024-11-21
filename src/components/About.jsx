@@ -34,9 +34,12 @@ const About = ({ hoveredItem, selectedItem }) => {
         src={akiraClip1} autoPlay muted loop
       />
       <div style={demobox} className={`absolute flex justify-end inset-0 max-h-172 max-w-5xl mx-auto gap-5 my-12`}>      
-        <div style={demobox} className={`w-7/12 my-12 flex items-center justify-center text-[24px]`}>
+        <div style={demobox} className={`w-7/12 my-12 flex items-center justify-center text-[24px] pointer-events-none`}>
           {aboutText}        
-        </div>      
+        </div>
+        <div style={demobox}>
+        
+        </div>  
       </div>
     </>    
   );

@@ -19,7 +19,19 @@ import { aboutText } from "../constants";
 
 const demobox = demomode ? styles.demo.front : {};
 
-const CanvasFront = ({ setHoveredItem, hoveredItem, setSelectedItem, selectedItem }) => {
+const CanvasFront = ({ setHoveredItem, hoveredItem, setSelectedItem, selectedItem, setVolumesVideoIndex, volumesVideoIndex }) => {
+
+  const incrementVolumesVideoIndex = () => {
+    let nextIndex = Math.abs(volumesVideoIndex + 1) % 2;
+    setVolumesVideoIndex(nextIndex);
+    console.log(volumesVideoIndex);
+  };
+
+  const decrementVolumesVideoIndex = () => {
+    let nextIndex = Math.abs(volumesVideoIndex - 1) % 2;
+    setVolumesVideoIndex(nextIndex);
+    console.log(volumesVideoIndex);
+  }
 
   return (
     <div style={demobox} className={`absolute max-h-172 flex items-center h-full w-full`}>
@@ -59,14 +71,112 @@ const CanvasFront = ({ setHoveredItem, hoveredItem, setSelectedItem, selectedIte
           :
             <>
               {selectedItem == "About" ? 
-                <div style={demobox} className={`absolute flex justify-end inset-0 max-h-172 max-w-5xl mx-auto gap-5 my-12 font-poppins`}>      
-                  <div style={demobox} className={`w-7/12 my-12 flex items-center justify-center text-[24px] mr-6`}>
-                    {aboutText}        
-                  </div>      
+                <div style={demobox} className={`absolute flex justify-end inset-0 max-h-172 max-w-5xl mx-auto gap-5 my-12 font-poppins`}>  
+                  <div style={demobox} className={`w-7/12 flex flex-col text-[24px] justify-evenly items-end mr-6`}>
+                    <div style={demobox} className={`text-[24px] cursor-default select-none`}>                    
+                      {aboutText}                           
+                    </div>
+                    <motion.div 
+                      style={demobox} 
+                      className={`text-[30px] w-max mr-12 font-shrikhand cursor-pointer select-none`} 
+                      initial="initial" 
+                      whileHover="hovered"
+                      onClick={() => setSelectedItem("None")}
+                      variants={{
+                        hovered: { opacity: 1, x: "-10%" }
+                      }}
+                      transition={{
+                        type: 'spring',
+                        bounce: 0,
+                        duration: 0.2
+                      }}
+                    >
+                      BACK
+                    </motion.div>
+                  </div>              
                 </div>
-              :
+              : 
                 <>
-                </>
+                <div style={demobox} className={`absolute w-full flex justify-center space-x-12 text-[30px] font-shrikhand`}>
+                  <motion.div 
+                    style={demobox} 
+                    className={`w-28 h-max cursor-pointer select-none text-end`}
+                    onClick={() => setSelectedItem("None")}
+                    initial="initial" 
+                    whileHover="hovered"
+                    variants={{
+                      hovered: { opacity: 1, x: "-10%" }
+                    }}
+                    transition={{
+                      type: 'spring',
+                      bounce: 0,
+                      duration: 0.2
+                    }}
+                  >
+                    BACK
+                  </motion.div>
+                  <div style={demobox} className={`w-1/3`}>
+
+                  </div>
+                  <motion.div 
+                    style={demobox} 
+                    className={`w-28 h-max cursor-pointer select-none`}
+                    onClick={() => setSelectedItem("Join")}
+                    initial="initial" 
+                    whileHover="hovered"
+                    variants={{
+                      hovered: { opacity: 1, x: "10%" }
+                    }}
+                    transition={{
+                      type: 'spring',
+                      bounce: 0,
+                      duration: 0.2
+                    }}
+                  >
+                    JOIN
+                  </motion.div>
+                </div>               
+                <div style={demobox} className={`h-full flex justify-center items-center space-x-12 text-[64px] font-shrikhand`}>
+                  
+                  <motion.div 
+                    style={demobox} 
+                    className={`w-max h-max cursor-pointer select-none`}
+                    onClick={() => decrementVolumesVideoIndex()}
+                    initial="initial" 
+                    whileHover="hovered"
+                    variants={{
+                      hovered: { opacity: 1, x: "-10%" }
+                    }}
+                    transition={{
+                      type: 'spring',
+                      bounce: 0,
+                      duration: 0.2
+                    }}
+                  >
+                    {'<'}
+                  </motion.div>         
+                  <div style={demobox} className={`w-1/3`}>
+
+                  </div>
+                  <motion.div 
+                    style={demobox} 
+                    className={`w-max h-max cursor-pointer select-none`}
+                    onClick={() => incrementVolumesVideoIndex()}
+                    initial="initial" 
+                    whileHover="hovered"
+                    variants={{
+                      hovered: { opacity: 1, x: "10%" }
+                    }}
+                    transition={{
+                      type: 'spring',
+                      bounce: 0,
+                      duration: 0.2
+                    }}
+                  >
+                    {">"}
+                  </motion.div>
+                </div>     
+                </>           
               }            
             </>           
           }               

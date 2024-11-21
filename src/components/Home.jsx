@@ -45,7 +45,8 @@ const STAGGER = 0.025;
 const Home = ({ setOnLanding }) => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [hoveredItem, setHoveredItem] = useState("None");
-  const [selectedItem, setSelectedItem] = useState("None")
+  const [selectedItem, setSelectedItem] = useState("None");
+  const [volumesVideoIndex, setVolumesVideoIndex] = useState(0);
 
   const titleEng = "Just Friends.";
   const titleJap = "友情"
@@ -59,19 +60,19 @@ const Home = ({ setOnLanding }) => {
       className={`relative w-full h-screen mx-auto flex items-center bg-primary`}
       style={demobox}
     > 
-      <video
+      {/* <video
         className={`object-cover w-full h-full brightness-35`}
         src={oceanWaves1} onEnded={() => setState(nextState)} autoPlay muted loop
-      />
+      /> */}
 
-      <div className={`absolute w-full h-full bg-custom-gradient`}/>
+      <div className={`absolute w-full h-full bg-black`}/>
       
       <div style={demobox} className={`absolute max-h-172 flex items-center h-full w-full`}>
-        <CanvasBack hoveredItem={hoveredItem} selectedItem={selectedItem} />         
+        <CanvasBack hoveredItem={hoveredItem} selectedItem={selectedItem} volumesVideoIndex={volumesVideoIndex} />         
         <HannyaCanvas hoveredItem={hoveredItem} selectedItem={selectedItem} />                   
       </div>    
       {/* {selectedItem == "None" ? <TitleVideos setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem} /> : <></> }      */}
-      <CanvasFront setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem} selectedItem={selectedItem} />
+      <CanvasFront setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem} selectedItem={selectedItem} setVolumesVideoIndex={setVolumesVideoIndex} volumesVideoIndex={volumesVideoIndex} />
     </section>    
   );
 };

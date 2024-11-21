@@ -82,7 +82,21 @@ const Hannya = ({ hoveredItem, selectedItem }) => {
       lerpPosZ = 0.8;
       lerpPosX = -3;
     } else if (selectedItem == "Join") {
+      lerpPosX = 2.75;
+      lerpPosY = 0;
       lerpPosZ = 0.8;
+      lerpRotY = -3*Math.PI/5;
+      lerpRotX = -Math.PI/8;
+      lerpRotZ = 0;
+
+    } else if (selectedItem == "Volumes") {
+      lerpPosZ = -6.5;
+      lerpPosX = 2.15;
+      lerpPosY = -2.75;
+      // lerpRotX = Math.PI/9;
+      lerpRotY = -3*Math.PI/5;
+      lerpRotZ = Math.PI/12;
+      lerpRotX = -Math.PI/16;
     }
 
     meshRef.current.position.x = MathUtils.lerp(meshRef.current.position.x, lerpPosX, 0.05);
@@ -98,8 +112,8 @@ const Hannya = ({ hoveredItem, selectedItem }) => {
       ref={meshRef}
       scale={20}
       rotation={[0, 0, 0]}
-      position={[0, 0, 0]}>
-        
+      position={[0, 0, 0]}
+      >
       {/* OBJECT */}
       <primitive
         object={hannya.scene}
