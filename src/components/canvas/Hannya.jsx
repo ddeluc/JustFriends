@@ -82,7 +82,7 @@ const Hannya = ({ hoveredItem, selectedItem }) => {
       lerpPosZ = 0.8;
       lerpPosX = -3;
     } else if (selectedItem == "Join") {
-      lerpPosX = 2.75;
+      lerpPosX = 2.5;
       lerpPosY = 0;
       lerpPosZ = 0.8;
       lerpRotY = -3*Math.PI/5;
@@ -216,7 +216,7 @@ const PolaroidClusterAbout = ({ page }) => {
     return (
       <group>
         <PolaroidImage image={photo1} rotation={[0, 0, Math.PI/9]} position={[-5.4, 2, -3]} scale={0.7} lerpSpeed={0.05} initialPosition={[-6, 5, -3]} />
-        <PolaroidImage image={photo2} rotation={[0, 0, -Math.PI/6]} position={[-5, -1.5, -2.8]} scale={0.7} lerpSpeed={0.06} initialPosition={[-5, -5, -2.8]} />
+        <PolaroidImage image={photo2} rotation={[0, 0, -Math.PI/12]} position={[-5, -2, -2.8]} scale={0.7} lerpSpeed={0.06} initialPosition={[-5, -5, -2.8]} />
       </group>
     )
   }

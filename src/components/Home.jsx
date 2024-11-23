@@ -45,7 +45,7 @@ const STAGGER = 0.025;
 const Home = ({ setOnLanding }) => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [hoveredItem, setHoveredItem] = useState("None");
-  const [selectedItem, setSelectedItem] = useState("None");
+  const [selectedItem, setSelectedItem] = useState("Join");
   const [volumesVideoIndex, setVolumesVideoIndex] = useState(0);
 
   const titleEng = "Just Friends.";

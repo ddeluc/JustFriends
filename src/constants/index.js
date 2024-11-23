@@ -51,4 +51,4 @@ export const suffixWords = [
   "l'incantesimo"
 ];
 
-export const demomode = false;
+export const demomode = true;

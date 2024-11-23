@@ -65,7 +65,7 @@ const CanvasBack = ({ hoveredItem, selectedItem, volumesVideoIndex }) => {
     //   vidRef3.current.play();
     // } 
 
-  }, [hoveredItem, volumesVideoIndex]);
+  }, [hoveredItem, volumesVideoIndex, selectedItem]);
 
   const changeVideoSource = () => {
     if (volumesVideoRef.current) {

@@ -4,6 +4,7 @@ import { styles } from "../styles";
 import { demomode } from "../constants";
 
 import MenuItem from "./MenuItem";
+import Join from "./Join";
 
 import akiraClip1 from '../assets/videos/Akira1.mp4';
 import champlooClip1 from '../assets/videos/SamuraiChamploo1.mp4';
@@ -52,21 +53,41 @@ const CanvasFront = ({ setHoveredItem, hoveredItem, setSelectedItem, selectedIte
         :
         <>
           {selectedItem == "Join" ? 
-            <div style={demobox} className={`absolute flex inset-0 max-h-172 max-w-5xl mx-auto gap-5 my-12`}>          
-              <div style={demobox} className={`w-7/12 my-12 p-6 translate-x-20 flex flex-col gap-5 text-[24px] ml-12`}>
-                <div style={demobox} className={`text-[45px] font-shrikhand`}>
+            <div style={demobox} className={`absolute flex inset-0 max-h-172 max-w-5xl mx-auto gap-5 my-12`}>      
+              <Join setSelectedItem={setSelectedItem} />    
+              {/* <div style={demobox} className={`w-7/12 my-12 p-6 translate-x-20 flex flex-col gap-5 text-[24px] ml-12`}>
+                <div style={demobox} className={`text-[45px] font-shrikhand mb-6`}>
                   Subscribe to our Newsletter.
+                  <div style={demobox} className={`font-poppins text-[24px]`}>
+                    Join the family and stay updated.
+                  </div>
                 </div>
-                {/* <div style={demobox} className={`font-poppins`}>
-                  Subscribe to our newletter and stay updated.
-                </div> */}
-                <input style={demobox} className={`w-full`} />
+                <input 
+                  style={demobox} 
+                  type="text" 
+                  placeholder="Email" 
+                  className={`w-full bg-white focus:outline-none text-slate-900 px-2.5 py-1.5 rounded-md text-[20px] font-shrikhand tracking-wider`} 
+                />
                 <div style={demobox} className={`flex justify-end font-shrikhand`}>
-                  <button style={demobox} className={`p-3`}>
+                  <motion.div 
+                    style={demobox} 
+                    className={`w-max cursor-pointer select-none`} 
+                    initial="initial" 
+                    whileHover="hovered"
+                    onClick={() => setSelectedItem("None")}
+                    variants={{
+                      hovered: { opacity: 1, x: "10%" }
+                    }}
+                    transition={{
+                      type: 'spring',
+                      bounce: 0,
+                      duration: 0.2
+                    }}
+                  >
                     SUBMIT
-                  </button>
+                  </motion.div>
                 </div>
-              </div>
+              </div> */}
             </div>
           :
             <>
