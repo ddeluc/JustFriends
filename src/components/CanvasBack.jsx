@@ -15,8 +15,10 @@ import farine from '../assets/videos/farinefiveroses.mp4';
 import vol4 from '../assets/volumes/vol4short.mp4';
 import vol2 from '../assets/volumes/vol2short.mp4';
 import promo from '../assets/volumes/promo1.mp4';
+import staticNoise from '../assets/videos/static.mp4';
 
-
+import { volumesVideoArray } from "../constants";
+import { volumesTitles } from "../constants";
 
 const demobox = demomode ? styles.demo.landing : {};
 
@@ -26,8 +28,7 @@ const CanvasBack = ({ hoveredItem, selectedItem, volumesVideoIndex, isMute }) =>
   const vidRef3 = useRef();
   const volumesVideoRef = useRef();
 
-  const volumesVideoArray = [vol2, vol4];
-  const volumesTitles = ["Volume 1", "Volume 2"];
+  
 
   // vidRef1.current.playbackRate = 0.8;
   // vidRef2.current.playbackRate = 0.8;
@@ -42,39 +43,14 @@ const CanvasBack = ({ hoveredItem, selectedItem, volumesVideoIndex, isMute }) =>
       changeVideoSource();
     }
 
-  //   if (hoveredItem == "About") {
-  //     vidRef1.current.play();
-  //   } else {
-  //     vidRef1.current.pause();
-  //   }
-
-  //   if (hoveredItem == "Volumes") {
-  //     vidRef2.current.play();
-  //   } else {
-  //     vidRef2.current.pause();
-  //   }
-
-  //   if (hoveredItem == "Join") {
-  //     vidRef3.current.play();
-  //   } else {
-  //     vidRef3.current.pause();
-  //   }
-
-    // if (selectedItem != "None") {
-    //   vidRef1.current.play();
-    //   vidRef2.current.play();
-    //   vidRef3.current.play();
-    // } 
-
   }, [hoveredItem, volumesVideoIndex, selectedItem]);
 
   const changeVideoSource = () => {
     if (volumesVideoRef.current) {
-      volumesVideoRef.current.src = whiteNoise;
+      volumesVideoRef.current.src = staticNoise;
       volumesVideoRef.current.volume = 0.4;
       volumesVideoRef.current.load();
-      volumesVideoRef.current.play();
-      
+      volumesVideoRef.current.play();      
     }
   }
 
@@ -150,7 +126,7 @@ const CanvasBack = ({ hoveredItem, selectedItem, volumesVideoIndex, isMute }) =>
               <video
                 style={demobox}
                 ref={volumesVideoRef}
-                className={`top-0 left-0 w-full h-full absolute object-fill rounded-3xl brightness-85`}
+                className={`top-0 left-0 w-full h-full absolute object-cover rounded-3xl brightness-85`}
                 src={volumesVideoArray[volumesVideoIndex]} onEnded={(event) => {
                   event.target.src = volumesVideoArray[volumesVideoIndex];
                 }} 

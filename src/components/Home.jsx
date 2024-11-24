@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
@@ -49,12 +49,17 @@ const Home = ({ setOnLanding }) => {
   const [volumesVideoIndex, setVolumesVideoIndex] = useState(0);
   const [isMute, setIsMute] = useState(false);
 
+
   const titleEng = "Just Friends.";
   const titleJap = "友情"
   const subTitleJap1 = "ゆっくりと"
   const subTitleEng1 = "Taking it slow."
   const subTitleJap2 = "思 い 出 づ く り"
   const subTitleEng2 = "Creating memories."
+
+  useEffect(() => {
+    setVolumesVideoIndex(0);
+  }, [selectedItem]);
   
   return (
     <section 

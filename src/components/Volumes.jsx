@@ -22,13 +22,18 @@ const demobox = demomode ? styles.demo.landing : {};
 const Volumes = ({ setSelectedItem, setVolumesVideoIndex, volumesVideoIndex, setIsMute, isMute }) => {
 
   const incrementVolumesVideoIndex = () => {
-    let nextIndex = Math.abs(volumesVideoIndex + 1) % 2;
+    let nextIndex = Math.abs(volumesVideoIndex + 1) % 4;
     setVolumesVideoIndex(nextIndex);
     console.log(volumesVideoIndex);
   };
 
   const decrementVolumesVideoIndex = () => {
-    let nextIndex = Math.abs(volumesVideoIndex - 1) % 2;
+    let nextIndex = volumesVideoIndex;
+    if (volumesVideoIndex == 0) {
+      nextIndex = 3;
+    } else {
+      nextIndex = nextIndex - 1;
+    }
     setVolumesVideoIndex(nextIndex);
     console.log(volumesVideoIndex);
   }

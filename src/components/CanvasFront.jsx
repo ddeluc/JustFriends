@@ -22,7 +22,6 @@ import { aboutText } from "../constants";
 const demobox = demomode ? styles.demo.front : {};
 
 const CanvasFront = ({ setHoveredItem, hoveredItem, setSelectedItem, selectedItem, setVolumesVideoIndex, volumesVideoIndex, setIsMute, isMute }) => {
-
   
 
   return (

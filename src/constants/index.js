@@ -1,3 +1,15 @@
+import akiraClip1 from '../assets/videos/Akira1.mp4';
+import champlooClip1 from '../assets/videos/SamuraiChamploo1.mp4';
+import oceanWaves1 from '../assets/videos/oceanWaves1.mp4';
+import whiteNoise from '../assets/videos/WhiteNoise/whiteNoise.mp4'
+import kuroko1 from '../assets/videos/Kuroko1.mp4';
+import cowboy1 from '../assets/videos/Cowboy1.mp4';
+import cityTrain from '../assets/videos/CityTrain.mp4';
+import farine from '../assets/videos/farinefiveroses.mp4';
+import vol4 from '../assets/volumes/vol4short.mp4';
+import vol2 from '../assets/volumes/vol2short.mp4';
+import promo from '../assets/volumes/promo1.mp4';
+
 export const navLinks = [
   // {
   //   id: "noh",
@@ -50,5 +62,8 @@ export const suffixWords = [
   "un'abitudine",
   "l'incantesimo"
 ];
+
+export const volumesVideoArray = [vol2, vol4, kuroko1, champlooClip1];
+export const volumesTitles = ["Volume 1", "Volume 2", "Volume 3", "Volume 4"];
 
 export const demomode = false;
