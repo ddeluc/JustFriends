@@ -20,13 +20,14 @@ import promo from '../assets/volumes/promo1.mp4';
 
 const demobox = demomode ? styles.demo.landing : {};
 
-const CanvasBack = ({ hoveredItem, selectedItem, volumesVideoIndex }) => {
+const CanvasBack = ({ hoveredItem, selectedItem, volumesVideoIndex, isMute }) => {
   const vidRef1 = useRef();
   const vidRef2 = useRef();
   const vidRef3 = useRef();
   const volumesVideoRef = useRef();
 
   const volumesVideoArray = [vol2, vol4];
+  const volumesTitles = ["Volume 1", "Volume 2"];
 
   // vidRef1.current.playbackRate = 0.8;
   // vidRef2.current.playbackRate = 0.8;
@@ -70,8 +71,10 @@ const CanvasBack = ({ hoveredItem, selectedItem, volumesVideoIndex }) => {
   const changeVideoSource = () => {
     if (volumesVideoRef.current) {
       volumesVideoRef.current.src = whiteNoise;
+      volumesVideoRef.current.volume = 0.4;
       volumesVideoRef.current.load();
       volumesVideoRef.current.play();
+      
     }
   }
 
@@ -142,7 +145,8 @@ const CanvasBack = ({ hoveredItem, selectedItem, volumesVideoIndex }) => {
               transition={{
                 duration: 0.5
               }}
-            >        
+            > 
+            <div style={demobox} className={`flex flex-col justify-end h-full w-full`}>               
               <video
                 style={demobox}
                 ref={volumesVideoRef}
@@ -151,7 +155,14 @@ const CanvasBack = ({ hoveredItem, selectedItem, volumesVideoIndex }) => {
                   event.target.src = volumesVideoArray[volumesVideoIndex];
                 }} 
                 autoPlay
-              />        
+                muted={isMute}                
+              />
+              <div style={demobox} className={`absolute text-white text-[40px] m-3 ml-4`}>
+                {volumesTitles[volumesVideoIndex]}
+              </div>                
+            </div>
+                   
+              
             </motion.div>            
           </>
         }

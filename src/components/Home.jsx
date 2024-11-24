@@ -45,8 +45,9 @@ const STAGGER = 0.025;
 const Home = ({ setOnLanding }) => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [hoveredItem, setHoveredItem] = useState("None");
-  const [selectedItem, setSelectedItem] = useState("Join");
+  const [selectedItem, setSelectedItem] = useState("None");
   const [volumesVideoIndex, setVolumesVideoIndex] = useState(0);
+  const [isMute, setIsMute] = useState(false);
 
   const titleEng = "Just Friends.";
   const titleJap = "友情"
@@ -68,11 +69,11 @@ const Home = ({ setOnLanding }) => {
       <div className={`absolute w-full h-full bg-black`}/>
       
       <div style={demobox} className={`absolute max-h-172 flex items-center h-full w-full`}>
-        <CanvasBack hoveredItem={hoveredItem} selectedItem={selectedItem} volumesVideoIndex={volumesVideoIndex} />         
+        <CanvasBack isMute={isMute} hoveredItem={hoveredItem} selectedItem={selectedItem} volumesVideoIndex={volumesVideoIndex} />         
         <HannyaCanvas hoveredItem={hoveredItem} selectedItem={selectedItem} />                   
       </div>    
       {/* {selectedItem == "None" ? <TitleVideos setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem} /> : <></> }      */}
-      <CanvasFront setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem} selectedItem={selectedItem} setVolumesVideoIndex={setVolumesVideoIndex} volumesVideoIndex={volumesVideoIndex} />
+      <CanvasFront setIsMute={setIsMute} isMute={isMute} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem} selectedItem={selectedItem} setVolumesVideoIndex={setVolumesVideoIndex} volumesVideoIndex={volumesVideoIndex} />
     </section>    
   );
 };
