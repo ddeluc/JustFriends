@@ -54,7 +54,7 @@ const Join = ({ setSelectedItem }) => {
             style={demobox} 
             initial={{ opacity: 0, x: -150 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.5, type: "spring", bounce: 0.3 }}
           >
             Subscribe to our Newsletter.
           </motion.div>          
@@ -63,7 +63,7 @@ const Join = ({ setSelectedItem }) => {
             className={`font-poppins text-[24px]`}
             initial={{ opacity: 0, x: -150 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4, delay: 0.2 }}
+            transition={{ duration: 0.5, type: "spring", bounce: 0.3, delay: 0.3 }}
           >
             Join the family and stay updated.
           </motion.div>
