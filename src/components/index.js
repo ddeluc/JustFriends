@@ -13,5 +13,6 @@ import MenuBack from "./MenuBack";
 import AboutBack from "./AboutBack";
 import JoinBack from "./JoinBack";
 import VolumesBack from "./VolumesBack";
+import Menu from "./Menu";
 
-export { Navbar, Landing, About, Work, Contact, Hero, Home, MenuItem, CanvasBack, CanvasFront, Join, MenuBack, AboutBack, JoinBack, VolumesBack };
+export { Navbar, Landing, About, Work, Contact, Hero, Home, MenuItem, CanvasBack, CanvasFront, Join, MenuBack, AboutBack, JoinBack, VolumesBack, Menu };

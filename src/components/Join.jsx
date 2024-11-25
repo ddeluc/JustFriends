@@ -14,21 +14,6 @@ const Join = ({ setSelectedItem }) => {
   const [inputFieldDisabled, setInputFieldDisabled] = useState(false);
   const inputField = useRef();
 
-  const getTest = () => {
-    axios.get('http://localhost:5000')
-      .then(response => {
-        console.log(response);
-      })
-      .catch(error => {
-        console.error("There was an error fetching the data. ", error);
-      })
-  }
-
-  const isValidEmail = (email) => {
-    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    return emailPattern.test(email);
-  }
-
   const postEmail = async () => {
 
     try {
@@ -44,7 +29,7 @@ const Join = ({ setSelectedItem }) => {
   }
 
   return (
-    <>
+    <div style={demobox} className={`absolute flex inset-0 max-h-172 max-w-5xl mx-auto gap-5 my-12`}>
       <div style={demobox} className={`w-11/20 my-12 p-6 translate-x-20 flex flex-col gap-2 text-[24px] ml-16 select-none`}>
         <div 
           style={demobox} 
@@ -122,8 +107,7 @@ const Join = ({ setSelectedItem }) => {
           </motion.div>
         </div>
       </div>
-    </>
-    
+    </div>
   );
 };
 
