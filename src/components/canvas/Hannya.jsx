@@ -219,6 +219,12 @@ const PolaroidClusterAbout = ({ page }) => {
         <PolaroidImage image={photo2} rotation={[0, 0, -Math.PI/12]} position={[-5.4, -2, -2.8]} scale={0.7} lerpSpeed={0.06} initialPosition={[-5, -5, -2.8]} />
       </group>
     )
+  } else if (page == "None") {
+    return (
+      <group>
+        
+      </group>
+    )
   }
 }
 

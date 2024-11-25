@@ -6,9 +6,13 @@ import kuroko1 from '../assets/videos/Kuroko1.mp4';
 import cowboy1 from '../assets/videos/Cowboy1.mp4';
 import cityTrain from '../assets/videos/CityTrain.mp4';
 import farine from '../assets/videos/farinefiveroses.mp4';
-import vol4 from '../assets/volumes/vol4short.mp4';
-import vol2 from '../assets/volumes/vol2short.mp4';
 import promo from '../assets/volumes/promo1.mp4';
+
+import vol1 from '../assets/videos/Volumes/Vol1.mp4';
+import vol2 from '../assets/videos/Volumes/Vol2.mp4';
+import vol3 from '../assets/videos/Volumes/Vol3.mp4';
+import vol4 from '../assets/videos/Volumes/Vol4.mp4';
+import vol5 from '../assets/videos/Volumes/Vol5.mp4';
 
 export const navLinks = [
   // {
@@ -63,7 +67,7 @@ export const suffixWords = [
   "l'incantesimo"
 ];
 
-export const volumesVideoArray = [vol2, vol4, kuroko1, champlooClip1];
-export const volumesTitles = ["Volume 1", "Volume 2", "Volume 3", "Volume 4"];
+export const volumesVideoArray = [vol1, vol2, vol3, vol4, vol5];
+export const volumesTitles = ["Volume 1", "Volume 2", "Volume 3", "Volume 4", "Volume 5"];
 
 export const demomode = false;
