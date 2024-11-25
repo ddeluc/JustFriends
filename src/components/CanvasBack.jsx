@@ -146,23 +146,21 @@ const CanvasBack = ({ hoveredItem, selectedItem, volumesVideoIndex, isMute }) =>
                 duration: 0.5
               }}
             > 
-            <div style={demobox} className={`flex flex-col justify-end h-full w-full`}>               
-              <video
-                style={demobox}
-                ref={volumesVideoRef}
-                className={`top-0 left-0 w-full h-full absolute object-cover rounded-3xl brightness-85`}
-                src={volumesVideoArray[volumesVideoIndex]} onEnded={(event) => {
-                  event.target.src = volumesVideoArray[volumesVideoIndex];
-                }} 
-                autoPlay
-                muted={isMute}                
-              />
-              <div style={demobox} className={`absolute text-white text-[40px] m-3 ml-4`}>
-                {volumesTitles[volumesVideoIndex]}
-              </div>                
-            </div>
-                   
-              
+              <div style={demobox} className={`flex flex-col justify-end h-full w-full`}>               
+                <video
+                  style={demobox}
+                  ref={volumesVideoRef}
+                  className={`top-0 left-0 w-full h-full absolute object-cover rounded-3xl brightness-85`}
+                  src={volumesVideoArray[volumesVideoIndex]} onEnded={(event) => {
+                    event.target.src = volumesVideoArray[volumesVideoIndex];
+                  }} 
+                  autoPlay
+                  muted={isMute}                
+                />
+                <div style={demobox} className={`absolute text-white text-[40px] m-3 ml-4`}>
+                  {volumesTitles[volumesVideoIndex]}
+                </div>                
+              </div>   
             </motion.div>            
           </>
         }

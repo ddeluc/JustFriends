@@ -22,7 +22,7 @@ const App = () => {
     return (
       <div className={`relative z-0 bg-primary`}>
         <Landing setOnLanding={setOnLanding} setState={setState} state={state} nextState={nextState} setNextState={setNextState}/>     
-        <Home />
+        {/* <Home /> */}
       </div>
     )
   } else {
