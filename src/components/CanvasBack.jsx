@@ -62,16 +62,28 @@ const CanvasBack = ({ hoveredItem, selectedItem, volumesVideoIndex, isMute }) =>
     <div style={demobox} className={`absolute flex inset-0 max-h-172 max-w-5xl justify-center mx-auto gap-5 my-8`}>
       {selectedItem == "None" ? 
       <>
-        <div style={demobox} className={`relative text-yellow-300 text-center text-[45px] font-shrikhand w-1/3`}>
-          <video
-            style={demobox}
-            ref={vidRef1}
-            className={hoveredItem == "About" 
-              ? `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-85`
-              : `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-50 grayscale`}
-            src={vol4} onEnded={handleVideoEnd} autoPlay muted loop
-          />              
-        </div >
+        <div style={demobox} className={`flex flex-col relative text-center text-[45px] font-shrikhand w-1/3 gap-5`}>
+          <div style={demobox} className={`relative h-1/2 text-center text-[45px] font-shrikhand`}>
+            <video
+              style={demobox}
+              ref={vidRef1}
+              className={hoveredItem == "About" 
+                ? `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-85`
+                : `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-50 grayscale`}
+              src={vol4} onEnded={handleVideoEnd} autoPlay muted loop
+            />          
+          </div >
+          <div style={demobox} className={`relative h-1/2 text-center text-[45px] font-shrikhand`}>
+            <video
+              style={demobox}
+              ref={vidRef1}
+              className={hoveredItem == "Contact" 
+                ? `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-85`
+                : `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-50 grayscale`}
+              src={oceanWaves1} onEnded={handleVideoEnd} autoPlay muted loop
+            />          
+          </div >
+        </div>        
         <div style={demobox} className={`relative text-yellow-300 text-center text-[45px] font-shrikhand w-1/3`}>        
           <video
             style={demobox}
@@ -82,16 +94,28 @@ const CanvasBack = ({ hoveredItem, selectedItem, volumesVideoIndex, isMute }) =>
             src={vol2} onEnded={handleVideoEnd} autoPlay muted loop
           />        
         </div>
-        <div style={demobox} className={`relative text-yellow-300 text-center text-[45px] font-shrikhand w-1/3`}>
-          <video
-            style={demobox}
-            ref={vidRef3}
-            className={hoveredItem == "Join" 
-              ? `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-85`
-              : `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-50 grayscale`}
-            src={promo} onEnded={handleVideoEnd} autoPlay muted loop
-          />
-        </div> 
+        <div style={demobox} className={`flex flex-col relative text-center text-[45px] font-shrikhand w-1/3 gap-5`}>
+          <div style={demobox} className={`relative h-1/2 text-center text-[45px] font-shrikhand`}>
+            <video
+              style={demobox}
+              ref={vidRef3}
+              className={hoveredItem == "Join" 
+                ? `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-85`
+                : `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-50 grayscale`}
+              src={promo} onEnded={handleVideoEnd} autoPlay muted loop
+            />
+          </div> 
+          <div style={demobox} className={`relative h-1/2 text-center text-[45px] font-shrikhand`}>
+            <video
+              style={demobox}
+              ref={vidRef3}
+              className={hoveredItem == "Service" 
+                ? `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-85`
+                : `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-50 grayscale`}
+              src={akiraClip1} onEnded={handleVideoEnd} autoPlay muted loop
+            />
+          </div>
+        </div>
       </>
       :
         <>

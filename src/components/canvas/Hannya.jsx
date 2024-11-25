@@ -45,40 +45,63 @@ const Hannya = ({ hoveredItem, selectedItem }) => {
     // state.camera.position.lerp(cameraVector, 0.025)
     // state.camera.lookAt(0, 0, 0)
 
+    lerpPosX = 0;
+    lerpPosY = 0;
+    lerpPosZ = 0;
+
     if (hoveredItem == "About") {
-      lerpPosX = -2.75;
-      lerpPosY = 0;
-      lerpPosZ = 0;
-      lerpRotY = -2*Math.PI/5;
+      // lerpPosX = -2.75;
+      // lerpPosY = 0;
+      // lerpPosZ = 0;
+      lerpRotY = -3*Math.PI/5;
       lerpRotX = -Math.PI/8;
       lerpRotZ = 0;
 
     } else if (hoveredItem == "Volumes") {
-      lerpPosX = 0;
-      lerpPosY = 0;
-      lerpPosZ = 0;
+      // lerpPosX = 0;
+      // lerpPosY = 0;
+      // lerpPosZ = 0;
       lerpRotY = -Math.PI/2;
       lerpRotX = -Math.PI/10;
       lerpRotZ = Math.PI/12;
 
     } else if (hoveredItem == "Join") {
-      lerpPosX = 2.75;
-      lerpPosY = 0;
-      lerpPosZ = 0;
-      lerpRotY = -3*Math.PI/5;
+      // lerpPosX = 2.75;
+      // lerpPosY = 0;
+      // lerpPosZ = 0;      
+      lerpRotY = -2*Math.PI/5;
       lerpRotX = -Math.PI/8;
       lerpRotZ = 0;
 
+    } else if (hoveredItem == "Contact") {
+      // lerpPosX = -2.75;
+      // lerpPosY = 0;
+      // lerpPosZ = 0;
+      lerpRotY = -3*Math.PI/5;
+      lerpRotX = Math.PI/8;
+      lerpRotZ = 0;
+
+    } else if (hoveredItem == "Service") {
+      // lerpPosX = 2.75;
+      // lerpPosY = 0;
+      // lerpPosZ = 0;
+      lerpRotY = -2*Math.PI/5;
+      lerpRotX = Math.PI/8;
+      lerpRotZ = 0;
+
     } else {
-      lerpPosX = 0;
-      lerpPosY = 0;
-      lerpPosZ = 0;
+      // lerpPosX = 0;
+      // lerpPosY = 0;
+      // lerpPosZ = 0;
       lerpRotY = -Math.PI/2;
       lerpRotX = 0;
       lerpRotZ = 0;
     }
 
     if (selectedItem == "About") {
+      lerpRotY = -2*Math.PI/5;
+      lerpRotX = -Math.PI/8;
+      lerpRotZ = 0;
       lerpPosZ = 0.8;
       lerpPosX = -3;
     } else if (selectedItem == "Join") {
@@ -222,7 +245,7 @@ const PolaroidClusterAbout = ({ page }) => {
   } else if (page == "None") {
     return (
       <group>
-        
+
       </group>
     )
   }
