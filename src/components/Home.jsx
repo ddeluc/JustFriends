@@ -78,8 +78,6 @@ const Home = ({ setOnLanding }) => {
         <HannyaCanvas hoveredItem={hoveredItem} selectedItem={selectedItem} />
         <CanvasFront setIsMute={setIsMute} isMute={isMute} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem} selectedItem={selectedItem} setVolumesVideoIndex={setVolumesVideoIndex} volumesVideoIndex={volumesVideoIndex} />                   
       </div>    
-      {/* {selectedItem == "None" ? <TitleVideos setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem} /> : <></> }      */}
-      {/* <CanvasFront setIsMute={setIsMute} isMute={isMute} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem} selectedItem={selectedItem} setVolumesVideoIndex={setVolumesVideoIndex} volumesVideoIndex={volumesVideoIndex} /> */}
     </section>    
   );
 };
