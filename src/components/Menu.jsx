@@ -19,7 +19,7 @@ const Menu = ({ setHoveredItem, hoveredItem, setSelectedItem }) => {
             </div >
           </div>
 
-          <div style={demobox} className={`relative text-yellow-300 text-center text-[45px] font-shrikhand mt-4`}>
+          <div style={demobox} className={`relative h-max text-yellow-300 text-center text-[45px] font-shrikhand mt-4`}>
             <MenuItem titleEng={"Volumes"} titleJap={"章"} xMovement={35} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem}/>
           </div>
 

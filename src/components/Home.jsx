@@ -2,8 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
-import { landingHover } from "../utils/motion";
-import { suffixWords } from "../constants";
 import { demomode } from "../constants";
 
 import CanvasBack from "./CanvasBack";

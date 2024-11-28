@@ -11,8 +11,7 @@ const Card = ({ active }) => {
         <div className={`flex w-2/3 mr-0 h-full flex-col mx-auto justify-center items-center border-2 border-white `}>
           Card1
         </div>
-      </div>
-      
+      </div>      
     )
   } else if (active == "About") {
     return (

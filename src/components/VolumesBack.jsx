@@ -20,7 +20,7 @@ import staticNoise from '../assets/videos/static.mp4';
 import { volumesVideoArray } from "../constants";
 import { volumesTitles } from "../constants";
 
-const demobox = demomode ? styles.demo.landing : {};
+const demobox = demomode ? styles.demo.back : {};
 
 const VolumesBack = ({ selectedItem, volumesVideoIndex, isMute }) => {
   const volumesVideoRef = useRef();
@@ -63,9 +63,9 @@ const VolumesBack = ({ selectedItem, volumesVideoIndex, isMute }) => {
             autoPlay
             muted={isMute}                
           />
-          <div style={demobox} className={`absolute text-white text-[40px] m-3 ml-4`}>
+          {/* <div style={demobox} className={`absolute text-white text-[40px] m-3 ml-4`}>
             {volumesTitles[volumesVideoIndex]}
-          </div>                
+          </div>                 */}
         </div>   
       </motion.div> 
     </>

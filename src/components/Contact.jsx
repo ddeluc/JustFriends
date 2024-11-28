@@ -4,7 +4,7 @@ import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 
 const demomode = false;
-const demobox = demomode ? styles.demo.hero : {};
+const demobox = demomode ? styles.demo.front : {};
 
 const Contact = () => {
   return (

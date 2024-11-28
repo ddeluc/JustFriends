@@ -5,7 +5,7 @@ import { demomode } from "../constants";
 
 import vol4 from '../assets/volumes/vol4short.mp4';
 
-const demobox = demomode ? styles.demo.landing : {};
+const demobox = demomode ? styles.demo.back : {};
 
 const AboutBack = ({}) => {
 

@@ -17,7 +17,7 @@ import cowboy1 from '../assets/videos/Cowboy1.mp4';
 import cityTrain from '../assets/videos/CityTrain.mp4';
 import farine from '../assets/videos/farinefiveroses.mp4';
 
-const demobox = demomode ? styles.demo.landing : {};
+const demobox = demomode ? styles.demo.front : {};
 
 const Volumes = ({ setSelectedItem, setVolumesVideoIndex, volumesVideoIndex, setIsMute, isMute }) => {
 

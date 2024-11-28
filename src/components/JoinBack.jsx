@@ -5,7 +5,7 @@ import { demomode } from "../constants";
 
 import promo from '../assets/volumes/promo1.mp4';
 
-const demobox = demomode ? styles.demo.landing : {};
+const demobox = demomode ? styles.demo.back : {};
 
 const JoinBack = ({}) => {
 

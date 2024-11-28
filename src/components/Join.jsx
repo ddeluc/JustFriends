@@ -6,7 +6,7 @@ import { styles } from "../styles";
 
 import { demomode } from "../constants";
 
-const demobox = demomode ? styles.demo.landing : {};
+const demobox = demomode ? styles.demo.front : {};
 
 const Join = ({ setSelectedItem }) => {
   const [email, setEmail] = useState();

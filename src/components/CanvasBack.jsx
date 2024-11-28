@@ -6,7 +6,7 @@ import AboutBack from "./AboutBack";
 import JoinBack from "./JoinBack";
 import VolumesBack from "./VolumesBack";
 
-const demobox = demomode ? styles.demo.landing : {};
+const demobox = demomode ? styles.demo.back : {};
 
 const CanvasBack = ({ hoveredItem, selectedItem, volumesVideoIndex, isMute }) => {
 

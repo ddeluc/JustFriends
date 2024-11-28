@@ -20,6 +20,7 @@ const styles = {
       title: {border: '2px solid #10e6bb', boxShadow: '0 0 10px #10e6bb'},
       canvas: {border: '2px solid #e635d7', boxShadow: '0 0 10px #e635d7'},
       front: {border: '2px solid #0328fc', boxShadow: '0 0 10px #0328fc'},
+      back: {border: '2px solid #fc0345', boxShadow: '0 0 10px #fc0345'},
     }
   };
   

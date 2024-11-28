@@ -2,8 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
-import { landingHover } from "../utils/motion";
-import { suffixWords } from "../constants";
 import { demomode } from "../constants";
 
 import akiraClip1 from '../assets/videos/Akira1.mp4';

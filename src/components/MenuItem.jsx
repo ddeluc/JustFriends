@@ -4,7 +4,7 @@ import { styles } from "../styles";
 import { demomode } from "../constants";
 
 
-const demobox = demomode ? styles.demo.landing : {};
+const demobox = false ? styles.demo.front : {};
 
 const MenuItem = ({ titleEng, titleJap, xMovement, setHoveredItem, hoveredItem, setSelectedItem }) => {
 
