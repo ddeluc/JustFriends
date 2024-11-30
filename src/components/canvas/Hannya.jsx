@@ -133,7 +133,7 @@ const Hannya = ({ hoveredItem, selectedItem }) => {
   return (
     <mesh
       ref={meshRef}
-      scale={20}
+      scale={18}
       rotation={[0, 0, 0]}
       position={[0, 0, 0]}
       >
@@ -255,27 +255,30 @@ const HannyaCanvas = ({ hoveredItem, selectedItem }) => {
   const backgroundColor = new THREE.Color('#ffffff');
 
   return (
-    <Canvas
-      className={`border-6 border-red-500 absolute`}
-      style={demobox}
-      shadows
-      camera={{ position: [0, 0, 10], fov: 30 }}
-      >
-      <Suspense fallback={<CanvasLoader />}>
-        <ambientLight intensity={0.08} />
-        {/* <pointLight position={[10, 10, 10]} /> */}
-        <spotLight position={[0, 2, 2.5]} rotation={[0, 0, 0]} intensity={0.3}  ></spotLight>
-        {/* <spotLight position={[20, -20, 4]} angle={0.15} intensity={0.2} />
-        <spotLight position={[-20, -20, 4]} angle={0.15} intensity={0.5} /> */}
-        {/* <PolaroidImage /> */}
-        {/* <Video /> */}
-        <Hannya hoveredItem={hoveredItem} selectedItem={selectedItem} />
-        {selectedItem == "About" ? <PolaroidClusterAbout page="About" /> : <></> }
-        {selectedItem == "Join" ? <PolaroidClusterAbout page="Join" /> : <></> }
-        <Environment preset="city" rotation={[0, Math.PI / 2, 0]} position={[0, -3, 0]}/>
-        {/* <OrbitControls /> */}
-      </Suspense>
-    </Canvas>
+    <div style={demobox} className={`absolute flex inset-0 max-h-172 justify-center mx-auto`}>
+      <Canvas
+        className={`border-6 border-red-500 absolute`}
+        style={demobox}
+        shadows
+        camera={{ position: [0, 0, 10], fov: 30 }}
+        >
+        <Suspense fallback={<CanvasLoader />}>
+          <ambientLight intensity={0.08} />
+          {/* <pointLight position={[10, 10, 10]} /> */}
+          <spotLight position={[0, 2, 2.5]} rotation={[0, 0, 0]} intensity={0.3}  ></spotLight>
+          {/* <spotLight position={[20, -20, 4]} angle={0.15} intensity={0.2} />
+          <spotLight position={[-20, -20, 4]} angle={0.15} intensity={0.5} /> */}
+          {/* <PolaroidImage /> */}
+          {/* <Video /> */}
+          <Hannya hoveredItem={hoveredItem} selectedItem={selectedItem} />
+          {selectedItem == "About" ? <PolaroidClusterAbout page="About" /> : <></> }
+          {selectedItem == "Join" ? <PolaroidClusterAbout page="Join" /> : <></> }
+          <Environment preset="city" rotation={[0, Math.PI / 2, 0]} position={[0, -3, 0]}/>
+          {/* <OrbitControls /> */}
+        </Suspense>
+      </Canvas>
+    </div>
+    
   )
 };
 

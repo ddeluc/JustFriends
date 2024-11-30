@@ -57,6 +57,8 @@ export const aboutText = `redefining the art of connection through curated event
   meaningful impact, Just Friends is about building a network that supports, inspires, 
   and gives back. Step into Just Friends, where every interaction is an opportunity to connect, grow, and elevate the community.`
 
+export const contactText = `Do you have a business you want to plug into JustFriends? Tell us your story and we'll get back to you!`
+
 export const volumesVideoArray = [vol1, vol2, vol3, vol4, vol5];
 export const volumesTitles = ["Volume 1", "Volume 2", "Volume 3", "Volume 4", "Volume 5"];
 

@@ -26,11 +26,15 @@ const MenuBack = ({ hoveredItem }) => {
   const vidRef1 = useRef();
   const vidRef2 = useRef();
   const vidRef3 = useRef();
+  const vidRef4 = useRef();
+  const vidRef5 = useRef();
 
   useEffect(() => {    
-    vidRef1.current.playbackRate = 0.8;
-    vidRef2.current.playbackRate = 0.8;
-    vidRef3.current.playbackRate = 0.8;  
+    vidRef1.current.playbackRate = 0.7;
+    vidRef2.current.playbackRate = 0.7;
+    vidRef3.current.playbackRate = 0.7;  
+    vidRef4.current.playbackRate = 1; 
+    vidRef5.current.playbackRate = 1; 
 
   }, [hoveredItem]);
 
@@ -47,17 +51,17 @@ const MenuBack = ({ hoveredItem }) => {
             ref={vidRef1}
             className={hoveredItem == "About" 
               ? `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-85`
-              : `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-50 grayscale`}
+              : `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-35 grayscale`}
             src={vol4} onEnded={handleVideoEnd} autoPlay muted loop
           />          
         </div >
         <div style={demobox} className={`relative h-1/2 text-center text-[45px] font-shrikhand`}>
           <video
             style={demobox}
-            ref={vidRef1}
+            ref={vidRef4}
             className={hoveredItem == "Contact" 
-              ? `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-85`
-              : `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-50 grayscale`}
+              ? `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-75`
+              : `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-35 grayscale`}
             src={oceanWaves1} onEnded={handleVideoEnd} autoPlay muted loop
           />          
         </div >
@@ -67,8 +71,8 @@ const MenuBack = ({ hoveredItem }) => {
           style={demobox}
           ref={vidRef2}
           className={hoveredItem == "Volumes" 
-            ? `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-85`
-            : `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-50 grayscale`}
+            ? `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-75`
+            : `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-35 grayscale`}
           src={vol2} onEnded={handleVideoEnd} autoPlay muted loop
         />        
       </div>
@@ -78,18 +82,18 @@ const MenuBack = ({ hoveredItem }) => {
             style={demobox}
             ref={vidRef3}
             className={hoveredItem == "Join" 
-              ? `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-85`
-              : `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-50 grayscale`}
+              ? `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-75`
+              : `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-35 grayscale`}
             src={promo} onEnded={handleVideoEnd} autoPlay muted loop
           />
         </div> 
         <div style={demobox} className={`relative h-1/2 text-center text-[45px] font-shrikhand`}>
           <video
             style={demobox}
-            ref={vidRef3}
+            ref={vidRef5}
             className={hoveredItem == "Service" 
-              ? `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-85`
-              : `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-50 grayscale`}
+              ? `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-75`
+              : `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-35 grayscale`}
             src={akiraClip1} onEnded={handleVideoEnd} autoPlay muted loop
           />
         </div>

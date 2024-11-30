@@ -8,7 +8,7 @@ import promo from '../assets/volumes/promo1.mp4';
 
 const demobox = demomode ? styles.demo.back : {};
 
-const JoinBack = ({}) => {
+const ContactBack = ({}) => {
 
   return (
     <motion.div
@@ -27,10 +27,10 @@ const JoinBack = ({}) => {
       <video
         style={demobox}
         className={`top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-50`}
-        src={promo} autoPlay muted loop
+        src={promo} muted loop
       />
     </motion.div>     
   );
 };
 
-export default JoinBack;
+export default ContactBack;

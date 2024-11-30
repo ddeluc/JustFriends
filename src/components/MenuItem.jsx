@@ -33,7 +33,7 @@ const MenuItem = ({ titleEng, titleJap, xMovement, setHoveredItem, hoveredItem, 
         {titleEng}
       </motion.div>
       <motion.div
-        className={`absolute inset-0 text-red-600 text-glow font-bold`}
+        className={`absolute inset-0 text-white text-glow font-bold`}
         style={demobox}
         variants={{
           initial: { opacity: 0, x: 0 },
