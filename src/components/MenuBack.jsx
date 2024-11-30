@@ -52,7 +52,7 @@ const MenuBack = ({ hoveredItem }) => {
             className={hoveredItem == "About" 
               ? `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-85`
               : `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-35 grayscale`}
-            src={vol4} onEnded={handleVideoEnd} autoPlay muted loop
+            src={champlooClip1} onEnded={handleVideoEnd} autoPlay muted loop
           />          
         </div >
         <div style={demobox} className={`relative h-1/2 text-center text-[45px] font-shrikhand`}>
@@ -84,7 +84,7 @@ const MenuBack = ({ hoveredItem }) => {
             className={hoveredItem == "Join" 
               ? `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-75`
               : `top-0 left-0 w-full h-full absolute object-none rounded-3xl brightness-35 grayscale`}
-            src={promo} onEnded={handleVideoEnd} autoPlay muted loop
+            src={cowboy1} onEnded={handleVideoEnd} autoPlay muted loop
           />
         </div> 
         <div style={demobox} className={`relative h-1/2 text-center text-[45px] font-shrikhand`}>

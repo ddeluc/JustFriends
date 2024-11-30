@@ -7,7 +7,9 @@ import { SectionWrapper } from "../hoc";
 
 import { contactText } from "../constants";
 
-const demomode = true;
+import { demomode } from "../constants";
+
+// const demomode = true;
 const demobox = demomode ? styles.demo.front : {};
 
 const Contact = ({ setSelectedItem }) => {

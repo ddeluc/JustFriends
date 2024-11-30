@@ -73,7 +73,7 @@ const Home = ({ setOnLanding }) => {
       
       <div style={demobox} className={`absolute max-h-172 flex items-center h-full w-full`}>
         <CanvasBack isMute={isMute} hoveredItem={hoveredItem} selectedItem={selectedItem} volumesVideoIndex={volumesVideoIndex} />         
-        {/* <HannyaCanvas hoveredItem={hoveredItem} selectedItem={selectedItem} /> */}
+        <HannyaCanvas hoveredItem={hoveredItem} selectedItem={selectedItem} />
         <CanvasFront setIsMute={setIsMute} isMute={isMute} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem} selectedItem={selectedItem} setVolumesVideoIndex={setVolumesVideoIndex} volumesVideoIndex={volumesVideoIndex} />                   
       </div>    
     </section>    
