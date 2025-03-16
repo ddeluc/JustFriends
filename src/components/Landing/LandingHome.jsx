@@ -43,7 +43,7 @@ const LandingHome = ({ setState, setNextState }) => {
         whileHover="hovered"
       >
         <motion.div
-          className={`text-red-600 text-[72px] absolute z-10`}
+          className={`text-red-600 text-[78px] absolute z-10`}
           style={demobox}
           variants={{
             hovered: { 
@@ -60,7 +60,7 @@ const LandingHome = ({ setState, setNextState }) => {
           {titleEng}
         </motion.div>
         <motion.div 
-          className={`text-white text-[72px] z-20`}
+          className={`text-white text-[78px] z-20`}
           style={demobox}
           variants={{            
             hovered: { 
@@ -77,7 +77,7 @@ const LandingHome = ({ setState, setNextState }) => {
           {titleEng}
         </motion.div>
         <motion.div
-          className={`absolute block overflow-hidden whitespace-nowrap bottom-0 right-0 translate-y-4 text-[24px] mr-4`}
+          className={`absolute block overflow-hidden whitespace-nowrap bottom-0 right-0 translate-y-6 text-[20px] mr-4`}
           style={demobox}
         >
           <div>
@@ -96,7 +96,7 @@ const LandingHome = ({ setState, setNextState }) => {
                   ease: "easeInOut",
                   delay: STAGGER * i,
                 }}
-                className={`inline-block text-[28px] font-bold mx-0.5`}
+                className={`inline-block text-[36px] font-bold mx-0.5`}
                 key={i}
               >
                 {l}

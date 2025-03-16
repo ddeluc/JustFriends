@@ -2,27 +2,26 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
 
 import {
-  Navbar,
-  Hero,
   Landing,
-  About,
-  Contact,
-  Work,
+  Navbar,
   Home,
 } from './components';
 
 const App = () => {
   const [state, setState] = useState(1);
   const [onLanding, setOnLanding] = useState(true);
-  const [hannyaPos, setHannyaPos] = useState(0);
   const [nextState, setNextState] = useState(1);
-  const [active, setActive] = useState("");
-
+  const [selectedItem, setSelectedItem] = useState("None");
 
   return (
     <div className={`relative z-0 bg-primary`}>
       {onLanding && <Landing setOnLanding={setOnLanding} setState={setState} state={state} nextState={nextState} setNextState={setNextState}/>}
-      {!onLanding && <Home />}
+      {!onLanding && 
+        <>
+          {/* <Navbar setSelectedItem={setSelectedItem} selectedItem={selectedItem} /> */}
+          <Home setSelectedItem={setSelectedItem} selectedItem={selectedItem} />
+        </>
+      }
     </div>
   )
 }

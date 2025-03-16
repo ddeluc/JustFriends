@@ -11,7 +11,7 @@ import { demomode } from "../constants";
 
 const demobox = demomode ? styles.demo.navbar : {};
 
-const Navbar = ({ setHannyaPos, hannyaPos, active, setActive }) => {
+const Navbar = ({ setSelectedItem, selectedItem }) => {
    
   const [onCollection, setOnCollection] = useState(true);
   const [animate, setAnimate] = useState(false);
@@ -22,27 +22,21 @@ const Navbar = ({ setHannyaPos, hannyaPos, active, setActive }) => {
       style={demobox}
     >
       <div className='w-full flex justify-between items-center max-w-full mx-auto' style={demobox}>
-        <Link
-          className='flex items-center gap-2'
-          onClick={() => {
-            setActive("");
-            window.scrollTo(0, 0);
-            setHannyaPos(0);
-            setAnimate(false);
-          }}
+        <div 
+          style={demobox} 
+          className={`font-shrikhand text-[24px]`}
+          onClick={() => setSelectedItem("None")}
         >
           <Title />
-        </Link>
-
+        </div>
         <ul className='list-none hidden sm:flex flex-row gap-10'>
           {navLinks.map((nav) => (
             <li
               key={nav.id}
-              className={`text-white hover:text-white text-[18px] font-medium cursor-pointer`}
+              className={`text-white hover:text-white text-[24px] cursor-pointer`}
               onClick={() => { 
-                setActive(nav.title);
                 setOnCollection(nav.collection);
-                setHannyaPos(nav.hannyaPosition);
+                setSelectedItem(nav.title);
                 setAnimate(true);
                 console.log(nav.hannyaPosition);
                 }

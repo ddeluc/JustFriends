@@ -15,16 +15,6 @@ import vol4 from '../assets/videos/Volumes/Vol4.mp4';
 import vol5 from '../assets/videos/Volumes/Vol5.mp4';
 
 export const navLinks = [
-  // {
-  //   id: "noh",
-  //   title: "Noh",
-  //   collection: true,
-  // },
-  // {
-  //   id: "marble",
-  //   title: "Marble",
-  //   collection: true,
-  // },
   {
     id: "about",
     title: "About",
@@ -32,20 +22,20 @@ export const navLinks = [
     hannyaPosition: 1,
   },
   {
-    id: "work",
-    title: "Work",
+    id: "service",
+    title: "Service",
     collection: false,
     hannyaPosition: 2,
   },
   {
-    id: "contact",
-    title: "Contact",
+    id: "join",
+    title: "Join",
     collection: false,
     hannyaPosition: 3,
   },
   {
-    id: "landing",
-    title: "Landing",
+    id: "contact",
+    title: "Contact",
     collection: false,
     hannyaPosition: 4,
   }
@@ -62,4 +52,4 @@ export const contactText = `Do you have a business you want to plug into JustFri
 export const volumesVideoArray = [vol1, vol2, vol3, vol4, vol5];
 export const volumesTitles = ["Volume 1", "Volume 2", "Volume 3", "Volume 4", "Volume 5"];
 
-export const demomode = true;
+export const demomode = false;

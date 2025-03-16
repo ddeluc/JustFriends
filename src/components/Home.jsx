@@ -8,6 +8,7 @@ import CanvasBack from "./CanvasBack";
 import CanvasFront from "./CanvasFront";
 import About from "./About";
 import Join from "./Join";
+import Navbar from "./Navbar";
 
 import akiraClip1 from '../assets/videos/Akira1.mp4';
 import champlooClip1 from '../assets/videos/SamuraiChamploo1.mp4';
@@ -33,17 +34,16 @@ const videoSources = [
 
 import { HannyaCanvas } from "./canvas";
 import { init } from "@emailjs/browser";
-import MenuItem from "./MenuItem";
+import MenuItem from "./Menu/MenuItem";
 
 const demobox = demomode ? styles.demo.landing : {};
 
 const DURATION = 0.05;
 const STAGGER = 0.025;
 
-const Home = ({ setOnLanding }) => {
+const Home = ({ setOnLanding, setSelectedItem, selectedItem }) => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [hoveredItem, setHoveredItem] = useState("None");
-  const [selectedItem, setSelectedItem] = useState("None");
   const [volumesVideoIndex, setVolumesVideoIndex] = useState(0);
   const [isMute, setIsMute] = useState(false);
 
@@ -61,17 +61,17 @@ const Home = ({ setOnLanding }) => {
   
   return (
     <section 
-      className={`relative w-full h-screen mx-auto flex items-center bg-primary`}
+      className={`relative w-full h-screen mx-auto flex items-end bg-primary`}
       style={demobox}
     > 
       {/* <video
         className={`object-cover w-full h-full brightness-35`}
-        src={oceanWaves1} onEnded={() => setState(nextState)} autoPlay muted loop
+        src={cityTrain} onEnded={() => setState(nextState)} autoPlay muted loop
       /> */}
 
-      <div className={`absolute w-full h-full bg-black`}/>
+      {/* <div className={`absolute w-full h-full bg-black`}/> */}
       
-      <div style={demobox} className={`absolute max-h-172 flex items-center h-full w-full`}>
+      <div style={demobox} className={`absolute max-h-[750px] flex items-center h-full w-full mb-12`}>
         <CanvasBack isMute={isMute} hoveredItem={hoveredItem} selectedItem={selectedItem} volumesVideoIndex={volumesVideoIndex} />         
         <HannyaCanvas hoveredItem={hoveredItem} selectedItem={selectedItem} />
         <CanvasFront setIsMute={setIsMute} isMute={isMute} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem} selectedItem={selectedItem} setVolumesVideoIndex={setVolumesVideoIndex} volumesVideoIndex={volumesVideoIndex} />                   

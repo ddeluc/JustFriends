@@ -1,7 +1,7 @@
 import { motion, transform } from "framer-motion";
 
-import { styles } from "../styles";
-import { demomode } from "../constants";
+import { styles } from "../../styles";
+import { demomode } from "../../constants";
 
 
 const demobox = false ? styles.demo.front : {};

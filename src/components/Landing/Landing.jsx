@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import LandingHome from "./LandingHome";
 import LandingStatic from "./LandingStatic";

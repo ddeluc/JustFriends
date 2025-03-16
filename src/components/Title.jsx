@@ -8,22 +8,19 @@ import { demomode } from "../constants";
 const demobox = demomode ? styles.demo.title : {};
 
 const Title = () => {
-  const titleEng = "JustFriends";
+  const titleEng = "JUST FRIENDS.";
   const titleJap = "友情"
 
   return (
     <motion.a 
-      className={`text-white text-[36px] font-bold 
+      className={`text-white text-[36px] 
       cursor-pointer block overflow-hidden whitespace-nowrap relative`} 
       style={demobox}
       initial="initial"
       whileHover="hovered"
     >
       <motion.div
-        // variants={{
-        //   initial: { y: 0 },
-        //   hovered: { y: "-100%" }
-        // }}
+        className={`text-[32px]`}
         variants={{
           initial: { opacity: 1, y: 0 },
           hovered: { opacity: 0 },
@@ -35,10 +32,10 @@ const Title = () => {
         {titleEng}
       </motion.div>
       <motion.div
-        className={`absolute inset-0 text-red-500`}
+        className={`text-[36px] absolute inset-0 text-red-600 font-bold`}
         variants={{
           initial: { opacity: 0, x: 0 },
-          hovered: { opacity: 1, x: "25%" },
+          hovered: { opacity: 1, x: "35%" },
         }}
         transition={{
           type: 'spring',
