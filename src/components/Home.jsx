@@ -42,40 +42,22 @@ const DURATION = 0.05;
 const STAGGER = 0.025;
 
 const Home = ({ setOnLanding, setSelectedItem, selectedItem }) => {
-  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
-  const [hoveredItem, setHoveredItem] = useState("None");
-  const [volumesVideoIndex, setVolumesVideoIndex] = useState(0);
-  const [isMute, setIsMute] = useState(false);
-
-
-  const titleEng = "Just Friends.";
-  const titleJap = "友情"
-  const subTitleJap1 = "ゆっくりと"
-  const subTitleEng1 = "Taking it slow."
-  const subTitleJap2 = "思 い 出 づ く り"
-  const subTitleEng2 = "Creating memories."
-
-  useEffect(() => {
-    setVolumesVideoIndex(0);
-  }, [selectedItem]);
+  const [selectedIndex, setSelectedIndex] = useState();
   
   return (
     <section 
-      className={`relative w-full h-screen mx-auto flex items-end bg-primary`}
+      className={`relative w-screen h-screen flex bg-primary overflow-hidden`}
       style={demobox}
-    > 
-      {/* <video
-        className={`object-cover w-full h-full brightness-35`}
-        src={cityTrain} onEnded={() => setState(nextState)} autoPlay muted loop
-      /> */}
-
-      {/* <div className={`absolute w-full h-full bg-black`}/> */}
-      
-      <div style={demobox} className={`absolute max-h-[750px] flex items-center h-full w-full mb-12`}>
-        <CanvasBack isMute={isMute} hoveredItem={hoveredItem} selectedItem={selectedItem} volumesVideoIndex={volumesVideoIndex} />         
-        <HannyaCanvas hoveredItem={hoveredItem} selectedItem={selectedItem} />
-        <CanvasFront setIsMute={setIsMute} isMute={isMute} setHoveredItem={setHoveredItem} hoveredItem={hoveredItem} setSelectedItem={setSelectedItem} selectedItem={selectedItem} setVolumesVideoIndex={setVolumesVideoIndex} volumesVideoIndex={volumesVideoIndex} />                   
-      </div>    
+    >       
+      <motion.div className={`w-1/3`} style={demobox}>
+        <div>left</div>
+      </motion.div>
+      <motion.div className={`w-1/3`} style={demobox}>
+        <div>left</div>
+      </motion.div>
+      <motion.div className={`w-1/3`} style={demobox}>
+      < div>left</div>
+      </motion.div>
     </section>    
   );
 };

@@ -255,7 +255,7 @@ const HannyaCanvas = ({ hoveredItem, selectedItem }) => {
   const backgroundColor = new THREE.Color('#ffffff');
 
   return (
-    <div style={demobox} className={`absolute flex inset-0 max-h-172 justify-center mx-auto`}>
+    <div style={demobox} className={`absolute flex top-0 left-0 max-h-172 justify-center mx-auto`}>
       <Canvas
         className={`border-6 border-red-500 absolute`}
         style={demobox}
