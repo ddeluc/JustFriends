@@ -27,12 +27,12 @@ const LandingHome = ({ setState, setNextState }) => {
 
   return (
     <section 
-      className={`relative flex flex-row w-full h-screen m-auto justify-center items-center p-8`}
+      className={`relative flex flex-row w-full h-screen m-auto justify-center items-center p-2`}
       style={demobox}
     >
       <video
         ref={homeVideo}
-        className={`object-cover w-full h-full rounded-3xl brightness-50`}
+        className={`object-cover w-full h-full brightness-50 rounded-lg`}
         src={volume2} autoPlay muted loop
       />
       <motion.div  
@@ -96,7 +96,7 @@ const LandingHome = ({ setState, setNextState }) => {
                   ease: "easeInOut",
                   delay: STAGGER * i,
                 }}
-                className={`inline-block text-[36px] font-bold mx-0.5`}
+                className={`inline-block text-[36px] mx-0.5 font-mochiy`}
                 key={i}
               >
                 {l}
@@ -105,12 +105,8 @@ const LandingHome = ({ setState, setNextState }) => {
           </div>            
         </motion.div>
       </motion.div>     
-      <div style={demobox} className={`absolute flex flex-col inset-16 text-[36px] font-extrabold opacity-40 select-none`}> 
-        <div style={demobox} className={`flex`}>
-          <div style={demobox}>
-            {titleJap}
-          </div>
-        </div>  
+      <div style={demobox} className={`absolute font-mochiy left-8 top-8 text-[48px] opacity-45`}> 
+        {titleJap}
       </div>         
     </section>
   );

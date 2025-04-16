@@ -16,12 +16,12 @@ const LandingStatic = ({ setOnLanding, setState, setNextState }) => {
 
   return (
     <section 
-      className={`relative flex flex-row w-full h-screen m-auto justify-center items-center p-8`}
+      className={`relative flex flex-row w-full h-screen m-auto justify-center items-center p-2`}
       style={demobox}
     >
       <video
         ref={staticVideo}
-        className={`object-cover w-full h-full rounded-3xl brightness-60`}
+        className={`object-cover w-full h-full rounded-lg brightness-60`}
         src={whiteNoise} onEnded={() => setOnLanding(false)} autoPlay muted
       />  
       <div

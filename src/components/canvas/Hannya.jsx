@@ -37,97 +37,97 @@ const Hannya = ({ hoveredItem, selectedItem }) => {
   const cameraVector = new THREE.Vector3();
 
   useFrame((state) => {
-    // const t = state.clock.getElapsedTime();
-    // meshRef.current.rotation.x = -Math.cos(t) / 16;
-    // meshRef.current.rotation.y = -Math.sin(t) / 16 - Math.PI/2;
+    const t = state.clock.getElapsedTime();
+    meshRef.current.rotation.x = -Math.cos(t) / 16;
+    meshRef.current.rotation.y = -Math.sin(t) / 16 - Math.PI/2;
 
-    // cameraVector.set(state.mouse.x * -5, state.mouse.y * -5, state.camera.position.z)
-    // state.camera.position.lerp(cameraVector, 0.025)
-    // state.camera.lookAt(0, 0, 0)
+    cameraVector.set(state.mouse.x * -5, state.mouse.y * -5, state.camera.position.z)
+    state.camera.position.lerp(cameraVector, 0.025)
+    state.camera.lookAt(0, 0, 0)
 
-    lerpPosX = 0;
-    lerpPosY = 0;
-    lerpPosZ = 0;
+    // lerpPosX = 0;
+    // lerpPosY = 0;
+    // lerpPosZ = 0;
 
-    if (hoveredItem == "About") {
-      // lerpPosX = -2.75;
-      // lerpPosY = 0;
-      // lerpPosZ = 0;
-      lerpRotY = -3*Math.PI/5;
-      lerpRotX = -Math.PI/8;
-      lerpRotZ = 0;
+    // if (hoveredItem == "About") {
+    //   // lerpPosX = -2.75;
+    //   // lerpPosY = 0;
+    //   // lerpPosZ = 0;
+    //   lerpRotY = -3*Math.PI/5;
+    //   lerpRotX = -Math.PI/8;
+    //   lerpRotZ = 0;
 
-    } else if (hoveredItem == "Volumes") {
-      // lerpPosX = 0;
-      // lerpPosY = 0;
-      // lerpPosZ = 0;
-      lerpRotY = -Math.PI/2;
-      lerpRotX = -Math.PI/10;
-      lerpRotZ = Math.PI/12;
+    // } else if (hoveredItem == "Volumes") {
+    //   // lerpPosX = 0;
+    //   // lerpPosY = 0;
+    //   // lerpPosZ = 0;
+    //   lerpRotY = -Math.PI/2;
+    //   lerpRotX = -Math.PI/10;
+    //   lerpRotZ = Math.PI/12;
 
-    } else if (hoveredItem == "Join") {
-      // lerpPosX = 2.75;
-      // lerpPosY = 0;
-      // lerpPosZ = 0;      
-      lerpRotY = -2*Math.PI/5;
-      lerpRotX = -Math.PI/8;
-      lerpRotZ = 0;
+    // } else if (hoveredItem == "Join") {
+    //   // lerpPosX = 2.75;
+    //   // lerpPosY = 0;
+    //   // lerpPosZ = 0;      
+    //   lerpRotY = -2*Math.PI/5;
+    //   lerpRotX = -Math.PI/8;
+    //   lerpRotZ = 0;
 
-    } else if (hoveredItem == "Contact") {
-      // lerpPosX = -2.75;
-      // lerpPosY = 0;
-      // lerpPosZ = 0;
-      lerpRotY = -3*Math.PI/5;
-      lerpRotX = Math.PI/8;
-      lerpRotZ = 0;
+    // } else if (hoveredItem == "Contact") {
+    //   // lerpPosX = -2.75;
+    //   // lerpPosY = 0;
+    //   // lerpPosZ = 0;
+    //   lerpRotY = -3*Math.PI/5;
+    //   lerpRotX = Math.PI/8;
+    //   lerpRotZ = 0;
 
-    } else if (hoveredItem == "Service") {
-      // lerpPosX = 2.75;
-      // lerpPosY = 0;
-      // lerpPosZ = 0;
-      lerpRotY = -2*Math.PI/5;
-      lerpRotX = Math.PI/8;
-      lerpRotZ = 0;
+    // } else if (hoveredItem == "Service") {
+    //   // lerpPosX = 2.75;
+    //   // lerpPosY = 0;
+    //   // lerpPosZ = 0;
+    //   lerpRotY = -2*Math.PI/5;
+    //   lerpRotX = Math.PI/8;
+    //   lerpRotZ = 0;
 
-    } else {
-      // lerpPosX = 0;
-      // lerpPosY = 0;
-      // lerpPosZ = 0;
-      lerpRotY = -Math.PI/2;
-      lerpRotX = 0;
-      lerpRotZ = 0;
-    }
+    // } else {
+    //   // lerpPosX = 0;
+    //   // lerpPosY = 0;
+    //   // lerpPosZ = 0;
+    //   lerpRotY = -Math.PI/2;
+    //   lerpRotX = 0;
+    //   lerpRotZ = 0;
+    // }
 
-    if (selectedItem == "About") {
-      lerpRotY = -2*Math.PI/5;
-      lerpRotX = -Math.PI/8;
-      lerpRotZ = 0;
-      lerpPosZ = 0.8;
-      lerpPosX = -3;
-    } else if (selectedItem == "Join") {
-      lerpPosX = 2.5;
-      lerpPosY = 0;
-      lerpPosZ = 0.8;
-      lerpRotY = -3*Math.PI/5;
-      lerpRotX = -Math.PI/8;
-      lerpRotZ = 0;
+    // if (selectedItem == "About") {
+    //   lerpRotY = -2*Math.PI/5;
+    //   lerpRotX = -Math.PI/8;
+    //   lerpRotZ = 0;
+    //   lerpPosZ = 0.8;
+    //   lerpPosX = -3;
+    // } else if (selectedItem == "Join") {
+    //   lerpPosX = 2.5;
+    //   lerpPosY = 0;
+    //   lerpPosZ = 0.8;
+    //   lerpRotY = -3*Math.PI/5;
+    //   lerpRotX = -Math.PI/8;
+    //   lerpRotZ = 0;
 
-    } else if (selectedItem == "Volumes") {
-      lerpPosZ = -6.5;
-      lerpPosX = 2.15;
-      lerpPosY = -2.75;
-      // lerpRotX = Math.PI/9;
-      lerpRotY = -3*Math.PI/5;
-      lerpRotZ = Math.PI/12;
-      lerpRotX = -Math.PI/16;
-    }
+    // } else if (selectedItem == "Volumes") {
+    //   lerpPosZ = -6.5;
+    //   lerpPosX = 2.15;
+    //   lerpPosY = -2.75;
+    //   // lerpRotX = Math.PI/9;
+    //   lerpRotY = -3*Math.PI/5;
+    //   lerpRotZ = Math.PI/12;
+    //   lerpRotX = -Math.PI/16;
+    // }
 
-    meshRef.current.position.x = MathUtils.lerp(meshRef.current.position.x, lerpPosX, 0.05);
-    meshRef.current.position.y = MathUtils.lerp(meshRef.current.position.y, lerpPosY, 0.025);
-    meshRef.current.position.z = MathUtils.lerp(meshRef.current.position.z, lerpPosZ, 0.025);
-    meshRef.current.rotation.y = MathUtils.lerp(meshRef.current.rotation.y, lerpRotY, 0.05);
-    meshRef.current.rotation.x = MathUtils.lerp(meshRef.current.rotation.x, lerpRotX, 0.05);
-    meshRef.current.rotation.z = MathUtils.lerp(meshRef.current.rotation.z, lerpRotZ, 0.05);
+    // meshRef.current.position.x = MathUtils.lerp(meshRef.current.position.x, lerpPosX, 0.05);
+    // meshRef.current.position.y = MathUtils.lerp(meshRef.current.position.y, lerpPosY, 0.025);
+    // meshRef.current.position.z = MathUtils.lerp(meshRef.current.position.z, lerpPosZ, 0.025);
+    // meshRef.current.rotation.y = MathUtils.lerp(meshRef.current.rotation.y, lerpRotY, 0.05);
+    // meshRef.current.rotation.x = MathUtils.lerp(meshRef.current.rotation.x, lerpRotX, 0.05);
+    // meshRef.current.rotation.z = MathUtils.lerp(meshRef.current.rotation.z, lerpRotZ, 0.05);
   })
 
   return (
@@ -135,7 +135,7 @@ const Hannya = ({ hoveredItem, selectedItem }) => {
       ref={meshRef}
       scale={18}
       rotation={[0, 0, 0]}
-      position={[0, 0, 0]}
+      position={[0, -0.25, 0]}
       >
       {/* OBJECT */}
       <primitive
@@ -255,7 +255,7 @@ const HannyaCanvas = ({ hoveredItem, selectedItem }) => {
   const backgroundColor = new THREE.Color('#ffffff');
 
   return (
-    <div style={demobox} className={`absolute flex top-0 left-0 max-h-172 justify-center mx-auto`}>
+    <div style={demobox} className={`fixed z-20 flex h-full w-full justify-center mx-auto`}>
       <Canvas
         className={`border-6 border-red-500 absolute`}
         style={demobox}

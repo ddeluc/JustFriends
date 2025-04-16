@@ -12,6 +12,9 @@ module.exports = {
         "black-200": "#090325",
         "white-100": "#f3f3f3",
       },
+      dropShadow: {
+        glow: "0 0 5px oklch(0.58 0.245 27.325)"
+      },
       maxHeight: {
         '172': '43rem',
       }, 
@@ -61,7 +64,11 @@ module.exports = {
         'poppins': ['Poppins', 'sans-serif'],
         'montserrat': ['Montserrat', 'sans-serif'],
         'lato': ['Lato', 'sans-serif'],
-        'coming-soon': ['Coming Soon', 'cursive']
+        'coming-soon': ['Coming Soon', 'cursive'],
+        'mochiy': ["Mochiy Pop One", 'sans-serif'],
+        'anton': ['Anton SC', 'sans-serif'],
+        'archivo': ['Archivo Black', 'sans-serif'],
+        'perm-marker': ['Permanent Marker', 'cursive']
       }
     },
   },
