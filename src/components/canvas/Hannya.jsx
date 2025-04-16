@@ -38,8 +38,8 @@ const Hannya = ({ hoveredItem, selectedItem }) => {
 
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
-    meshRef.current.rotation.x = -Math.cos(t) / 16;
-    meshRef.current.rotation.y = -Math.sin(t) / 16 - Math.PI/2;
+    meshRef.current.rotation.x = -2*Math.cos(t) / 16;
+    meshRef.current.rotation.y = -2*Math.sin(t) / 16 - Math.PI/2;
 
     cameraVector.set(state.mouse.x * -5, state.mouse.y * -5, state.camera.position.z)
     state.camera.position.lerp(cameraVector, 0.025)
