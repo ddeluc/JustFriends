@@ -52,4 +52,4 @@ export const contactText = `Do you have a business you want to plug into JustFri
 export const volumesVideoArray = [vol1, vol2, vol3, vol4, vol5];
 export const volumesTitles = ["Volume 1", "Volume 2", "Volume 3", "Volume 4", "Volume 5"];
 
-export const demomode = false;
+export const demomode = true;
