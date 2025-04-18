@@ -255,12 +255,12 @@ const HannyaCanvas = ({ hoveredItem, selectedItem }) => {
   const backgroundColor = new THREE.Color('#ffffff');
 
   return (
-    <div style={demobox} className={`fixed z-20 flex h-full w-full justify-center mx-auto`}>
+    <div style={demobox} className={`absolute top-0 left-0 z-20 flex h-full w-full justify-center mx-auto`}>
       <Canvas
         className={`border-6 border-red-500 absolute`}
         style={demobox}
         shadows
-        camera={{ position: [0, 0, 10], fov: 30 }}
+        camera={{ position: [0, 0, 8], fov: 30 }}
         >
         <Suspense fallback={<CanvasLoader />}>
           <ambientLight intensity={0.08} />

@@ -9,6 +9,7 @@ import CanvasFront from "./CanvasFront";
 import About from "./About";
 import Join from "./Join";
 import Navbar from "./Navbar";
+import Volumes from "./Volumes";
 
 import akiraClip1 from '../assets/videos/Akira1.mp4';
 import champlooClip1 from '../assets/videos/SamuraiChamploo1.mp4';
@@ -22,6 +23,7 @@ import AkiraCity from '../assets/videos/AkiraCity.mp4';
 import AkiraCity1 from '../assets/videos/AkiraCity1.mp4';
 import AkiraCity2 from '../assets/videos/AkiraCity2.mp4';
 import AkiraCity3 from '../assets/videos/AkiraCity3.mp4';
+import animatedDJ from '../assets/animatedVideos/Anime_DJ_Mixing_JF.mp4';
 
 import volume2 from '../assets/volumes/vol2.mp4';
 import volume4 from '../assets/volumes/vol4.mp4';
@@ -57,7 +59,7 @@ const Home = ({ setOnLanding, setSelectedItem, selectedItem }) => {
           animate={{
             width: selectedIndex === null ? "33.333%" : selectedIndex === 1 ? '100%' : '0%',
           }}
-          onClick={() => setSelectedIndex(selectedIndex === 1 ? null : 1)}
+          onClick={() => setSelectedIndex(1)}
           onHoverStart={() => setHovered(1)}
           onHoverEnd={() => setHovered(null)}
       >
@@ -83,7 +85,7 @@ const Home = ({ setOnLanding, setSelectedItem, selectedItem }) => {
               className={`top-0 left-0 w-full h-full absolute object-none rounded-lg
                 ${hovered === 1 ? 'brightness-50' : 'brightness-25 grayscale '}
               `}
-              src={cityTrain} autoPlay muted loop
+              src={animatedDJ} autoPlay muted loop
             />      
           </>  
         :
@@ -101,7 +103,9 @@ const Home = ({ setOnLanding, setSelectedItem, selectedItem }) => {
           onHoverEnd={() => setHovered(null)}
       >
         {selectedIndex == 2 ?
-          <></>
+          <>
+            <Volumes />
+          </>
         : selectedIndex == null ?
           <>
             <motion.div className={`relative mt-8 flex justify-center ${demomode ? 'border-blue-600 border-2' : ''} z-30`}>          
@@ -138,7 +142,7 @@ const Home = ({ setOnLanding, setSelectedItem, selectedItem }) => {
         animate={{
           width: selectedIndex === null ? "33.333%" : selectedIndex === 3 ? '100%' : '0%',
         }}
-        onClick={() => setSelectedIndex(selectedIndex === 3 ? null : 3)}
+        onClick={() => setSelectedIndex(3)}
         onHoverStart={() => setHovered(3)}
         onHoverEnd={() => setHovered(null)}
       >

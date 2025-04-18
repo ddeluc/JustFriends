@@ -20,7 +20,7 @@ const App = () => {
       {!onLanding && 
         <>
           {/* <Navbar setSelectedItem={setSelectedItem} selectedItem={selectedItem} /> */}
-          <HannyaCanvas />
+          {/* <HannyaCanvas /> */}
           <Home setSelectedItem={setSelectedItem} selectedItem={selectedItem} />
         </>
       }
