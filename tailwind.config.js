@@ -68,7 +68,8 @@ module.exports = {
         'mochiy': ["Mochiy Pop One", 'sans-serif'],
         'anton': ['Anton SC', 'sans-serif'],
         'archivo': ['Archivo Black', 'sans-serif'],
-        'perm-marker': ['Permanent Marker', 'cursive']
+        'perm-marker': ['Permanent Marker', 'cursive'],
+        'dot-gothic': ['DotGothic16', 'sans-serif']
       }
     },
   },

@@ -49,7 +49,9 @@ export const aboutText = `redefining the art of connection through curated event
 
 export const contactText = `Do you have a business you want to plug into JustFriends? Tell us your story and we'll get back to you!`
 
+export const volumesDescription = "Volumes are dynamic social experiences designed to connect people and elevate both businesses and individuals. Each Volume is a curated event where ideas flow, collaborations ignite, and opportunities thrive. Whether you're looking to network, showcase your brand, or simply engage with like-minded innovators, Volumes create the perfect atmosphere for growth and connection."
+
 export const volumesVideoArray = [vol1, vol2, vol3, vol4, vol5];
 export const volumesTitles = ["Volume 1", "Volume 2", "Volume 3", "Volume 4", "Volume 5"];
 
-export const demomode = true;
+export const demomode = false;

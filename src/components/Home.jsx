@@ -94,7 +94,7 @@ const Home = ({ setOnLanding, setSelectedItem, selectedItem }) => {
       </motion.div>
 
       {/* MIDDLE */}
-      <motion.div className={`flex flex-col relative ${selectedIndex === null ? 'w-1/3' : ''}`} style={demobox}
+      <motion.div className={`flex flex-col relative h-full ${selectedIndex === null ? 'w-1/3' : ''}`} style={demobox}
           animate={{
             width: selectedIndex === null ? "33.333%" : selectedIndex === 2 ? '100%' : '0%',
           }}
@@ -104,7 +104,7 @@ const Home = ({ setOnLanding, setSelectedItem, selectedItem }) => {
       >
         {selectedIndex == 2 ?
           <>
-            <Volumes />
+            <Volumes setSelectedIndex={setSelectedIndex} />
           </>
         : selectedIndex == null ?
           <>
