@@ -3,7 +3,6 @@ import { demomode } from "../constants";
 
 import Join from "./Join";
 import Volumes from "./Volumes";
-import About from "./About";
 import Menu from "./Menu/Menu";
 import Contact from "./Contact";
 

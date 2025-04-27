@@ -79,8 +79,8 @@ const Volumes = ({ setSelectedIndex }) => {
           ref={videoRef}
           style={demobox}          
           className={`relative object-cover w-full h-full rounded-lg`}
-          src={volumesVideoArray[videoIndex]}
-          onEnded={(event) => {event.target.src = volumesVideoArray[videoIndex]}}
+          src={volumesVideoArray[videoIndex].src}
+          onEnded={(event) => {event.target.src = volumesVideoArray[videoIndex].src}}
           autoPlay
           muted
         />
@@ -89,18 +89,18 @@ const Volumes = ({ setSelectedIndex }) => {
             border-t-[20px] border-t-transparent 
             border-b-[20px] border-b-transparent 
             border-r-[20px] border-l-white mr-8`}
-            onClick={() => incrementVideoIndex()}
+            onClick={() => decrementVideoIndex()}
           />
           <div className={`${demomode ? 'border-purple-600 border-2' : ''}`}>
-            <div className={`font-dot-gothic text-[40px] font-bold`}>VOLUME 1</div>
-            <div className={`font-dot-gothic text-[30px]`}>MEMENTO, MTL</div>
+            <div className={`font-dot-gothic text-[40px] font-bold`}>{volumesVideoArray[videoIndex].displayTitle}</div>
+            <div className={`font-dot-gothic text-[30px]`}>{volumesVideoArray[videoIndex].location}</div>
             <div className={`font-dot-gothic text-[30px]`}>4/26/2025</div>
           </div>
           <div className={`w-0 h-0 
             border-t-[20px] border-t-transparent 
             border-b-[20px] border-b-transparent 
             border-l-[20px] border-l-white ml-6`}
-            onClick={() => decrementVideoIndex()}
+            onClick={() => incrementVideoIndex()}
           />
         </div>
         

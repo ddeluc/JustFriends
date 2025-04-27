@@ -51,7 +51,43 @@ export const contactText = `Do you have a business you want to plug into JustFri
 
 export const volumesDescription = "Volumes are dynamic social experiences designed to connect people and elevate both businesses and individuals. Each Volume is a curated event where ideas flow, collaborations ignite, and opportunities thrive. Whether you're looking to network, showcase your brand, or simply engage with like-minded innovators, Volumes create the perfect atmosphere for growth and connection."
 
-export const volumesVideoArray = [vol1, vol2, vol3, vol4, vol5];
+export const volumesVideoArray = [
+  {
+    id: 1,
+    displayTitle: "VOLUME 1",
+    date: "",
+    location: "MEMENTO, MTL",
+    src: vol1,   
+  },
+  {
+    id: 2,
+    displayTitle: "VOLUME 2",
+    date: "",
+    location: "HEXAGON, MTL",
+    src: vol2,    
+  },
+  {
+    id: 3,
+    displayTitle: "VOLUME 3",
+    date: "",
+    location: "HEXAGON, MTL",
+    src: vol3,    
+  },
+  {
+    id: 4,
+    displayTitle: "VOLUME 4",
+    date: "",
+    location: "MEMENTO, MTL",
+    src: vol4,    
+  },
+  {
+    id: 5,
+    displayTitle: "VOLUME 5",
+    date: "",
+    location: "BRIX, MTL",
+    src: vol5,    
+  },
+];
 export const volumesTitles = ["Volume 1", "Volume 2", "Volume 3", "Volume 4", "Volume 5"];
 
 export const demomode = false;

@@ -105,7 +105,7 @@ const LandingHome = ({ setState, setNextState }) => {
           </div>            
         </motion.div>
       </motion.div>     
-      <div style={demobox} className={`absolute font-mochiy left-8 top-8 text-[48px] opacity-45`}> 
+      <div style={demobox} className={`absolute font-mochiy\ left-8 top-8 text-[48px] opacity-45`}> 
         {titleJap}
       </div>         
     </section>

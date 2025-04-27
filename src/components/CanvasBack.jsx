@@ -2,7 +2,6 @@ import { styles } from "../styles";
 import { demomode } from "../constants";
 
 import MenuBack from "./Menu/MenuBack";
-import AboutBack from "./AboutBack";
 import JoinBack from "./JoinBack";
 import VolumesBack from "./VolumesBack";
 import ContactBack from "./ContactBack";
