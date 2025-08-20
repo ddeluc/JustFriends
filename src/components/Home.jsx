@@ -22,62 +22,14 @@ const Home = ({ setOnLanding, setSelectedItem, selectedItem }) => {
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [hovered, setHovered] = useState(null);
   
-  // return (
-  //   <section 
-  //     className={`relative w-screen h-screen flex gap-2 p-2 bg-primary overflow-hidden`}
-  //     style={demobox}
-  //     key={1}
-  //   >
-      
-  //     <motion.div className={`flex flex-col relative ${selectedIndex === null ? 'w-1/3' : ''}`} style={demobox}
-  //         animate={{
-  //           width: selectedIndex === null ? "33.333%" : selectedIndex === 1 ? '100%' : '0%',
-  //         }}
-  //         onClick={() => setSelectedIndex(1)}
-  //         onHoverStart={() => setHovered(1)}
-  //         onHoverEnd={() => setHovered(null)}
-  //     >
-  //       {selectedIndex == 1 ?
-  //         <></>
-  //       : selectedIndex == null ?
-  //         <>          
-  //           <motion.div className={`relative mt-8 flex justify-center ${demomode ? 'border-blue-600 border-2' : ''} z-30`}>
-  //             <motion.h1 className={`relative font-anton text-[90px] text-white ${demomode ? 'border-purple-600 border-2' : ''} ${hovered === 1 ? '' : 'opacity-70'}`}>
-  //               SERVICE
-  //             </motion.h1>
-  //             <motion.h1 className={`absolute text-red-600 text-[32px] top-1/2 -translate-y-1/2 z-20 font-mochiy font-bold drop-shadow-glow ${demomode ? 'border-orange-600 border-2' : ''}`}
-  //               animate={{
-  //                 opacity: hovered === 1 ? 1 : 0,
-  //               }}
-  //             >
-  //               コ ミ ュ ニ テ ィ
-  //             </motion.h1>
-  //           </motion.div>
-  //           {/* <motion.div className={`absolute left-0 top-0 h-full w-full ${demomode ? 'border-pink-600 border-2' : ''} z-30`} /> */}
-  //           <video
-  //             style={demobox}
-  //             className={`top-0 left-0 w-full h-full absolute object-none rounded-lg
-  //               ${hovered === 1 ? 'brightness-50' : 'brightness-25 grayscale '}
-  //             `}
-  //             src={animatedDJ} autoPlay muted loop
-  //           />      
-  //         </>  
-  //       :
-  //         <></>
-  //       }        
-  //     </motion.div>      
-
-  //   </section>
-  // );
-  
   return (
     <section 
-      className={`relative w-screen h-screen flex gap-2 p-2 bg-primary overflow-hidden`}
+      className={`relative w-screen h-screen overflow-x-hidden overflow-y-hidden flex gap-2 p-2 bg-primary`}
       style={demobox}
       key={1}
     >
       {/* LEFT */}       
-      <motion.div className={`flex flex-col relative ${selectedIndex === null ? 'w-[60rem]' : ''}`} style={demobox}
+      <motion.div className={`flex-none flex-col relative h-full w-1/3 ${selectedIndex === null ? 'w-1/3' : ''}`} style={demobox}
           animate={{
             width: selectedIndex === null ? "33.333%" : selectedIndex === 1 ? '100%' : '0%',
           }}
@@ -116,7 +68,7 @@ const Home = ({ setOnLanding, setSelectedItem, selectedItem }) => {
       </motion.div>
 
       {/* MIDDLE */}
-      <motion.div className={`flex flex-col relative h-full ${selectedIndex === null ? 'w-1/3' : ''}`} style={demobox}
+      <motion.div className={`flex-none flex-col relative h-full w-1/3 ${selectedIndex === null ? 'w-1/3' : ''}`} style={demobox}
           animate={{
             width: selectedIndex === null ? "33.333%" : selectedIndex === 2 ? '100%' : '0%',
           }}
@@ -160,7 +112,7 @@ const Home = ({ setOnLanding, setSelectedItem, selectedItem }) => {
       </motion.div>
 
       {/* RIGHT */}
-      <motion.div className={`flex flex-col relative ${selectedIndex === null ? 'w-1/3' : ''}`} style={demobox}
+      <motion.div className={`flex-none flex-col relative w-1/3 ${selectedIndex === null ? 'w-1/3' : ''}`} style={demobox}
         animate={{
           width: selectedIndex === null ? "33.333%" : selectedIndex === 3 ? '100%' : '0%',
         }}
@@ -198,8 +150,7 @@ const Home = ({ setOnLanding, setSelectedItem, selectedItem }) => {
         {/* <motion.div className={`absolute left-0 top-0 h-full w-full ${demomode ? 'border-pink-600 border-2' : ''} z-30`} /> */}
       </motion.div>
 
-      {/*FOURTH*/}
-      {/* <motion.div className={`flex flex-col relative ${selectedIndex === null ? 'w-1/3' : ''}`} style={demobox}
+      <motion.div className={`flex-none flex-col relative ${selectedIndex === null ? 'w-1/3' : ''}`} style={demobox}
         animate={{
           width: selectedIndex === null ? "33.333%" : selectedIndex === 4 ? '100%' : '0%',
         }}
@@ -207,7 +158,7 @@ const Home = ({ setOnLanding, setSelectedItem, selectedItem }) => {
         onHoverStart={() => setHovered(4)}
         onHoverEnd={() => setHovered(null)}
       >
-        {selectedIndex == 4 ? 
+        {selectedIndex == 3 ? 
           <></>
         : selectedIndex == null ?
           <>
@@ -234,8 +185,8 @@ const Home = ({ setOnLanding, setSelectedItem, selectedItem }) => {
         :
           <></>
         }    
-        
-      </motion.div>       */}
+        {/* <motion.div className={`absolute left-0 top-0 h-full w-full ${demomode ? 'border-pink-600 border-2' : ''} z-30`} /> */}
+      </motion.div>
 
     </section>    
   );

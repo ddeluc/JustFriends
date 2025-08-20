@@ -51,8 +51,8 @@ const Volumes = ({ setSelectedIndex }) => {
   }
 
   return (
-    <div className={`relative m-4 flex h-full overflow-hidden`} style={demobox}>
-      <div className={`relative flex flex-col justify-between p-4 max-w-[40rem]`} style={demobox}>
+    <div className={`relative justify-center gap-8 flex h-full overflow-hidden`} style={demobox}>
+      <div className={`relative flex flex-col justify-between h-full p-4 max-w-[40rem]`} style={demobox}>
         <div className={`relative z-20 pointer-events-none ${demomode ? 'border-purple-600 border-2' : ''}`}>
           <motion.div className={`relative flex ${demomode ? 'border-purple-600 border-2' : ''}`}>
             <motion.span className={`relative inline-block font-anton text-[110px] ${demomode ? 'border-purple-600 border-2' : ''}`}>VOLUMES</motion.span>
@@ -63,7 +63,7 @@ const Volumes = ({ setSelectedIndex }) => {
             {volumesDescription}
           </motion.div> 
         </div>
-        <div className={`relative flex justify-between items-center ${demomode ? 'border-purple-600 border-2' : ''}`}>
+        <div className={`relative flex justify-between items-center h ${demomode ? 'border-purple-600 border-2' : ''}`}>
           {/* <motion.div className={`relative font-anton inline-block text-[28px] z-20 ${demomode ? 'border-purple-600 border-2' : ''}`}>
             BACK
           </motion.div> */}
@@ -72,9 +72,9 @@ const Volumes = ({ setSelectedIndex }) => {
           </motion.div>
         </div>       
         
-        <HannyaCanvas hScale={13} hpx={0} hpy={-0.8} hpz={0} />
+        <HannyaCanvas hScale={14} hpx={0} hpy={-0.7} hpz={0} />
       </div>
-      <div className={`relative flex-1 h-full p-4`} style={demobox}>
+      <div className={`relative flex-1 h-full max-w-[40rem] p-4`} style={demobox}>
         <video
           ref={videoRef}
           style={demobox}          

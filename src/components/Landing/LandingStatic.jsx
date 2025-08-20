@@ -25,7 +25,7 @@ const LandingStatic = ({ setOnLanding, setState, setNextState }) => {
         src={whiteNoise} onEnded={() => setOnLanding(false)} autoPlay muted
       />  
       <div
-        className={`flex flex-col font-moichy opacity-75 font-bold text-[200px] text-white justify-end cursor-default absolute select-none`}
+        className={`flex flex-col font-moichy font-bold text-[96px] text-white justify-end cursor-default absolute select-none`}
         style={demobox}
       >
         {titleJap}
