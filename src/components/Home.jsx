@@ -5,7 +5,7 @@ import { styles } from "../styles";
 import { demomode } from "../constants";
 
 import Volumes from "./Volumes";
-
+import Service from "./Service";
 
 import oceanWaves1 from '../assets/videos/oceanWaves1.mp4';
 import kuroko1 from '../assets/videos/Kuroko1.mp4';
@@ -38,7 +38,9 @@ const Home = ({ setOnLanding, setSelectedItem, selectedItem }) => {
           onHoverEnd={() => setHovered(null)}
       >
         {selectedIndex == 1 ?
-          <></>
+          <>
+            <Service setSelectedIndex={setSelectedIndex} />
+          </>
         : selectedIndex == null ?
           <>          
             <motion.div className={`relative mt-8 flex justify-center ${demomode ? 'border-blue-600 border-2' : ''} z-30`}>
@@ -85,7 +87,6 @@ const Home = ({ setOnLanding, setSelectedItem, selectedItem }) => {
             <motion.div className={`relative mt-8 flex justify-center ${demomode ? 'border-blue-600 border-2' : ''} z-30`}>          
               <motion.h1 className={`relative font-anton text-[90px] text-white ${demomode ? 'border-purple-600 border-2' : ''} ${hovered === 2 ? '' : 'opacity-70'}`}>
                 VOLUMES
-                <motion.span className={`absolute -top-2 left-0 font-shrikhand text-[24px]`}>JUST FRIENDS.</motion.span>
               </motion.h1>
               <motion.h1 className={`absolute text-red-600 text-[32px] top-1/2 -translate-y-1/2 z-20 font-mochiy font-bold drop-shadow-glow ${demomode ? 'border-orange-600 border-2' : ''}`}
                 animate={{
@@ -140,44 +141,6 @@ const Home = ({ setOnLanding, setSelectedItem, selectedItem }) => {
               style={demobox}
               className={`top-0 left-0 w-full h-full absolute object-none rounded-lg
                 ${hovered === 3 ? 'brightness-50' : 'brightness-25 grayscale '}
-              `}
-              src={oceanWaves1} autoPlay muted loop
-            />        
-          </>          
-        :
-          <></>
-        }    
-        {/* <motion.div className={`absolute left-0 top-0 h-full w-full ${demomode ? 'border-pink-600 border-2' : ''} z-30`} /> */}
-      </motion.div>
-
-      <motion.div className={`flex-none flex-col relative ${selectedIndex === null ? 'w-1/3' : ''}`} style={demobox}
-        animate={{
-          width: selectedIndex === null ? "33.333%" : selectedIndex === 4 ? '100%' : '0%',
-        }}
-        onClick={() => setSelectedIndex(4)}
-        onHoverStart={() => setHovered(4)}
-        onHoverEnd={() => setHovered(null)}
-      >
-        {selectedIndex == 3 ? 
-          <></>
-        : selectedIndex == null ?
-          <>
-            <motion.div className={`relative mt-8 flex justify-center ${demomode ? 'border-blue-600 border-2' : ''} z-30`}>
-              <motion.h1 className={`relative font-anton text-[90px] text-white ${demomode ? 'border-purple-600 border-2' : ''} ${hovered === 4 ? '' : 'opacity-70'}`}>
-                CONNECT
-              </motion.h1>
-              <motion.h1 className={`absolute text-red-600 text-[36px] top-1/2 -translate-y-1/2 z-20 font-mochiy font-bold drop-shadow-glow ${demomode ? 'border-orange-600 border-2' : ''}`}
-                animate={{
-                  opacity: hovered === 4 ? 1 : 0,
-                }}
-              >
-                カ ル チ ャ ー
-              </motion.h1>
-            </motion.div>
-            <video
-              style={demobox}
-              className={`top-0 left-0 w-full h-full absolute object-none rounded-lg
-                ${hovered === 4 ? 'brightness-50' : 'brightness-25 grayscale '}
               `}
               src={oceanWaves1} autoPlay muted loop
             />        

@@ -88,6 +88,26 @@ export const volumesVideoArray = [
     src: vol5,    
   },
 ];
+
+export const serviceCards = [
+  {
+    title: "DOMINATE SOCIAL",
+    content: "We manage your social media account to maximize your brands impact and engage your audience."
+  },
+  {
+    title: "PRODUCTION THAT POPS",
+    content: "We create standout content that tells your brands story."
+  },
+  {
+    title: "DIGITAL GAMEPLAN",
+    content: "We provide customized digital solutions to add dimension to your brand's image."
+  },
+  {
+    title: "PLUG INTO JUSTFRIENDS",
+    content: "We promote your business through the Just Friends community."
+  }
+]
+
 export const volumesTitles = ["Volume 1", "Volume 2", "Volume 3", "Volume 4", "Volume 5"];
 
-export const demomode = false;
+export const demomode = true;
