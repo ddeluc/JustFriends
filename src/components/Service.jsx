@@ -5,6 +5,7 @@ import { styles } from "../styles";
 import Card from "./Card";
 
 import { demomode, serviceCards } from "../constants";
+import backroundVideo from '../assets/volumes/promo1.mp4';
 
 const demobox = demomode ? styles.demo.landing : {};
 
@@ -14,12 +15,21 @@ const Service = () => {
   return (
     <div className={`relative flex flex-col items-center gap-8 h-full mt-8`} style={demobox}>
       {/* <div className={`relative flex flex-col items-center space-y-12 h-full p-4`} style={demobox}> */}
-        
-          <motion.div className={`relative flex ${demomode ? 'border-purple-600 border-2' : ''}`}>
+      
+        <motion.div className={`relative w-full max-w-[80rem] py-8 flex justify-center ${demomode ? 'border-green-600 border-2' : ''}`}>
+          <motion.div className={`relative flex z-30 ${demomode ? 'border-purple-600 border-2' : ''}`}>
             <motion.span className={`relative inline-block font-anton text-[110px] ${demomode ? 'border-purple-600 border-2' : ''}`}>SERVICE</motion.span>
-            <motion.span className={`absolute -top-1 left-1 font-shrikhand text-[32px] z-30`}>JUST FRIENDS.</motion.span>
-            <motion.span className={`relative inline-block font-mochiy text-red-600 text-[101px] ${demomode ? 'border-purple-600 border-2' : ''}`}>接続</motion.span>
-          </motion.div>       
+            <motion.span className={`absolute -top-1 left-1 font-shrikhand text-[32px] `}>JUST FRIENDS.</motion.span>
+            <motion.span className={`relative inline-block font-mochiy text-red-600 text-[101px] ${demomode ? 'border-purple-600 border-2' : ''}`}>接続</motion.span>    
+          </motion.div>
+          <video
+            style={demobox}
+            className={`top-0 left-0 w-full h-full absolute object-cover rounded-lg brightness-50`}
+            src={backroundVideo} autoPlay muted loop
+          />     
+        </motion.div>
+        
+               
         
         <div className={`relative flex flex-col max-w-[80rem] items-center z-20 ${demomode ? 'border-purple-600 border-2' : ''}`}>
           <motion.div className={`relative`}>
