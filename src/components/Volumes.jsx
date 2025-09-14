@@ -15,6 +15,16 @@ import staticNoise from "../assets/videos/WhiteNoise/whiteNoise.mp4"
 
 const demobox = demomode ? styles.demo.landing : {};
 
+const volumeSelectionParentVariants = {
+  initial: { x: 0 },
+  hover: { x: 20 },
+}
+
+const volumeSelectionChildVariants = {
+  initial: { opacity: 0 },
+  hover: { opacity: 1 },
+}
+
 
 const Volumes = ({ setSelectedIndex }) => {  
   const videoRef = useRef();
@@ -49,6 +59,67 @@ const Volumes = ({ setSelectedIndex }) => {
       videoRef.current.play();      
     }
   }
+
+  return (
+    <section 
+      className={`relative h-[300vh] overflow-x-hidden overflow-y-hidden flex flex-col gap-2 p-2 bg-primary`}
+      style={demobox}
+      key={1}
+    >
+      
+
+      <motion.div className={`relative flex z-30 ${demomode ? 'border-purple-600 border-2' : ''}`}>
+        <motion.span className={`relative inline-block font-anton text-[160px] ${demomode ? 'border-purple-600 border-2' : ''}`}>VOLUMES</motion.span>
+        <motion.span className={`absolute -top-1 left-1 font-shrikhand text-[40px] z-30`}>JUST FRIENDS.</motion.span>
+        <motion.span className={`relative inline-block left-2 font-mochiy text-red-600 text-[148px] ${demomode ? 'border-purple-600 border-2' : ''}`}>接続</motion.span>
+      </motion.div>
+
+        
+               
+        
+      <div className={`relative ${demomode ? 'border-purple-600 border-2' : ''}`}>
+        
+        <motion.div className={`pb-4 relative ${demomode ? 'border-purple-600 border-2' : ''}`} whileHover="hover" initial="initial">
+          <video
+            style={demobox}
+            className={`top-0 left-0 w-full h-full absolute object-cover`}
+            src={volumesVideoArray[videoIndex].src} autoPlay muted loop
+          />  
+          <motion.hr className={`relative border-t-2 border-white my-4`}></motion.hr>
+          <motion.div className={`mx-4 relative flex justify-between mb-4`} >
+            <motion.div variants={volumeSelectionParentVariants} transition={{ type: "tween"}}>
+              <motion.p className={`font-dot-gothic font-bold text-[48px] ${demomode ? 'border-purple-600 border-2' : ''}`}>
+                V O L 1 • <motion.span className={`text-red-600 font-dot-gothic`}>初 め</motion.span>
+              </motion.p>
+              <motion.div className={`font-dot-gothic text-[28px]`} variants={volumeSelectionChildVariants}>{volumesVideoArray[videoIndex].location}</motion.div>
+            </motion.div>
+            <motion.div className={`font-dot-gothic text-[28px] ${demomode ? 'border-purple-600 border-2' : ''}`}>4/26/2025</motion.div>
+          </motion.div>
+          
+        </motion.div>
+
+        <motion.div className={`pb-4  relative ${demomode ? 'border-purple-600 border-2' : ''}`}>
+          <hr class="border-t-2 border-white my-4"></hr>
+          <motion.div className={`mx-4 relative flex justify-between mb-4`}>
+            <motion.p className={`font-dot-gothic font-bold text-[48px] ${demomode ? 'border-purple-600 border-2' : ''}`}>V O L 1 • <motion.span className={`text-red-600 font-dot-gothic`}>初 め</motion.span></motion.p>
+            <motion.div className={`font-dot-gothic text-[28px] ${demomode ? 'border-purple-600 border-2' : ''}`}>4/26/2025</motion.div>
+          </motion.div>
+          <motion.div className={`mx-4 font-dot-gothic text-[28px]`}>{volumesVideoArray[videoIndex].location}</motion.div>
+        </motion.div>
+      </div>
+
+
+      <div className={`relative z-20 ${demomode ? 'border-purple-600 border-2' : ''}`}>
+          
+        <motion.div className={`relative font-anton inline-block text-[36px] z-30 bg-red-600 text-white px-2 p-1 rounded-lg ${demomode ? 'border-purple-600 border-2' : ''}`}
+          onClick={() => console.log("Clicked!")}
+        >
+          TICKETS
+        </motion.div>
+      </div>
+      
+    </section>
+  )
 
   return (
     <div className={`relative justify-center gap-8 flex h-full overflow-hidden`} style={demobox}>

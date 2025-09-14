@@ -10,6 +10,7 @@ import backroundVideo from '../assets/volumes/promo1.mp4';
 
 import memento from '../assets/images/logos/memento.png';
 import brix from '../assets/images/logos/brix.png';
+import offTheTop from '../assets/images/logos/offthetop.png';
 
 const demobox = demomode ? styles.demo.landing : {};
 
@@ -20,7 +21,7 @@ const Service = () => {
   return (
     
     <section 
-      className={`relative h-[300vh] w-screen overflow-x-hidden overflow-y-hidden flex flex-col gap-2 p-2 bg-primary`}
+      className={`relative h-[300vh] overflow-x-hidden overflow-y-hidden flex flex-col gap-2 p-2 bg-primary`}
       style={demobox}
       key={1}
     >
@@ -60,8 +61,8 @@ const Service = () => {
           <motion.div className={`h-64 ${demomode ? 'border-purple-600 border-2' : ''}`}>
             <img src={brix} alt="Example" class="w-full h-full object-cover rounded-lg" />
           </motion.div>
-          <motion.div>
-            image3
+          <motion.div className={`h-64 ${demomode ? 'border-purple-600 border-2' : ''}`}>
+            <img src={offTheTop} alt="Example" class="w-full h-full object-cover rounded-lg" />
           </motion.div>
         </motion.div>
       </div>

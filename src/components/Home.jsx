@@ -76,7 +76,7 @@ const Home = ({ setOnLanding, setSelectedItem, selectedItem }) => {
           animate={{
             width: selectedIndex === null ? "33.333%" : selectedIndex === 2 ? '100%' : '0%',
           }}
-          onClick={() => setSelectedIndex(2)}
+          onClick={() => navigate("/volumes")}
           onHoverStart={() => setHovered(2)}
           onHoverEnd={() => setHovered(null)}
       >

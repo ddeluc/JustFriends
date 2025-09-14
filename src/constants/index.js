@@ -110,4 +110,4 @@ export const serviceCards = [
 
 export const volumesTitles = ["Volume 1", "Volume 2", "Volume 3", "Volume 4", "Volume 5"];
 
-export const demomode = true;
+export const demomode = false;
