@@ -4,10 +4,14 @@ import { motion } from 'framer-motion';
 import { styles } from "../styles";
 import { demomode } from "../constants";
 
-const Card = ({ title, content }) => {
+const Card = ({ title, content, delay, gridPosition, xPos, yPos }) => {
 
   return (
-    <motion.div className={`p-4 m-4 max-w-[25rem] aspect-square ${demomode ? 'border-pink-600 border-2' : ''}`}>
+    <motion.div className={`p-4 ${gridPosition} ${demomode ? 'border-pink-600 border-2' : ''}`}
+      initial={{ opacity: 0, y: yPos, x: xPos }}
+      animate={{ opacity: 1, y: 0, x: 0 }}
+      transition={{ duration: 0.5, delay: delay }}
+    >
       <motion.div className={`${demomode ? 'border-pink-600 border-2' : ''}`}>
         {title}
       </motion.div>

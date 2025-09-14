@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter } from "react-router-dom";
 import { HannyaCanvas } from "./components/canvas";
+import Service from "./components/Service";
 
 import {
   Landing,
@@ -20,7 +20,7 @@ const App = () => {
       {!onLanding && 
         <>
           {/* <Navbar setSelectedItem={setSelectedItem} selectedItem={selectedItem} /> */}
-          {/* <HannyaCanvas hScale={16} hpx={0} hpy={-0.25} hpz={0} /> */}
+          <HannyaCanvas hScale={16} hpx={0} hpy={-0.25} hpz={0} />
           <Home setSelectedItem={setSelectedItem} selectedItem={selectedItem} />
         </>
       }
