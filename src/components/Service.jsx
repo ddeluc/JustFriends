@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { Link, useNavigate } from "react-router-dom";
 
 import { styles } from "../styles";
 import Card from "./Card";
@@ -7,10 +8,14 @@ import Card from "./Card";
 import { demomode, serviceCards } from "../constants";
 import backroundVideo from '../assets/volumes/promo1.mp4';
 
+import memento from '../assets/images/logos/memento.png';
+import brix from '../assets/images/logos/brix.png';
+
 const demobox = demomode ? styles.demo.landing : {};
 
 
 const Service = () => {   
+  const navigate = useNavigate();
 
   return (
     
@@ -49,9 +54,26 @@ const Service = () => {
           They Trusted Us
         </motion.div>  
         <motion.div className={`flex ${demomode ? 'border-purple-600 border-2' : ''}`}>
-          <motion.div className={`flex ${demomode ? 'border-pink-600 border-2' : ''}`}>
-              *Carousel of brands*
+          <motion.div className={`w-64 h-64 ${demomode ? 'border-purple-600 border-2' : ''}`}>
+            <img src={memento} alt="Example" class="w-full h-full object-cover rounded-lg" />
           </motion.div>
+          <motion.div className={`h-64 ${demomode ? 'border-purple-600 border-2' : ''}`}>
+            <img src={brix} alt="Example" class="w-full h-full object-cover rounded-lg" />
+          </motion.div>
+          <motion.div>
+            image3
+          </motion.div>
+        </motion.div>
+      </div>
+
+      <div className={`relative z-20 ${demomode ? 'border-purple-600 border-2' : ''}`}>
+        <motion.div className={`${demomode ? 'border-purple-600 border-2' : ''}`}>
+          Plug into JustFriends
+        </motion.div>  
+        <motion.div className={`relative font-anton inline-block text-[36px] z-30 bg-red-600 text-white px-2 p-1 rounded-lg ${demomode ? 'border-purple-600 border-2' : ''}`}
+          onClick={() => navigate("/contact")}
+        >
+          CONNECT
         </motion.div>
       </div>
       

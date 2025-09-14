@@ -5,11 +5,13 @@ import App from './App'
 import './index.css'
 import Volumes from './components/Volumes';
 import Service from './components/Service';
+import { Contact } from './components';
 
 const router = createBrowserRouter([
   {path: "/", element: <App />},
   {path: "/service", element: <Service />},
-  {path: "/volumes", element: <Volumes />}
+  {path: "/volumes", element: <Volumes />},
+  {path: "/contact", element: <Contact />},
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
