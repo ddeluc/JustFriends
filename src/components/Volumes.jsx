@@ -12,6 +12,7 @@ import { volumesDescription } from "../constants";
 import coverImg from "../assets/photos/volumeCovers/Vol1CoverGib.png"
 import vol1 from "../assets/videos/Volumes/Vol2.mp4"
 import staticNoise from "../assets/videos/WhiteNoise/whiteNoise.mp4"
+import grain from "../assets/videos/Effects/grainVid1.mp4"
 
 const demobox = demomode ? styles.demo.landing : {};
 
@@ -64,10 +65,14 @@ const VideoCard = ({ volume }) => {
 
 const Volumes = ({ setSelectedIndex }) => {  
   const videoRef = useRef();
+  const videoGrainRef = useRef();
   const [videoIndex, setVideoIndex] = useState(0);
 
   useEffect(() => {
     changeVideoSource();
+    if (videoGrainRef.current) {
+      videoGrainRef.current.playbackRate = 0.4;
+    }
   }, [videoIndex]);
 
   const incrementVideoIndex = () => {
@@ -98,19 +103,38 @@ const Volumes = ({ setSelectedIndex }) => {
 
   return (
     <section 
-      className={`relative h-[300vh] overflow-x-hidden overflow-y-hidden flex flex-col gap-2 p-2 bg-primary`}
+      className={`relative overflow-x-hidden overflow-y-hidden flex flex-col gap-2 p-4 bg-primary`}
       style={demobox}
       key={1}
     >
-      
+      <motion.div className={`relative flex flex-col p-20 gap-20 items-center ${demomode ? 'border-purple-600 border-2' : ''}`}>
+        <video
+          style={demobox}
+          className={`top-0 left-0 w-full h-full absolute object-cover brightness-25`}
+          src={grain}
+          ref={videoGrainRef} 
+          autoPlay  
+          loop
+          muted
+        />
 
-      <motion.div className={`relative flex z-30 ${demomode ? 'border-purple-600 border-2' : ''}`}>
-        <motion.span className={`relative inline-block font-anton text-[160px] ${demomode ? 'border-purple-600 border-2' : ''}`}>VOLUMES</motion.span>
-        <motion.span className={`absolute -top-1 left-1 font-shrikhand text-[40px] z-30`}>JUST FRIENDS.</motion.span>
-        <motion.span className={`relative inline-block left-2 font-mochiy text-red-600 text-[148px] ${demomode ? 'border-purple-600 border-2' : ''}`}>接続</motion.span>
+        <motion.div className={`relative flex gap-2 z-30 ${demomode ? 'border-purple-600 border-2' : ''}`}>
+          <motion.span className={`relative inline-block font-anton text-[160px] ${demomode ? 'border-purple-600 border-2' : ''}`}>VOLUMES</motion.span>
+          <motion.span className={`absolute -top-1 left-1 font-shrikhand text-[40px] z-30`}>JUST FRIENDS.</motion.span>
+          <motion.span className={`relative inline-block font-mochiy drop-shadow-glow text-red-600 text-[148px] ${demomode ? 'border-purple-600 border-2' : ''}`}>接続
+            {/* <motion.span>接</motion.span>
+            <motion.span>続</motion.span> */}
+          </motion.span>
+        </motion.div>
+
+        {/* <motion.p className={`relative font-montserrat text-[18px] max-w-2xl ${demomode ? 'border-purple-600 border-2' : ''}`}>
+          {volumesDescription}
+        </motion.p> */}
+        
       </motion.div>
 
-        
+      
+
                
         
       <div className={`relative ${demomode ? 'border-purple-600 border-2' : ''}`}>
