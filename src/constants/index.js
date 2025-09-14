@@ -14,6 +14,12 @@ import vol3 from '../assets/videos/Volumes/Vol3.mp4';
 import vol4 from '../assets/videos/Volumes/Vol4.mp4';
 import vol5 from '../assets/videos/Volumes/Vol5.mp4';
 
+import shortVol1 from '../assets/videos/VolumesShort/shortVol1.mp4';
+import shortVol2 from '../assets/videos/VolumesShort/shortVol2.mp4';
+import shortVol3 from '../assets/videos/VolumesShort/shortVol3.mp4';
+import shortVol4 from '../assets/videos/VolumesShort/shortVol4.mp4';
+import shortVol5 from '../assets/videos/VolumesShort/shortVol5.mp4';
+
 export const navLinks = [
   {
     id: "about",
@@ -57,35 +63,40 @@ export const volumesVideoArray = [
     displayTitle: "VOLUME 1",
     date: "",
     location: "MEMENTO, MTL",
-    src: vol1,   
+    src: vol1,
+    shortSrc: shortVol1,   
   },
   {
     id: 2,
     displayTitle: "VOLUME 2",
     date: "",
     location: "HEXAGON, MTL",
-    src: vol2,    
+    src: vol2,  
+    shortSrc: shortVol2,  
   },
   {
     id: 3,
     displayTitle: "VOLUME 3",
     date: "",
     location: "HEXAGON, MTL",
-    src: vol3,    
+    src: vol3,   
+    shortSrc: shortVol3, 
   },
   {
     id: 4,
     displayTitle: "VOLUME 4",
     date: "",
     location: "MEMENTO, MTL",
-    src: vol4,    
+    src: vol4, 
+    shortSrc: shortVol4,   
   },
   {
     id: 5,
     displayTitle: "VOLUME 5",
     date: "",
     location: "BRIX, MTL",
-    src: vol5,    
+    src: vol5,  
+    shortSrc: shortVol5,  
   },
 ];
 

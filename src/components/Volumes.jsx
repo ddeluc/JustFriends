@@ -25,6 +25,42 @@ const volumeSelectionChildVariants = {
   hover: { opacity: 1 },
 }
 
+const VideoCard = ({ volume }) => {
+  const videoRef = useRef(null);
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <motion.div className={`pb-8 relative ${demomode ? 'border-purple-600 border-2' : ''}`} 
+      whileHover="hover" 
+      initial="initial"
+      onHoverStart={() => setHovered(true)}
+      onHoverEnd={() => setHovered(false)}
+    >
+      {hovered && (
+        <video
+          style={demobox}
+          className={`top-0 left-0 w-full h-full absolute object-cover brightness-50`}
+          src={volume.src} 
+          autoPlay  
+          loop
+          muted
+          ref={videoRef}
+        />  
+      )}      
+      <motion.hr className={`relative border-t-2 border-white my-4`}></motion.hr>
+      <motion.div className={`mx-4 relative flex justify-between mb-4`} >
+        <motion.div variants={volumeSelectionParentVariants} transition={{ type: "tween"}}>
+          <motion.p className={`font-dot-gothic font-bold text-[48px] ${demomode ? 'border-purple-600 border-2' : ''}`}>
+            V O L {volume.id} • <motion.span className={`text-red-600 font-dot-gothic`}>初 め</motion.span>
+          </motion.p>
+          <motion.div className={`font-dot-gothic text-[28px]`} variants={volumeSelectionChildVariants}>{volume.location}</motion.div>
+        </motion.div>
+        <motion.div className={`font-dot-gothic text-[28px] ${demomode ? 'border-purple-600 border-2' : ''}`}>4/26/2025</motion.div>
+      </motion.div>          
+    </motion.div>
+  )
+}
+
 
 const Volumes = ({ setSelectedIndex }) => {  
   const videoRef = useRef();
@@ -78,34 +114,9 @@ const Volumes = ({ setSelectedIndex }) => {
                
         
       <div className={`relative ${demomode ? 'border-purple-600 border-2' : ''}`}>
-        
-        <motion.div className={`pb-4 relative ${demomode ? 'border-purple-600 border-2' : ''}`} whileHover="hover" initial="initial">
-          <video
-            style={demobox}
-            className={`top-0 left-0 w-full h-full absolute object-cover`}
-            src={volumesVideoArray[videoIndex].src} autoPlay muted loop
-          />  
-          <motion.hr className={`relative border-t-2 border-white my-4`}></motion.hr>
-          <motion.div className={`mx-4 relative flex justify-between mb-4`} >
-            <motion.div variants={volumeSelectionParentVariants} transition={{ type: "tween"}}>
-              <motion.p className={`font-dot-gothic font-bold text-[48px] ${demomode ? 'border-purple-600 border-2' : ''}`}>
-                V O L 1 • <motion.span className={`text-red-600 font-dot-gothic`}>初 め</motion.span>
-              </motion.p>
-              <motion.div className={`font-dot-gothic text-[28px]`} variants={volumeSelectionChildVariants}>{volumesVideoArray[videoIndex].location}</motion.div>
-            </motion.div>
-            <motion.div className={`font-dot-gothic text-[28px] ${demomode ? 'border-purple-600 border-2' : ''}`}>4/26/2025</motion.div>
-          </motion.div>
-          
-        </motion.div>
-
-        <motion.div className={`pb-4  relative ${demomode ? 'border-purple-600 border-2' : ''}`}>
-          <hr class="border-t-2 border-white my-4"></hr>
-          <motion.div className={`mx-4 relative flex justify-between mb-4`}>
-            <motion.p className={`font-dot-gothic font-bold text-[48px] ${demomode ? 'border-purple-600 border-2' : ''}`}>V O L 1 • <motion.span className={`text-red-600 font-dot-gothic`}>初 め</motion.span></motion.p>
-            <motion.div className={`font-dot-gothic text-[28px] ${demomode ? 'border-purple-600 border-2' : ''}`}>4/26/2025</motion.div>
-          </motion.div>
-          <motion.div className={`mx-4 font-dot-gothic text-[28px]`}>{volumesVideoArray[videoIndex].location}</motion.div>
-        </motion.div>
+        {volumesVideoArray.map((volume) => (
+          <VideoCard volume={volume} />
+        ))}
       </div>
 
 
