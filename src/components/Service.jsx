@@ -7,12 +7,14 @@ import Card from "./Card";
 
 import { demomode, serviceCards } from "../constants";
 import backroundVideo from '../assets/volumes/promo1.mp4';
-import grain from "../assets/videos/Effects/grainVid1.mp4"
+import grain from "../assets/videos/Effects/grainVid1.mp4";
+import laughing3 from '../assets/images/people/laughing3.png';
+
 
 import memento from '../assets/images/logos/memento.png';
 import brix from '../assets/images/logos/brix.png';
 import offTheTop from '../assets/images/logos/offthetop.png';
-import podcastSet from '../assets/videos/Clips/podcastSet.mp4';
+import podcastSet from '../assets/images/people/laughing.png';
 
 const demobox = demomode ? styles.demo.landing : {};
 
@@ -34,7 +36,7 @@ const Service = () => {
       style={demobox}
       key={1}
     >
-      <motion.div className={`relative flex flex-col p-20 gap-20 items-center ${demomode ? 'border-purple-600 border-2' : ''}`}>
+      <motion.div className={`relative flex flex-col p-20 gap-18 items-center ${demomode ? 'border-purple-600 border-2' : ''}`}>
         <video
           style={demobox}
           className={`top-0 left-0 w-full h-full absolute object-cover brightness-25`}
@@ -58,18 +60,21 @@ const Service = () => {
       </motion.div>
       
       
-      
-
+  
         
                
         
-      <motion.div className={`relative flex flex-col items-center gap-4 ${demomode ? 'border-purple-600 border-2' : ''}`}>
+      <motion.div className={`relative flex flex-col items-center gap-24 ${demomode ? 'border-purple-600 border-2' : ''}`}>
+          
         
+          <Card title={serviceCards[0].title} content={serviceCards[0].content} kanji={serviceCards[0].kanji}/>          
         
-          <Card title={serviceCards[0].title} content={serviceCards[0].content} delay={0.5} xPos={0} yPos={-150} kanji={serviceCards[0].kanji}/> 
-          <Card title={serviceCards[1].title} content={serviceCards[1].content} delay={1.0} xPos={-150} yPos={0} kanji={serviceCards[1].kanji}/>
-          <Card title={serviceCards[2].title} content={serviceCards[2].content} delay={1.5} xPos={-150} yPos={0} kanji={serviceCards[2].kanji}/>
-          <Card title={serviceCards[3].title} content={serviceCards[3].content} delay={2.0} xPos={-150} yPos={0} kanji={serviceCards[3].kanji}/>
+          <Card title={serviceCards[1].title} content={serviceCards[1].content} kanji={serviceCards[1].kanji}/> 
+        
+          <Card title={serviceCards[2].title} content={serviceCards[2].content} kanji={serviceCards[2].kanji}/> 
+        
+          <Card title={serviceCards[3].title} content={serviceCards[3].content} kanji={serviceCards[3].kanji}/> 
+        
         
       </motion.div>
 

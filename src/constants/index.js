@@ -126,22 +126,22 @@ export const homePanels = [
 export const serviceCards = [
   {
     title: "DOMINATE SOCIAL",
-    content: "From strategy to scheduling, we handle your social media accounts—ensuring consistent branding, community engagement, and optimized growth.",
+    content: "From strategy to scheduling, we handle your social media accounts—ensuring consistent branding, community engagement, and optimized growth. We don’t just manage content, we elevate your brand presence.",
     kanji: "成長"
   },
   {
     title: "PRODUCTION THAT POPS",
-    content: "We produce high-quality visuals, videos, and storytelling assets to authentically represent your brand across all platforms.",
+    content: "We produce high-quality visuals, videos, and storytelling assets to authentically represent your brand across all platforms. Our creative approach turns attention into lasting connection.",
     kanji: "生産"
   },
   {
     title: "DIGITAL GAMEPLAN",
-    content: "Need a website, SEO help, or tech advice? We offer tailored digital solutions to build or boost your online presence.",
+    content: "Need a website, SEO help, or tech advice? We offer tailored digital solutions to build or boost your online presence. Our expertise ensures your brand stands out in a crowded digital world.",
     kanji: "計画"
   },
   {
     title: "PLUG INTO JUSTFRIENDS",
-    content: "We promote your business through the Justfriends app and community ecosystem—connecting you directly to a curated local audience.",
+    content: "We promote your business through the Justfriends app and community ecosystem—connecting you directly to a curated local audience. Beyond digital reach, we bring businesses together at events to network, collaborate, and grow.",
     kanji: "接続"
   },  
   {
@@ -152,4 +152,4 @@ export const serviceCards = [
 
 export const volumesTitles = ["Volume 1", "Volume 2", "Volume 3", "Volume 4", "Volume 5"];
 
-export const demomode = false ;
+export const demomode = false;
