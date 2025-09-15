@@ -7,6 +7,8 @@ import cowboy1 from '../assets/videos/Cowboy1.mp4';
 import cityTrain from '../assets/videos/CityTrain.mp4';
 import farine from '../assets/videos/farinefiveroses.mp4';
 import promo from '../assets/volumes/promo1.mp4';
+import animatedDJ from '../assets/animatedVideos/Anime_DJ_Mixing_JF.mp4';
+import AkiraCity3 from '../assets/videos/AkiraCity3.mp4';
 
 import vol1 from '../assets/videos/Volumes/Vol1.mp4';
 import vol2 from '../assets/videos/Volumes/Vol2.mp4';
@@ -100,30 +102,54 @@ export const volumesVideoArray = [
   },
 ];
 
+export const homePanels = [
+  {
+    titleEng: "SERVICE",
+    titleJap: "コ ミ ュ ニ テ ィ",
+    vidSrc: animatedDJ,
+    link: "/service",
+  },
+  {
+    titleEng: "VOLUMES",
+    titleJap: "コ ネ ク シ ョ ン",
+    vidSrc: AkiraCity3,
+    link: "/volumes",
+  },
+  {
+    titleEng: "CONNECT",
+    titleJap: "シ ナ ジ ー",
+    vidSrc: oceanWaves1,
+    link: "/connect",
+  }
+]
+
 export const serviceCards = [
   {
     title: "DOMINATE SOCIAL",
-    content: "From strategy to scheduling, we handle your social media accounts—ensuring consistent branding, community engagement, and optimized growth."
+    content: "From strategy to scheduling, we handle your social media accounts—ensuring consistent branding, community engagement, and optimized growth.",
+    kanji: "成長"
   },
   {
     title: "PRODUCTION THAT POPS",
-    content: "We produce high-quality visuals, videos, and storytelling assets to authentically represent your brand across all platforms."
+    content: "We produce high-quality visuals, videos, and storytelling assets to authentically represent your brand across all platforms.",
+    kanji: "生産"
   },
   {
     title: "DIGITAL GAMEPLAN",
-    content: "Need a website, SEO help, or tech advice? We offer tailored digital solutions to build or boost your online presence."
+    content: "Need a website, SEO help, or tech advice? We offer tailored digital solutions to build or boost your online presence.",
+    kanji: "計画"
   },
   {
     title: "PLUG INTO JUSTFRIENDS",
-    content: "We promote your business through the Justfriends app and community ecosystem—connecting you directly to a curated local audience."
-  },
+    content: "We promote your business through the Justfriends app and community ecosystem—connecting you directly to a curated local audience.",
+    kanji: "接続"
+  },  
   {
     title: "PROMOTIONAL EVENTS",
     content: "From barbershops to boutiques, we promote your brand with online shout-outs, live events, and collaborative campaigns designed to get attention."
   }
-  
 ]
 
 export const volumesTitles = ["Volume 1", "Volume 2", "Volume 3", "Volume 4", "Volume 5"];
 
-export const demomode = true;
+export const demomode = false ;

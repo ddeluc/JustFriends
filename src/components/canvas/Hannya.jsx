@@ -48,9 +48,9 @@ const Hannya = ({ scale, px, py, pz }) => {
 const HannyaCanvas = ({ hScale, hpx, hpy, hpz}) => {
 
   return (
-    <div style={demobox} className={`absolute top-0 left-0 z-10 flex h-full w-full justify-center mx-auto`}>
+    <div style={demobox} className={`absolute top-0 left-0 z-10 w-full h-full`}>
       <Canvas
-        className={`border-6 border-red-500 absolute`}
+        className={` border-red-500`}
         style={demobox}
         shadows
         camera={{ position: [0, 0, 8], fov: 30 }}

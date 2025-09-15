@@ -63,14 +63,14 @@ const Service = () => {
         
                
         
-      <motion.div className={`relative ${demomode ? 'border-purple-600 border-2' : ''}`}>
+      <motion.div className={`relative flex flex-col items-center gap-4 ${demomode ? 'border-purple-600 border-2' : ''}`}>
         
-        <motion.div className={`grid min-h-screen sm:grid-cols-1 lg:grid-cols-[1fr_1.5fr_1fr] lg:grid-rows-2 gap-2 ${demomode ? 'border-purple-600 border-2' : ''}`}>
-          <Card title={serviceCards[0].title} content={serviceCards[0].content} delay={0.5} gridPosition={"col-start-1 col-end-2 row-start-1 row-end-3"} xPos={0} yPos={-150} vidSrc={null}/> 
-          <Card title={serviceCards[1].title} content={serviceCards[1].content} delay={1.0} gridPosition={"col-start-2 col-end-3 row-start-1 row-end-2"} xPos={-150} yPos={0} vidSrc={podcastSet}/>
-          <Card title={serviceCards[2].title} content={serviceCards[2].content} delay={1.5} gridPosition={"col-start-2 col-end-3 row-start-2 row-end-3"} xPos={-150} yPos={0} vidSrc={null}/>
-          <Card title={serviceCards[3].title} content={serviceCards[3].content} delay={2.0} gridPosition={"col-start-3 col-end-4 row-start-1 row-end-3"} xPos={-150} yPos={0} vidSrc={null}/>
-        </motion.div>
+        
+          <Card title={serviceCards[0].title} content={serviceCards[0].content} delay={0.5} xPos={0} yPos={-150} kanji={serviceCards[0].kanji}/> 
+          <Card title={serviceCards[1].title} content={serviceCards[1].content} delay={1.0} xPos={-150} yPos={0} kanji={serviceCards[1].kanji}/>
+          <Card title={serviceCards[2].title} content={serviceCards[2].content} delay={1.5} xPos={-150} yPos={0} kanji={serviceCards[2].kanji}/>
+          <Card title={serviceCards[3].title} content={serviceCards[3].content} delay={2.0} xPos={-150} yPos={0} kanji={serviceCards[3].kanji}/>
+        
       </motion.div>
 
 

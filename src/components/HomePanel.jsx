@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
@@ -18,34 +19,41 @@ import MenuItem from "./Menu/MenuItem";
 
 const demobox = demomode ? styles.demo.landing : {};
 
-const HomePanel = ({ setOnLanding, setSelectedItem, selectedItem }) => {
-  const [selectedIndex, setSelectedIndex] = useState(null);
+const HomePanel = ({ vidSrc, titleEng, titleJap, link }) => {
   const [hovered, setHovered] = useState(null);
+  const navigate = useNavigate();
   
   return (
-    <>          
-        <motion.div className={`relative mt-8 flex justify-center ${demomode ? 'border-blue-600 border-2' : ''} z-30`}>
-            <motion.h1 className={`relative font-anton text-[110px] text-white ${demomode ? 'border-purple-600 border-2' : ''} ${hovered === 1 ? '' : 'opacity-70'}`}>
-              SERVICE
+    <motion.div className={`flex-none flex-col relative h-full flex-grow `} style={demobox}
+        onClick={() => navigate(link)}
+        onHoverStart={() => setHovered(1)}
+        onHoverEnd={() => setHovered(null)}
+    >
+     
+                  
+          <motion.div className={`relative mt-8 flex justify-center ${demomode ? 'border-blue-600 border-2' : ''} z-30`}>
+            <motion.h1 className={`relative font-anton text-[110px] text-white ${demomode ? 'border-purple-600 border-2' : ''} ${hovered === 1 ? '' : 'text-gray-400'}`}>
+              {titleEng}
             </motion.h1>
             <motion.h1 className={`absolute text-red-600 text-[42px] top-1/2 -translate-y-1/2 z-20 font-mochiy font-bold drop-shadow-glow ${demomode ? 'border-orange-600 border-2' : ''}`}
-            animate={{
+              animate={{
                 opacity: hovered === 1 ? 1 : 0,
-            }}
+              }}
             >
-            コ ミ ュ ニ テ ィ
+              {titleJap}
             </motion.h1>
-        </motion.div>
-        {/* <motion.div className={`absolute left-0 top-0 h-full w-full ${demomode ? 'border-pink-600 border-2' : ''} z-30`} /> */}
-        <video
+          </motion.div>          
+          <video
             style={demobox}
             className={`top-0 left-0 w-full h-full absolute object-none rounded-lg
-            ${hovered === 1 ? 'brightness-50' : 'brightness-25 grayscale '}
+              ${hovered === 1 ? 'brightness-50' : 'brightness-25 grayscale '}
             `}
-            src={animatedDJ} autoPlay muted loop
-        />      
-    </>
+            src={vidSrc} autoPlay muted loop
+          />      
+          
+       
+    </motion.div>
   );
 };
 
-export default Home;
+export default HomePanel;

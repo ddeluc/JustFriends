@@ -69,7 +69,8 @@ module.exports = {
         'anton': ['Anton SC', 'sans-serif'],
         'archivo': ['Archivo Black', 'sans-serif'],
         'perm-marker': ['Permanent Marker', 'cursive'],
-        'dot-gothic': ['DotGothic16', 'sans-serif']
+        'dot-gothic': ['DotGothic16', 'sans-serif'],
+        'noto-mono': ['Noto Sans Mono', 'monospace'],
       }
     },
   },
