@@ -63,42 +63,62 @@ export const volumesVideoArray = [
   {
     id: 1,
     displayTitle: "VOLUME 1",
-    date: "",
+    date: "4/26/2025",
     location: "MEMENTO, MTL",
     src: vol1,
-    shortSrc: shortVol1,   
+    shortSrc: shortVol1,
+    titleJap: "第 一",
+    active: true,   
   },
   {
     id: 2,
     displayTitle: "VOLUME 2",
-    date: "",
+    date: "4/26/2025",
     location: "HEXAGON, MTL",
     src: vol2,  
     shortSrc: shortVol2,  
+    titleJap: "第 二",
+    active: true,
   },
   {
     id: 3,
     displayTitle: "VOLUME 3",
-    date: "",
+    date: "4/26/2025",
     location: "HEXAGON, MTL",
     src: vol3,   
     shortSrc: shortVol3, 
+    titleJap: "第 三",
+    active: true,
   },
   {
     id: 4,
     displayTitle: "VOLUME 4",
-    date: "",
+    date: "4/26/2025",
     location: "MEMENTO, MTL",
     src: vol4, 
     shortSrc: shortVol4,   
+    titleJap: "第 四",
+    active: true,
   },
   {
     id: 5,
     displayTitle: "VOLUME 5",
-    date: "",
+    date: "4/26/2025",
     location: "BRIX, MTL",
     src: vol5,  
     shortSrc: shortVol5,  
+    titleJap: "第 五",
+    active: true,
+  },
+  {
+    id: 6,
+    displayTitle: "VOLUME 6",
+    date: "???",
+    location: "COMING SOON",
+    src: whiteNoise,  
+    shortSrc: whiteNoise,  
+    titleJap: "第 六",
+    active: false,
   },
 ];
 
@@ -127,22 +147,26 @@ export const serviceCards = [
   {
     title: "DOMINATE SOCIAL",
     content: "From strategy to scheduling, we handle your social media accounts—ensuring consistent branding, community engagement, and optimized growth. We don’t just manage content, we elevate your brand presence.",
-    kanji: "成長"
+    kanji: "成長",
+    translation: "GROWTH"
   },
   {
     title: "PRODUCTION THAT POPS",
     content: "We produce high-quality visuals, videos, and storytelling assets to authentically represent your brand across all platforms. Our creative approach turns attention into lasting connection.",
-    kanji: "生産"
+    kanji: "生産",
+    translation: "PRODUCTION"
   },
   {
     title: "DIGITAL GAMEPLAN",
     content: "Need a website, SEO help, or tech advice? We offer tailored digital solutions to build or boost your online presence. Our expertise ensures your brand stands out in a crowded digital world.",
-    kanji: "計画"
+    kanji: "計画",
+    translation: "STRATEGY"
   },
   {
     title: "PLUG INTO JUSTFRIENDS",
     content: "We promote your business through the Justfriends app and community ecosystem—connecting you directly to a curated local audience. Beyond digital reach, we bring businesses together at events to network, collaborate, and grow.",
-    kanji: "接続"
+    kanji: "接続",
+    translation: "CONNECTION"
   },  
   {
     title: "PROMOTIONAL EVENTS",

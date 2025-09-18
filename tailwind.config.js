@@ -11,9 +11,12 @@ module.exports = {
         "black-100": "#100d25",
         "black-200": "#090325",
         "white-100": "#f3f3f3",
+        "red-600": "#dd1515",
       },
       dropShadow: {
-        glow: "0 0 5px oklch(0.58 0.245 27.325)"
+        'glow-red-xs': "0 0 2px oklch(0.58 0.245 27.325)",
+        'glow-red-sm': "0 0 5px oklch(0.58 0.245 27.325)",
+        'glow-red-lg': "0 0 10px oklch(0.58 0.245 27.325)",
       },
       maxHeight: {
         '172': '43rem',

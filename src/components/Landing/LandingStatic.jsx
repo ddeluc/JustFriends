@@ -24,12 +24,12 @@ const LandingStatic = ({ setOnLanding, setState, setNextState }) => {
         className={`object-cover w-full h-full rounded-lg brightness-60`}
         src={whiteNoise} onEnded={() => setOnLanding(false)} autoPlay muted
       />  
-      <div
+      {/* <div
         className={`flex flex-col font-moichy font-bold text-[96px] text-white justify-end cursor-default absolute select-none`}
         style={demobox}
       >
         {titleJap}
-      </div>       
+      </div>        */}
     </section>
   ); 
 };
