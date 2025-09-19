@@ -49,11 +49,7 @@ export const navLinks = [
   }
 ];
 
-export const aboutText = `redefining the art of connection through curated events,
-  dynamic storytelling, and a passion for community. We create immersive experiences where networking meets creativity,
-  from discovering fresh music to exploring local businesses and culture. With a cinematic touch and a commitment to
-  meaningful impact, Just Friends is about building a network that supports, inspires, 
-  and gives back. Step into Just Friends, where every interaction is an opportunity to connect, grow, and elevate the community.`
+export const aboutText = `Redefining connection through curated events, storytelling, and community. We create immersive experiences where networking meets creativity—discovering fresh music, local businesses, and culture. With a cinematic touch and meaningful impact, Just Friends builds a network that supports, inspires, and gives back. Every interaction is a chance to connect, grow, and elevate.`
 
 export const contactText = `Do you have a business you want to plug into JustFriends? Tell us your story and we'll get back to you!`
 
