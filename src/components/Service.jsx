@@ -27,7 +27,8 @@ const BusinessCard = ({ imgSrc, name }) => {
   return (
     <motion.div className={`relative w-48 h-auto border-2 border-white p-2 ${demomode ? 'border-purple-600 border-2' : ''}`} 
       // initial={{ y: 0 }}
-      animate={{ y: hovered ? 10 : 0, transition: { duration: 0.25, type: "spring", bounce: 0 } }}
+      animate={{ y: hovered ? 10 : 0, backgroundColor: hovered ? "#dc2626" : "#000000", transition: { duration: 0.25, type: "spring", bounce: 0 } }}
+      
       onHoverEnd={() => setHovered(false)} 
       onHoverStart={() => setHovered(true)}
     >
