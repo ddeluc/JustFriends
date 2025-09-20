@@ -1,7 +1,6 @@
 import Navbar from "./Navbar";
 import Landing from "./Landing/Landing";
 import Work from "./Work";
-import Contact from "./Contact";
 import Home from "./Home";
 import MenuItem from "./Menu/MenuItem";
 import CanvasBack from "./CanvasBack";
@@ -17,7 +16,6 @@ export {
     Navbar, 
     Landing, 
     Work, 
-    Contact, 
     Home, 
     MenuItem, 
     CanvasBack, 

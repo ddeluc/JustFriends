@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { styles } from "../styles";
 import Card from "./Card";
+import EmailForm from "./EmailForm";
 
 import { demomode, serviceCards } from "../constants";
 import backroundVideo from '../assets/volumes/promo1.mp4';
@@ -46,6 +47,7 @@ const Service = () => {
   useEffect(() => {
     if (videoGrainRef.current) {
       videoGrainRef.current.playbackRate = 0.4;
+      window.scrollTo(0, 0);
     }
   }, []);
 
@@ -101,27 +103,7 @@ const Service = () => {
 
       <div className={`border-b-2 border-white max-w-16 w-full`}/>
 
-      <div className={`relative w-full flex flex-col items-center p-20 gap-16 ${demomode ? 'border-purple-600 border-2' : ''}`}>
-
-        <motion.div className={`relative text-[28px] font-light font-noto-mono z-20 ${demomode ? 'border-purple-600 border-2' : ''}`}>
-          Email Us
-        </motion.div>    
-        <div class={`grid grid-cols-2 grid-rows-5 gap-5 z-20 text-[18px] font-light font-noto-mono ${demomode ? 'border-purple-600 border-2' : ''}`}>
-          <input className={`col-start-1 col-end-2 row-start-1 row-end-2 p-3 ${demomode ? 'border-purple-600 border-2' : ''}`} placeholder="Name"/>
-          <input className={`col-start-2 col-end-3 row-start-1 row-end-2 p-3 ${demomode ? 'border-purple-600 border-2' : ''}`} placeholder="Email Address"/>
-          <input className={`col-start-1 col-end-3 row-start-2 row-end-3 p-3 ${demomode ? 'border-purple-600 border-2' : ''}`} placeholder="Subject"/>
-          <textarea className={`col-start-1 resize-none col-end-3 row-start-3 h-full row-end-6 p-3 ${demomode ? 'border-purple-600 border-2' : ''}`} placeholder="Message"/>
-        </div>
-        
-        {/* <video
-          style={demobox}
-          className={`top-0 left-0 w-full h-full absolute object-cover brightness-35`}
-          src={SamuraiChamploo} 
-          autoPlay  
-          loop
-          muted
-        />   */}
-      </div>
+      <EmailForm />
       
     </section>   
   );

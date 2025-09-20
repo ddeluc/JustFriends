@@ -49,6 +49,8 @@ export const navLinks = [
   }
 ];
 
+export const connectText = `Tell us your story and we'll get back to you.`
+
 export const aboutText = `Redefining connection through curated events, storytelling, and community. We create immersive experiences where networking meets creativity—discovering fresh music, local businesses, and culture. With a cinematic touch and meaningful impact, Just Friends builds a network that supports, inspires, and gives back. Every interaction is a chance to connect, grow, and elevate.`
 
 export const contactText = `Do you have a business you want to plug into JustFriends? Tell us your story and we'll get back to you!`

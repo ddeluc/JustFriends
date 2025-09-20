@@ -31,25 +31,25 @@ const HomePanel = ({ vidSrc, titleEng, titleJap, link }) => {
     >
      
                   
-          <motion.div className={`relative mt-8 flex justify-center ${demomode ? 'border-blue-600 border-2' : ''} z-30`}>
-            <motion.h1 className={`relative font-anton text-[110px] text-white ${demomode ? 'border-purple-600 border-2' : ''} ${hovered === 1 ? '' : 'text-gray-400 brightness-75'}`}>
-              {titleEng}
-            </motion.h1>
-            <motion.h1 className={`absolute text-red-600 text-[42px] top-1/2 -translate-y-1/2 z-20 font-mochiy font-bold drop-shadow-glow-red-sm ${demomode ? 'border-orange-600 border-2' : ''}`}
-              animate={{
-                opacity: hovered === 1 ? 1 : 0,
-              }}
-            >
-              {titleJap}
-            </motion.h1>
-          </motion.div>          
-          <video
-            style={demobox}
-            className={`top-0 left-0 w-full h-full absolute object-none rounded-lg
-              ${hovered === 1 ? 'brightness-50' : 'brightness-20 grayscale '}
-            `}
-            src={vidSrc} autoPlay muted loop
-          />      
+      <motion.div className={`relative mt-8 flex justify-center ${demomode ? 'border-blue-600 border-2' : ''} z-30`}>
+        <motion.h1 className={`relative font-anton text-[110px] text-white ${demomode ? 'border-purple-600 border-2' : ''} ${hovered === 1 ? '' : 'text-gray-400 brightness-75'}`}>
+          {titleEng}
+        </motion.h1>
+        <motion.h1 className={`absolute text-red-600 text-[42px] top-1/2 -translate-y-1/2 z-20 font-mochiy font-bold drop-shadow-glow-red-sm ${demomode ? 'border-orange-600 border-2' : ''}`}
+          animate={{
+            opacity: hovered === 1 ? 1 : 0,
+          }}
+        >
+          {titleJap}
+        </motion.h1>
+      </motion.div>          
+      <video
+        style={demobox}
+        className={`top-0 left-0 w-full h-full absolute object-none rounded-lg
+          ${hovered === 1 ? 'brightness-50' : 'brightness-20 grayscale '}
+        `}
+        src={vidSrc} autoPlay muted loop
+      />      
           
        
     </motion.div>

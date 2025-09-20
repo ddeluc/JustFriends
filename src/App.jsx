@@ -16,6 +16,7 @@ const App = () => {
 
   return (
     <div className={`relative z-0 bg-primary`}>
+      
       {onLanding && <Landing setOnLanding={setOnLanding} setState={setState} state={state} nextState={nextState} setNextState={setNextState}/>}
       {!onLanding && 
         <>

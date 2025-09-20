@@ -4,7 +4,6 @@ import { demomode } from "../constants";
 import MenuBack from "./Menu/MenuBack";
 import JoinBack from "./JoinBack";
 import VolumesBack from "./VolumesBack";
-import ContactBack from "./ContactBack";
 
 const demobox = demomode ? styles.demo.back : {};
 
@@ -16,7 +15,6 @@ const CanvasBack = ({ hoveredItem, selectedItem, volumesVideoIndex, isMute }) =>
       {selectedItem === "About" && <AboutBack />}
       {selectedItem === "Join" && <JoinBack />}
       {selectedItem === "Volumes" && <VolumesBack selectedItem={selectedItem} isMute={isMute} volumesVideoIndex={volumesVideoIndex} />}
-      {selectedItem === "Contact" && <ContactBack />}
     </div>
   )
 }

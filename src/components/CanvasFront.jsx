@@ -4,7 +4,6 @@ import { demomode } from "../constants";
 import Join from "./Join";
 import Volumes from "./Volumes";
 import Menu from "./Menu/Menu";
-import Contact from "./Contact";
 
 const demobox = demomode ? styles.demo.front : {};
 
@@ -17,7 +16,6 @@ const CanvasFront = ({ setHoveredItem, hoveredItem, setSelectedItem, selectedIte
         {selectedItem === "About" && <About setSelectedItem={setSelectedItem} />}
         {selectedItem === "Join" && <Join setSelectedItem={setSelectedItem} />}
         {selectedItem === "Volumes" && <Volumes setVolumesVideoIndex={setVolumesVideoIndex} setSelectedItem={setSelectedItem} setIsMute={setIsMute} isMute={isMute} volumesVideoIndex={volumesVideoIndex}/>}   
-        {selectedItem === "Contact" && <Contact setSelectedItem={setSelectedItem} />}
       </div>                       
     </div> 
   )
