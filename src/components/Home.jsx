@@ -7,6 +7,7 @@ import { demomode } from "../constants";
 
 import Volumes from "./Volumes";
 import Service from "./Service";
+import Navbar from "./Navbar";
 
 import oceanWaves1 from '../assets/videos/oceanWaves1.mp4';
 import kuroko1 from '../assets/videos/Kuroko1.mp4';
@@ -58,6 +59,7 @@ const Home = ({}) => {
       
       
       <div className={`relative w-screen h-screen flex gap-2 bg-primary`}>
+        <Navbar />
         <HomePanel vidSrc={homePanels[0].vidSrc} titleEng={homePanels[0].titleEng} titleJap={homePanels[0].titleJap} link={homePanels[0].link} />
         <HomePanel vidSrc={homePanels[1].vidSrc} titleEng={homePanels[1].titleEng} titleJap={homePanels[1].titleJap} link={homePanels[1].link} />
         <HomePanel vidSrc={homePanels[2].vidSrc} titleEng={homePanels[2].titleEng} titleJap={homePanels[2].titleJap} link={homePanels[2].link} />

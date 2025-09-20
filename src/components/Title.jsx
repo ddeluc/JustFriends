@@ -7,20 +7,19 @@ import { demomode } from "../constants";
 
 const demobox = demomode ? styles.demo.title : {};
 
-const Title = () => {
-  const titleEng = "JUST FRIENDS.";
-  const titleJap = "友情"
+const Title = ({ titleEng, titleJap, submitFunction }) => {
 
   return (
-    <motion.a 
-      className={`text-white text-[36px] 
-      cursor-pointer block overflow-hidden whitespace-nowrap relative`} 
+    <motion.div 
+      className={`text-white 
+      cursor-pointer whitespace-nowrap overflow-hidden relative`} 
       style={demobox}
+      onClick={submitFunction}
       initial="initial"
       whileHover="hovered"
     >
       <motion.div
-        className={`text-[32px]`}
+        className={`text-[64px] font-anton`}
         variants={{
           initial: { opacity: 1, y: 0 },
           hovered: { opacity: 0 },
@@ -32,10 +31,11 @@ const Title = () => {
         {titleEng}
       </motion.div>
       <motion.div
-        className={`text-[36px] absolute inset-0 text-red-600 font-bold`}
+        className={`text-[64px] absolute top-1/2 left-1/2 -mt-1 text-red-600 font-mochiy`}
+        style={demobox}
         variants={{
-          initial: { opacity: 0, x: 0 },
-          hovered: { opacity: 1, x: "35%" },
+          initial: { opacity:0, x: "-50%", y: "-100%" },
+          hovered: { opacity: 1, x: "-50%", y: "-50%" },
         }}
         transition={{
           type: 'spring',
@@ -45,7 +45,7 @@ const Title = () => {
       >
         {titleJap}
       </motion.div>      
-    </motion.a>
+    </motion.div>
   )
 }
 

@@ -5,6 +5,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { styles } from "../styles";
 import Card from "./Card";
 import EmailForm from "./EmailForm";
+import Navbar from "./Navbar";
+import Title from "./Title";
 
 import { demomode, serviceCards } from "../constants";
 import backroundVideo from '../assets/volumes/promo1.mp4';
@@ -23,7 +25,7 @@ const BusinessCard = ({ imgSrc, name }) => {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <motion.div className={`relative h-64 ${demomode ? 'border-purple-600 border-2' : ''}`} 
+    <motion.div className={`relative w-48 h-auto border-2 border-white p-2 ${demomode ? 'border-purple-600 border-2' : ''}`} 
       // initial={{ y: 0 }}
       animate={{ y: hovered ? 10 : 0, transition: { duration: 0.25, type: "spring", bounce: 0 } }}
       onHoverEnd={() => setHovered(false)} 
@@ -54,10 +56,12 @@ const Service = () => {
   return (
     
     <section 
-      className={`relative overflow-x-hidden overflow-y-hidden items-center  flex flex-col bg-primary`}
+      className={`relative overflow-x-hidden overflow-y-hidden items-center flex flex-col bg-primary`}
       style={demobox}
       key={1}
     >
+      <Navbar /> 
+
       <div className={`relative flex flex-col p-20 w-full gap-18 items-center ${demomode ? 'border-purple-600 border-2' : ''}`}>
         <video
           style={demobox}
@@ -71,7 +75,6 @@ const Service = () => {
 
         <motion.div className={`relative flex gap-2 z-30 ${demomode ? 'border-purple-600 border-2' : ''}`}>
           <motion.span className={`relative inline-block font-anton text-[160px] ${demomode ? 'border-purple-600 border-2' : ''}`}>SERVICE</motion.span>
-          <motion.span className={`absolute -top-1 left-1 font-shrikhand text-[40px] `}>JUST FRIENDS.</motion.span>
           <motion.span className={`relative inline-block font-mochiy drop-shadow-glow-red-sm text-red-600 text-[148px] ${demomode ? 'border-purple-600 border-2' : ''}`}>接続</motion.span>    
         </motion.div>
         
@@ -102,8 +105,10 @@ const Service = () => {
       </div>
 
       <div className={`border-b-2 border-white max-w-16 w-full`}/>
-
-      <EmailForm />
+      
+      <div className={`p-20`}>
+        <Title titleEng={"CONNECT"} titleJap={"友情"} submitFunction={() => navigate('/connect')}/>
+      </div>      
       
     </section>   
   );

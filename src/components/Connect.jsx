@@ -6,6 +6,8 @@ import grain from "../assets/videos/Effects/grainVid1.mp4";
 
 import { connectText } from "../constants";
 import { HannyaCanvas } from "./canvas";
+import Navbar from "./Navbar";
+import Title from "./Title";
 
 import EmailForm from "./EmailForm";
 
@@ -29,10 +31,8 @@ const Connect = ({}) => {
 			style={demobox}
 			key={1}
 		>
-      
-        
-
-      <motion.div className={`relative z-20`}
+      <Navbar />
+      <motion.div className={`relative z-20 mt-32`}
         onHoverStart={() => setHovered(true)}
         onHoverEnd={() => setHovered(false)}
       >
@@ -58,12 +58,8 @@ const Connect = ({}) => {
           <motion.input className={`col-start-1 col-end-3 row-start-2 row-end-3 p-3 rounded-md bg-transparent backdrop-blur-md border-white border-2 ${demomode ? 'border-purple-600 border-2' : ''}`} placeholder="Subject"/>
           <motion.textarea className={`col-start-1 resize-none col-end-3 row-start-3 rounded-md bg-transparent backdrop-blur-md border-white border-2 h-full row-end-6 p-3 ${demomode ? 'border-purple-600 border-2' : ''}`} placeholder="Message"/>
         </div>
-        <motion.div className={`relative font-anton inline-block text-[36px] z-30 bg-red-600 text-white px-4 p-1 rounded-lg ${demomode ? 'border-purple-600 border-2' : ''}`}
-          onClick={() => console.log("Clicked!")}
-        >
-          SEND
-        </motion.div>
-        
+        <Title titleEng={"SEND"} titleJap={"送信"} submitFunction={() => alert("Form submission is currently disabled for demo purposes.")}/>
+
       </div>
       
         
@@ -76,7 +72,7 @@ const Connect = ({}) => {
         loop
         muted
       />
-      <HannyaCanvas hScale={18} hpx={0} hpy={0} hpz={0} />
+      <HannyaCanvas hScale={18} hpx={0} hpy={-0.2} hpz={0} />
 		</section>
 	);
 }

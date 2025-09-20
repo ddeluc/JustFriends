@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { Link, useNavigate } from "react-router-dom";
+import { motion, transform } from "framer-motion";
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
@@ -12,42 +12,28 @@ import { demomode } from "../constants";
 const demobox = demomode ? styles.demo.navbar : {};
 
 const Navbar = ({ setSelectedItem, selectedItem }) => {
+  const navigate = useNavigate();
    
   const [onCollection, setOnCollection] = useState(true);
+  const [hovered, setHovered] = useState(false);
   const [animate, setAnimate] = useState(false);
 
   return (
     <nav
-      className={`${styles.paddingX} w-full flex items-center py-7 fixed top-0 z-20 bg-transparent`}
+      className={`py-6 px-12 w-full flex items-center fixed top-0 bg-transparent z-20`}
       style={demobox}
     >
-      <div className='w-full flex justify-between items-center max-w-full mx-auto' style={demobox}>
-        <div 
-          style={demobox} 
-          className={`font-shrikhand text-[24px]`}
-          onClick={() => setSelectedItem("None")}
-        >
-          <Title />
-        </div>
-        <ul className='list-none hidden sm:flex flex-row gap-10'>
-          {navLinks.map((nav) => (
-            <li
-              key={nav.id}
-              className={`text-white hover:text-white text-[24px] cursor-pointer`}
-              onClick={() => { 
-                setOnCollection(nav.collection);
-                setSelectedItem(nav.title);
-                setAnimate(true);
-                console.log(nav.hannyaPosition);
-                }
-              }
-              style={demobox}
-            >
-              <a href={`#${nav.id}`}>{nav.title}</a>
-            </li>
-          ))}
-        </ul>
-      </div>      
+      <motion.div 
+        style={demobox} 
+        className={`font-shrikhand text-[42px] pointer-default`}
+        onClick={() => navigate('/home')}
+        onHoverStart={() => setHovered(true)}
+        onHoverEnd={() => setHovered(false)}
+        animate={{ opacity: hovered ? 1 : 0.75, transition: { duration: 0.1 } }}
+      >
+        JF.
+      </motion.div>
+        
     </nav>
   ); 
 }

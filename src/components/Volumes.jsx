@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { Link, useNavigate } from "react-router-dom";
 
 import { HannyaCanvas } from "./canvas";
 
@@ -8,6 +9,8 @@ import { styles } from "../styles";
 
 import { demomode, volumesVideoArray } from "../constants";
 import { volumesDescription } from "../constants";
+import Navbar from "./Navbar";
+import Title from "./Title";
 
 import coverImg from "../assets/photos/volumeCovers/Vol1CoverGib.png"
 import vol1 from "../assets/videos/Volumes/Vol2.mp4"
@@ -29,6 +32,7 @@ const volumeSelectionChildVariants = {
 const VideoCard = ({ volume }) => {
   const videoRef = useRef(null);
   const [hovered, setHovered] = useState(false);
+  
 
   return (
     <motion.div className={`pb-8 relative ${demomode ? 'border-purple-600 border-2' : ''}`} 
@@ -67,6 +71,7 @@ const Volumes = ({ setSelectedIndex }) => {
   const videoRef = useRef();
   const videoGrainRef = useRef();
   const [videoIndex, setVideoIndex] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     changeVideoSource();
@@ -104,10 +109,11 @@ const Volumes = ({ setSelectedIndex }) => {
 
   return (
     <section 
-      className={`relative overflow-x-hidden overflow-y-hidden flex flex-col bg-primary`}
+      className={`relative overflow-x-hidden overflow-y-hidden flex flex-col items-center bg-primary`}
       style={demobox}
       key={1}
     >
+      <Navbar />
       <div className={`relative flex flex-col p-20 gap-20 items-center ${demomode ? 'border-purple-600 border-2' : ''}`}>
         <video
           style={demobox}
@@ -121,7 +127,6 @@ const Volumes = ({ setSelectedIndex }) => {
 
         <motion.div className={`relative flex gap-2 z-30 ${demomode ? 'border-purple-600 border-2' : ''}`}>
           <motion.span className={`relative inline-block font-anton text-[160px] ${demomode ? 'border-purple-600 border-2' : ''}`}>VOLUMES</motion.span>
-          <motion.span className={`absolute -top-1 left-1 font-shrikhand text-[40px] z-30`}>JUST FRIENDS.</motion.span>
           <motion.span className={`relative inline-block font-mochiy drop-shadow-glow-red-sm text-red-600 text-[148px] ${demomode ? 'border-purple-600 border-2' : ''}`}>接続
             {/* <motion.span>接</motion.span>
             <motion.span>続</motion.span> */}
@@ -139,22 +144,20 @@ const Volumes = ({ setSelectedIndex }) => {
           {volumesDescription}
         </motion.p>
       </div> */}
+      
+      <div className={`w-full`}>
+        <div className={`relative p-20 ${demomode ? 'border-purple-600 border-2' : ''}`}>
+          {volumesVideoArray.map((volume) => (
+            <VideoCard volume={volume} />
+          ))}
+        </div>
+      </div>
+      
+      <div className={`border-b-2 border-white max-w-16 w-full`}/>
         
-      <div className={`relative p-20 ${demomode ? 'border-purple-600 border-2' : ''}`}>
-        {volumesVideoArray.map((volume) => (
-          <VideoCard volume={volume} />
-        ))}
-      </div>
-
-
-      <div className={`relative z-20 ${demomode ? 'border-purple-600 border-2' : ''}`}>
-          
-        <motion.div className={`relative font-anton inline-block text-[36px] z-30 bg-red-600 text-white px-2 p-1 rounded-lg ${demomode ? 'border-purple-600 border-2' : ''}`}
-          onClick={() => console.log("Clicked!")}
-        >
-          TICKETS
-        </motion.div>
-      </div>
+      <div className={`p-20`}>
+        <Title titleEng={"CONNECT"} titleJap={"友情"} submitFunction={() => navigate('/connect')}/>
+      </div>     
       
     </section>
   )
