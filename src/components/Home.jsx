@@ -1,25 +1,17 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import React, { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 import { styles } from "../styles";
 import { demomode } from "../constants";
 
-import Volumes from "./Volumes";
-import Service from "./Service";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
-import oceanWaves1 from '../assets/videos/oceanWaves1.mp4';
-import kuroko1 from '../assets/videos/Kuroko1.mp4';
-import AkiraCity3 from '../assets/videos/AkiraCity3.mp4';
-import animatedDJ from '../assets/animatedVideos/Anime_DJ_Mixing_JF.mp4';
 import grain from "../assets/videos/Effects/grainVid1.mp4"
 
 import dj from "../assets/images/people/cutout/whiteOutline/dj.png";
 import handShake from "../assets/images/people/cutout/whiteOutline/handShake.png";
 import man from "../assets/images/people/cutout/whiteOutline/man.png";
-import business from "../assets/images/people/cutout/whiteOutline/business.png";
 import saxaphone from "../assets/images/people/cutout/whiteOutline/saxaphone.png";
 import girlTalking from "../assets/images/people/cutout/whiteOutline/girlTalking.png";
 import manHoldingProduct from "../assets/images/people/cutout/whiteOutline/manHoldingProduct.png";
@@ -27,8 +19,6 @@ import couple from "../assets/images/people/cutout/whiteOutline/couple.png"
 import { aboutText } from "../constants";
 
 import { HannyaCanvas } from "./canvas";
-import { init } from "@emailjs/browser";
-import MenuItem from "./Menu/MenuItem";
 import { homePanels } from "../constants";
 import HomePanel from "./HomePanel";
 
@@ -36,27 +26,10 @@ const demobox = demomode ? styles.demo.landing : {};
 
 const Home = ({}) => {
   const container = useRef();
-  const { pathname, hash } = useLocation();
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start start", "end end"]
   });
-
-  useEffect(() => {
-    // console.log(hash);
-    // if (hash) {
-    //   // Scroll to the element matching the hash
-    //   const el = document.querySelector(hash);
-    //   if (el) {
-    //     const y = el.getBoundingClientRect().top;
-    //     console.log(y);
-    //     window.scrollTo({ top: y, behavior: "instant" });
-    //   }
-    // } else {
-    //   // Default: top of page
-    //   window.scrollTo(0, 0);
-    // }
-  }, []);
   
   return (
     <section 
@@ -67,7 +40,6 @@ const Home = ({}) => {
     >
 
       <Hero parentScrollYProgress={scrollYProgress} />
-      
       
       <div id="menu" className={`relative w-full h-[100vh] flex gap-2 bg-primary`}>
         <Navbar />

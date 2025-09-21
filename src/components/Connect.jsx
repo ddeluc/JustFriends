@@ -1,7 +1,7 @@
 import React,{ useRef, useEffect } from "react";
 import { styles } from "../styles";
 import { motion } from "framer-motion";
-import { demomode, serviceCards } from "../constants";
+import { demomode } from "../constants";
 import grain from "../assets/videos/Effects/grainVid1.mp4";
 
 import { connectText } from "../constants";
@@ -10,8 +10,6 @@ import Navbar from "./Navbar";
 import Title from "./Title";
 import Footer from "./Footer";
 
-import EmailForm from "./EmailForm";
-
 const demobox = demomode ? styles.demo.landing : {};
 
 const Connect = ({}) => {
@@ -19,11 +17,9 @@ const Connect = ({}) => {
   const [hovered, setHovered] = React.useState(false);
 
   useEffect(() => {
-   
     if (videoGrainRef.current) {
       videoGrainRef.current.playbackRate = 0.35;
     }
-    // window.scrollTo({ top: 0, behavior: "instant" });
   }, []);
 
 	return (

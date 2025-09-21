@@ -1,11 +1,11 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import { styles } from "../../styles";
 import { demomode } from "../../constants";
 
-import volume2 from '../../assets/volumes/vol2short.mp4';
+import volume2 from '../../assets/videos/landingPreviewWide.mp4';
 
 
 const demobox = demomode ? styles.demo.landing : {};
@@ -14,7 +14,7 @@ const DURATION = 0.05;
 const STAGGER = 0.025;
 
 const LandingHome = ({ setState }) => {
-  const navigate = useNavigate();
+
 
   const homeVideo = useRef();
 

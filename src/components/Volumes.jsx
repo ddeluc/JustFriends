@@ -1,9 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Link, useNavigate } from "react-router-dom";
-
-import { HannyaCanvas } from "./canvas";
-
+import { useNavigate } from "react-router-dom";
 
 import { styles } from "../styles";
 
@@ -13,8 +10,6 @@ import Navbar from "./Navbar";
 import Title from "./Title";
 import Footer from "./Footer";
 
-import coverImg from "../assets/photos/volumeCovers/Vol1CoverGib.png"
-import vol1 from "../assets/videos/Volumes/Vol2.mp4"
 import staticNoise from "../assets/videos/WhiteNoise/whiteNoise.mp4"
 import grain from "../assets/videos/Effects/grainVid1.mp4"
 
@@ -58,7 +53,7 @@ const VideoCard = ({ volume }) => {
           <video
             style={demobox}
             className={`top-0 left-0 w-full h-full absolute object-cover ${volume.active ? "brightness-50" : "brightness-25"}`}
-            src={volume.src} 
+            src={volume.shortSrc} 
             autoPlay  
             loop
             muted
@@ -121,7 +116,6 @@ const Volumes = ({  }) => {
     if (videoGrainRef.current) {
       videoGrainRef.current.playbackRate = 0.4;
     }
-    // window.scrollTo({ top: 0, behavior: "instant"});
   }, []);
 
   const incrementVideoIndex = () => {
@@ -173,8 +167,6 @@ const Volumes = ({  }) => {
         <motion.div className={`relative flex gap-2 ${demomode ? 'border-purple-600 border-2' : ''}`}>
           <motion.span className={`relative inline-block font-anton text-[160px] ${demomode ? 'border-purple-600 border-2' : ''}`}>VOLUMES</motion.span>
           <motion.span className={`relative inline-block font-mochiy drop-shadow-glow-red-sm text-red-600 text-[148px] ${demomode ? 'border-purple-600 border-2' : ''}`}>接続
-            {/* <motion.span>接</motion.span>
-            <motion.span>続</motion.span> */}
           </motion.span>
         </motion.div>
 

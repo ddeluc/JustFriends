@@ -7,7 +7,7 @@ const Landing = ({ }) => {
   const [state, setState] = useState(1);
 
   return (
-    <div>
+    <div className={`bg-black`}>
       {state == 1 && <LandingHome setState={setState} />}
       {state == 0 && <LandingStatic />}
     </div>    

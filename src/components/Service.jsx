@@ -1,24 +1,19 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { styles } from "../styles";
 import Card from "./Card";
-import EmailForm from "./EmailForm";
 import Navbar from "./Navbar";
 import Title from "./Title";
 import Footer from "./Footer";
 
 import { demomode, serviceCards } from "../constants";
-import backroundVideo from '../assets/volumes/promo1.mp4';
 import grain from "../assets/videos/Effects/grainVid1.mp4";
-import laughing3 from '../assets/images/people/laughing3.png';
-import SamuraiChamploo from '../assets/videos/SamuraiChamploo1.mp4';
 
 import memento from '../assets/images/logos/memento.png';
 import brix from '../assets/images/logos/brixWhite.svg';
 import offTheTop from '../assets/images/logos/offthetop.png';
-import podcastSet from '../assets/images/people/laughing.png';
 
 const demobox = demomode ? styles.demo.landing : {};
 
@@ -27,7 +22,6 @@ const BusinessCard = ({ imgSrc, name, link }) => {
 
   return (
     <motion.div className={`relative w-48 h-auto border-2 border-white p-2 ${demomode ? 'border-purple-600 border-2' : ''}`} 
-      // initial={{ y: 0 }}
       animate={{ y: hovered ? 10 : 0, backgroundColor: hovered ? "#dc2626" : "#000000", transition: { duration: 0.25, type: "spring", bounce: 0 } }}
       onClick={() => window.open(link, "_blank", "noopener,noreferrer")}
       onHoverEnd={() => setHovered(false)} 
@@ -96,9 +90,6 @@ const Service = () => {
           They Trusted Us
         </motion.div>  
         <motion.div className={`flex gap-24 ${demomode ? 'border-purple-600 border-2' : ''}`}>
-          {/* <motion.div className={`h-64 ${demomode ? 'border-purple-600 border-2' : ''}`}>
-            <img src={memento} alt="Example" class="w-full h-full object-cover rounded-lg" />
-          </motion.div> */}
           <BusinessCard imgSrc={memento} name={"[MEMENTO]"} link={"https://www.brasseriememento.com/"} />
           <BusinessCard imgSrc={brix} name={"[BRIX]"} link={"https://brixmtl.com/"} />
           <BusinessCard imgSrc={offTheTop} name={"[OFFTHETOP]"} link={"https://www.studiooffthetop.com/"} />

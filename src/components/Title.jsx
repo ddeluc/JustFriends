@@ -1,6 +1,5 @@
-import { motion, transform } from "framer-motion";
+import { motion } from "framer-motion";
 
-import { moveTitle } from "../utils/motion";
 import { styles } from "../styles";
 import { demomode } from "../constants";
 

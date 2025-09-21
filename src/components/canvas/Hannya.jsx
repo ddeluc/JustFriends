@@ -1,16 +1,12 @@
-import React, { Suspense, useEffect, useState, useRef } from "react";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { Plane } from '@react-three/drei';
-import { MathUtils } from "three";
-import { OrbitControls, Preload, useGLTF, PresentationControls, Environment } from "@react-three/drei";
+import { Suspense, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { useGLTF, Environment } from "@react-three/drei";
 import * as THREE from 'three';
 
 import { styles } from "../../styles";
 
 import CanvasLoader from "../Loader";
 import { demomode } from "../../constants";
-import { color } from "framer-motion";
-import { shininess } from "three/examples/jsm/nodes/Nodes.js";
 
 const demobox = demomode ? styles.demo.canvas : {};
 

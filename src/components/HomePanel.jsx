@@ -1,21 +1,9 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 import { demomode } from "../constants";
-
-import Volumes from "./Volumes";
-import Service from "./Service";
-
-import oceanWaves1 from '../assets/videos/oceanWaves1.mp4';
-import kuroko1 from '../assets/videos/Kuroko1.mp4';
-import AkiraCity3 from '../assets/videos/AkiraCity3.mp4';
-import animatedDJ from '../assets/animatedVideos/Anime_DJ_Mixing_JF.mp4';
-
-import { HannyaCanvas } from "./canvas";
-import { init } from "@emailjs/browser";
-import MenuItem from "./Menu/MenuItem";
 
 const demobox = demomode ? styles.demo.landing : {};
 

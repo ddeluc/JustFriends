@@ -1,12 +1,5 @@
-import akiraClip1 from '../assets/videos/Akira1.mp4';
-import champlooClip1 from '../assets/videos/SamuraiChamploo1.mp4';
 import oceanWaves1 from '../assets/videos/oceanWaves1.mp4';
 import whiteNoise from '../assets/videos/WhiteNoise/whiteNoise.mp4'
-import kuroko1 from '../assets/videos/Kuroko1.mp4';
-import cowboy1 from '../assets/videos/Cowboy1.mp4';
-import cityTrain from '../assets/videos/CityTrain.mp4';
-import farine from '../assets/videos/farinefiveroses.mp4';
-import promo from '../assets/volumes/promo1.mp4';
 import animatedDJ from '../assets/animatedVideos/Anime_DJ_Mixing_JF.mp4';
 import AkiraCity3 from '../assets/videos/AkiraCity3.mp4';
 
@@ -21,7 +14,6 @@ import shortVol2 from '../assets/videos/VolumesShort/shortVol2.mp4';
 import shortVol3 from '../assets/videos/VolumesShort/shortVol3.mp4';
 import shortVol4 from '../assets/videos/VolumesShort/shortVol4.mp4';
 import shortVol5 from '../assets/videos/VolumesShort/shortVol5.mp4';
-import { texture } from 'three/examples/jsm/nodes/Nodes.js';
 
 export const navLinks = [
   {
