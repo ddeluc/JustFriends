@@ -49,7 +49,7 @@ const Home = ({}) => {
   
   return (
     <section 
-      className={`relative w-screen h-[350vh] bg-primary`}
+      className={`relative w-[100wh] h-[350vh] bg-primary`}
       style={demobox}
       ref={container}
       key={1}
@@ -58,7 +58,7 @@ const Home = ({}) => {
       <Hero parentScrollYProgress={scrollYProgress} />
       
       
-      <div className={`relative w-full h-screen flex gap-2 bg-primary`}>
+      <div className={`relative w-full h-[100vh] flex gap-2 bg-primary`}>
         <Navbar />
         <HomePanel vidSrc={homePanels[0].vidSrc} titleEng={homePanels[0].titleEng} titleJap={homePanels[0].titleJap} link={homePanels[0].link} />
         <HomePanel vidSrc={homePanels[1].vidSrc} titleEng={homePanels[1].titleEng} titleJap={homePanels[1].titleJap} link={homePanels[1].link} />
@@ -89,7 +89,7 @@ const Hero = ({ parentScrollYProgress }) => {
   }, []);
 
   return (
-    <motion.div className={`sticky top-0 w-screen h-[250vh] bg-primary`}
+    <motion.div className={`sticky top-0 w-full h-[250vh] bg-primary`}
       ref={container}
     >
       <video
@@ -101,7 +101,7 @@ const Hero = ({ parentScrollYProgress }) => {
         loop
         muted
       />
-      <div className={`sticky top-0 overflow-x-hidden overflow-y-hidden h-screen flex flex-col`}>
+      <div className={`sticky top-0 w-full h-[100vh] flex flex-col`}>
         <motion.div className={`flex justify-center h-[50vh] items-center ${demomode ? 'border-blue-600 border-2' : ''}`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { delay: 0.5, duration: 4 }}}
@@ -112,15 +112,9 @@ const Hero = ({ parentScrollYProgress }) => {
           >
             コネクション
           </motion.span>
-          {/* <motion.span className={`absolute text-[1.5vw] text-yellow-400 font-noto-mono top-8`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { delay: 4.5, duration: 0 }}}
-          >
-            {"[CONNECTION]"}
-          </motion.span> */}
         </motion.div>
 
-        <motion.div className={`absolute flex flex-col top-0 h-screen items-center justify-center`}>
+        <motion.div className={`absolute flex flex-col top-0 h-full items-center justify-center`}>
           <motion.p className={`font-noto-mono text-[18px] max-w-6/20 font-light text-center`}
             style={{ opacity: aboutTextOpacity }}  
           >
@@ -137,7 +131,7 @@ const Hero = ({ parentScrollYProgress }) => {
             style={{ y: imagePositionY, rotate: 2 }}
           />
 
-          <motion.img src={saxaphone} alt="DJ" className={`absolute -bottom-44 rotate-3 right-0 grayscale w-[37vw] brightness-60 drop-shadow-xl`} 
+          <motion.img src={saxaphone} alt="DJ" className={`absolute -bottom-3/20 rotate-3 right-[2%] grayscale w-[32vw] brightness-60 drop-shadow-xl`} 
             style={{ y: imagePositionY, rotate: -4 }}
           />
 
@@ -145,7 +139,7 @@ const Hero = ({ parentScrollYProgress }) => {
             style={{ y: imagePositionY }}
           />
 
-          <motion.img src={man} alt="DJ" className={`absolute rotate-3 bottom-0 -right-14 grayscale w-[32vw] brightness-60 drop-shadow-xl`}  
+          <motion.img src={man} alt="DJ" className={`absolute rotate-3 bottom-0 right-2 grayscale w-[30vw] brightness-60 drop-shadow-xl`}  
             style={{ y: imagePositionY }}
           />
 
