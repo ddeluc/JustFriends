@@ -52,7 +52,6 @@ const Service = () => {
     if (videoGrainRef.current) {
       videoGrainRef.current.playbackRate = 0.4;
     }
-    // window.scrollTo({ top: 0, behavior: "instant"});
   }, []);
 
   return (

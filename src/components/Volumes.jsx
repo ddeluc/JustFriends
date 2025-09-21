@@ -31,45 +31,86 @@ const volumeSelectionChildVariants = {
 }
 
 const VideoCard = ({ volume }) => {
-  const videoRef = useRef(null);
+  const previewVid = useRef(null);
+  const fullVid = useRef(null)
   const [hovered, setHovered] = useState(false);
-  
+  const [play, setPlay] = useState(false);
+
+  useEffect(() => {
+    if (play) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+  }, [play])
 
   return (
-    <motion.div className={`pb-8 relative ${demomode ? 'border-purple-600 border-2' : ''}`} 
-      whileHover="hover" 
-      initial="initial"
-      onHoverStart={() => setHovered(true)}
-      onHoverEnd={() => setHovered(false)}
-      onClick={() => window.open("https://www.instagram.com/justfriends.zz/", "_blank", "noopener,noreferrer")}
-    >
-      {hovered && (
-        <video
-          style={demobox}
-          className={`top-0 left-0 w-full h-full absolute object-cover ${volume.active ? "brightness-50" : "brightness-25"}`}
-          src={volume.src} 
-          autoPlay  
-          loop
-          muted
-          ref={videoRef}
-        />  
-      )}      
-      <motion.hr className={`relative border-t-2 border-white my-4`}></motion.hr>
-      <motion.div className={`mx-4 relative flex justify-between mb-4`} >
-        <motion.div variants={volumeSelectionParentVariants} transition={{ type: "tween"}}>
-          <motion.p className={`font-dot-gothic font-bold text-[36px] ${demomode ? 'border-purple-600 border-2' : ''}`}>
-            V O L {volume.id} • <motion.span className={`text-red-600 font-dot-gothic ${hovered && volume.active ? 'drop-shadow-glow-red-xs' : ''}`}>{volume.titleJap}</motion.span>
-          </motion.p>
-          <motion.div className={`font-dot-gothic text-[24px]`} variants={volumeSelectionChildVariants}>{volume.location}</motion.div>
-        </motion.div>
-        <motion.div className={`font-dot-gothic text-[24px] ${demomode ? 'border-purple-600 border-2' : ''}`}>{volume.date}</motion.div>
-      </motion.div>          
-    </motion.div>
+    <>
+      <motion.div className={`pb-8 relative ${play && 'z-20'} ${demomode ? 'border-purple-600 border-2' : ''}`} 
+        whileHover="hover" 
+        initial="initial"
+        onHoverStart={() => setHovered(true)}
+        onHoverEnd={() => setHovered(false)}
+        onClick={() => {if (volume.active) setPlay(true)}}
+      >
+        {hovered && (
+          <video
+            style={demobox}
+            className={`top-0 left-0 w-full h-full absolute object-cover ${volume.active ? "brightness-50" : "brightness-25"}`}
+            src={volume.src} 
+            autoPlay  
+            loop
+            muted
+            ref={previewVid}
+          />  
+        )}      
+        <motion.hr className={`relative border-t-2 border-white my-4`}></motion.hr>
+        <motion.div className={`mx-4 relative flex justify-between mb-4`} >
+          <motion.div variants={volumeSelectionParentVariants} transition={{ type: "tween"}}>
+            <motion.p className={`font-dot-gothic font-bold text-[36px] ${demomode ? 'border-purple-600 border-2' : ''}`}>
+              V O L {volume.id} • <motion.span className={`text-red-600 font-dot-gothic ${hovered && volume.active ? 'drop-shadow-glow-red-xs' : ''}`}>{volume.titleJap}</motion.span>
+            </motion.p>
+            <motion.div className={`font-dot-gothic text-[24px]`} variants={volumeSelectionChildVariants}>{volume.location}</motion.div>
+          </motion.div>
+          <motion.div className={`font-dot-gothic text-[24px] ${demomode ? 'border-purple-600 border-2' : ''}`}>{volume.date}</motion.div>
+        </motion.div>        
+      </motion.div>
+
+      {play && (
+        <div className={`fixed inset-0 bg-black bg-opacity-90 z-30 flex items-center justify-center`}
+          onClick={() => setPlay(false)}
+        >
+          <div className={`relative`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <video
+              style={demobox}
+              className={`h-[90vh] ${volume.active ? "brightness-50" : "brightness-25"}`}
+              src={volume.src} 
+              autoPlay  
+              loop
+              ref={fullVid}
+              onClick={() => {
+                if (fullVid.current) {
+                  if (fullVid.current.paused) {
+                    fullVid.current.play();
+                  } else {
+                    fullVid.current.pause();
+                  }
+                }
+              }}    
+            />  
+          </div>
+          
+        </div>
+      )}
+    </>
+    
   )
 }
 
-
-const Volumes = ({ setSelectedIndex }) => {  
+const Volumes = ({  }) => {  
   const videoRef = useRef();
   const videoGrainRef = useRef();
   const [videoIndex, setVideoIndex] = useState(0);
@@ -116,6 +157,8 @@ const Volumes = ({ setSelectedIndex }) => {
       key={1}
     >
       <Navbar />
+
+      {/* TITLE */}
       <div className={`relative flex flex-col p-20 gap-20 items-center ${demomode ? 'border-purple-600 border-2' : ''}`}>
         <video
           style={demobox}
@@ -127,7 +170,7 @@ const Volumes = ({ setSelectedIndex }) => {
           muted
         />
 
-        <motion.div className={`relative flex gap-2 z-30 ${demomode ? 'border-purple-600 border-2' : ''}`}>
+        <motion.div className={`relative flex gap-2 ${demomode ? 'border-purple-600 border-2' : ''}`}>
           <motion.span className={`relative inline-block font-anton text-[160px] ${demomode ? 'border-purple-600 border-2' : ''}`}>VOLUMES</motion.span>
           <motion.span className={`relative inline-block font-mochiy drop-shadow-glow-red-sm text-red-600 text-[148px] ${demomode ? 'border-purple-600 border-2' : ''}`}>接続
             {/* <motion.span>接</motion.span>
@@ -137,26 +180,20 @@ const Volumes = ({ setSelectedIndex }) => {
 
         <motion.p className={`relative font-noto-mono max-w-10/20 font-light text-center ${demomode ? 'border-purple-600 border-2' : ''}`}>
           {volumesDescription}
-        </motion.p>
-        
-      </div>
-
-      {/* <div className={`relative flex flex-col items-center p-20 ${demomode ? 'border-purple-600 border-2' : ''}`}>
-        <motion.p className={`relative font-noto-mono max-w-10/20 font-light text-center ${demomode ? 'border-purple-600 border-2' : ''}`}>
-          {volumesDescription}
-        </motion.p>
-      </div> */}
-      
-      <div className={`w-full`}>
-        <div className={`relative p-20 pointr-default ${demomode ? 'border-purple-600 border-2' : ''}`}>
-          {volumesVideoArray.map((volume) => (
-            <VideoCard volume={volume} />
-          ))}
-        </div>
+        </motion.p>        
       </div>
       
-      <div className={`border-b-2 border-white max-w-16 w-full`}/>
+      {/* VOLUMES LIST */}
+      <div className={`relative z-10 w-full p-20`}>
+        {volumesVideoArray.map((volume) => (          
+          <VideoCard volume={volume} />                   
+        ))}
+      </div>
+      
+      {/* LINE */}
+      <div className={`relative border-b-2 border-white max-w-16 w-full`}/>
         
+      {/* CONNECT */}
       <div className={`relative p-20`}>
         <Title titleEng={"CONNECT"} titleJap={"友情"} submitFunction={() => navigate('/connect')}/>
       </div>     
