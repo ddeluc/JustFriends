@@ -8,6 +8,7 @@ import { connectText } from "../constants";
 import { HannyaCanvas } from "./canvas";
 import Navbar from "./Navbar";
 import Title from "./Title";
+import Footer from "./Footer";
 
 import EmailForm from "./EmailForm";
 
@@ -27,28 +28,30 @@ const Connect = ({}) => {
 
 	return (
 		<section 
-			className={`relative overflow-x-hidden min-h-[100vh] w-screen items-center gap-20 justify-center flex flex-col bg-primary`}
+			className={`relative overflow-x-hidden overflow-y-hidden min-h-screen items-center flex flex-col pb-20 bg-primary`}
 			style={demobox}
 			key={1}
 		>
       <Navbar />
-      <motion.div className={`relative z-20 mt-32`}
+
+      <motion.div className={`relative flex flex-col p-20 z-20 w-full gap-18 items-center ${demomode ? 'border-purple-600 border-2' : ''}`}
         onHoverStart={() => setHovered(true)}
         onHoverEnd={() => setHovered(false)}
       >
-        <motion.h1 className={`relative font-mochiy font-bold z-20 text-[120px] text-white ${demomode ? 'border-purple-600 border-2' : ''}`}
+        <motion.h1 className={`relative font-mochiy font-bold text-[120px] z-10 text-white ${demomode ? 'border-purple-600 border-2' : ''}`}
           animate={{ y: hovered ? 10 : 0, transition: { duration: 0.25, type: "spring", bounce: 0 } }}
         >
           シ ナ ジ ー
         </motion.h1>
-        <motion.span className={`absolute left-1/2 -top-5 text-yellow-400 font-noto-mono ${demomode ? 'border-purple-600 border-2' : ''}`}
+        <motion.span className={`absolute left-1/2 top-10 text-yellow-400 z-10 font-noto-mono ${demomode ? 'border-purple-600 border-2' : ''}`}
           animate={{ x: "-50%", opacity: hovered ? 1 : 0, y: hovered ? 25 : 0, transition: { duration: 0.25, type: "spring", bounce: 0 } }}
         >
           {`[CONNECT]`}
         </motion.span>
+        
       </motion.div>
       
-      <div className={`flex flex-col items-center z-20 gap-10`}>
+      <div className={`relative flex flex-col items-center z-20 gap-10 p-20`}>
         <motion.p className={`relative font-noto-mono z-20 text-center ${demomode ? 'border-purple-600 border-2' : ''}`}>
           {connectText}
         </motion.p>    
@@ -62,6 +65,7 @@ const Connect = ({}) => {
 
       </div>
       
+      
         
       <video
         style={demobox}
@@ -72,7 +76,12 @@ const Connect = ({}) => {
         loop
         muted
       />
-      <HannyaCanvas hScale={18} hpx={0} hpy={-0.2} hpz={0} />
+
+      <div className={`absolute top-0 left-0 w-full h-full max-h-[100vh] ${demomode ? 'border-purple-600 border-2' : ''}`}>
+        <HannyaCanvas hScale={18} hpx={0} hpy={0} hpz={0} />
+      </div>
+      
+      <Footer />
 		</section>
 	);
 }

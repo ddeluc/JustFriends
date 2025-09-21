@@ -21,6 +21,7 @@ import shortVol2 from '../assets/videos/VolumesShort/shortVol2.mp4';
 import shortVol3 from '../assets/videos/VolumesShort/shortVol3.mp4';
 import shortVol4 from '../assets/videos/VolumesShort/shortVol4.mp4';
 import shortVol5 from '../assets/videos/VolumesShort/shortVol5.mp4';
+import { texture } from 'three/examples/jsm/nodes/Nodes.js';
 
 export const navLinks = [
   {

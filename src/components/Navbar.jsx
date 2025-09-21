@@ -20,7 +20,7 @@ const Navbar = ({ setSelectedItem, selectedItem }) => {
 
   return (
     <nav
-      className={`py-6 px-12 w-full flex items-center fixed top-0 bg-transparent z-20`}
+      className={`p-3 px-6 w-full flex items-center justify-between fixed top-0 bg-transparent z-50`}
       style={demobox}
     >
       <motion.div 
@@ -33,7 +33,10 @@ const Navbar = ({ setSelectedItem, selectedItem }) => {
       >
         JF.
       </motion.div>
-        
+      <div className={`flex gap-4 justify-evenly text-[18px]`}> 
+        <motion.div className={`font-noto-mono`}>{`EMAIL`}</motion.div>
+        <motion.div className={`font-noto-mono`}>{`INSTAGRAM`}</motion.div>
+      </div>
     </nav>
   ); 
 }

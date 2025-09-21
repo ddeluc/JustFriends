@@ -48,7 +48,7 @@ const Hannya = ({ scale, px, py, pz }) => {
 const HannyaCanvas = ({ hScale, hpx, hpy, hpz}) => {
 
   return (
-    <div style={demobox} className={`absolute top-0 left-0 w-full h-full`}>
+    <div style={demobox} className={`relative w-full h-full`}>
       <Canvas
         className={` border-red-500`}
         style={demobox}

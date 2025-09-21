@@ -11,6 +11,7 @@ import { demomode, volumesVideoArray } from "../constants";
 import { volumesDescription } from "../constants";
 import Navbar from "./Navbar";
 import Title from "./Title";
+import Footer from "./Footer";
 
 import coverImg from "../assets/photos/volumeCovers/Vol1CoverGib.png"
 import vol1 from "../assets/videos/Volumes/Vol2.mp4"
@@ -109,7 +110,7 @@ const Volumes = ({ setSelectedIndex }) => {
 
   return (
     <section 
-      className={`relative overflow-x-hidden overflow-y-hidden flex flex-col items-center bg-primary`}
+      className={`relative overflow-x-hidden overflow-y-hidden flex flex-col items-center pb-20 bg-primary`}
       style={demobox}
       key={1}
     >
@@ -155,10 +156,11 @@ const Volumes = ({ setSelectedIndex }) => {
       
       <div className={`border-b-2 border-white max-w-16 w-full`}/>
         
-      <div className={`p-20`}>
+      <div className={`relative p-20`}>
         <Title titleEng={"CONNECT"} titleJap={"友情"} submitFunction={() => navigate('/connect')}/>
       </div>     
       
+      <Footer />
     </section>
   )
 };

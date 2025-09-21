@@ -7,6 +7,7 @@ import Card from "./Card";
 import EmailForm from "./EmailForm";
 import Navbar from "./Navbar";
 import Title from "./Title";
+import Footer from "./Footer";
 
 import { demomode, serviceCards } from "../constants";
 import backroundVideo from '../assets/volumes/promo1.mp4';
@@ -57,7 +58,7 @@ const Service = () => {
   return (
     
     <section 
-      className={`relative overflow-x-hidden overflow-y-hidden items-center flex flex-col bg-primary`}
+      className={`relative overflow-x-hidden overflow-y-hidden items-center flex flex-col bg-primary pb-20`}
       style={demobox}
       key={1}
     >
@@ -110,7 +111,8 @@ const Service = () => {
       <div className={`p-20`}>
         <Title titleEng={"CONNECT"} titleJap={"友情"} submitFunction={() => navigate('/connect')}/>
       </div>      
-      
+          
+      <Footer />
     </section>   
   );
 };

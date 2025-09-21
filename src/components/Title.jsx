@@ -12,8 +12,11 @@ const Title = ({ titleEng, titleJap, submitFunction }) => {
   return (
     <motion.div 
       className={`text-white 
-      cursor-pointer whitespace-nowrap overflow-hidden relative`} 
-      style={demobox}
+      cursor-pointer whitespace-nowrap overflow-hidden relative px-4 rounded-lg border-2 border-white`} 
+      variants={{
+        initial: { borderColor: "#ffffff" },
+        hovered: { borderColor: "#dc2626" },
+      }}
       onClick={submitFunction}
       initial="initial"
       whileHover="hovered"

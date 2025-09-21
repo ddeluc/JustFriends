@@ -8,6 +8,7 @@ import { demomode } from "../constants";
 import Volumes from "./Volumes";
 import Service from "./Service";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 import oceanWaves1 from '../assets/videos/oceanWaves1.mp4';
 import kuroko1 from '../assets/videos/Kuroko1.mp4';
@@ -22,6 +23,7 @@ import business from "../assets/images/people/cutout/whiteOutline/business.png";
 import saxaphone from "../assets/images/people/cutout/whiteOutline/saxaphone.png";
 import girlTalking from "../assets/images/people/cutout/whiteOutline/girlTalking.png";
 import manHoldingProduct from "../assets/images/people/cutout/whiteOutline/manHoldingProduct.png";
+import couple from "../assets/images/people/cutout/whiteOutline/couple.png"
 import { aboutText } from "../constants";
 
 import { HannyaCanvas } from "./canvas";
@@ -47,24 +49,25 @@ const Home = ({}) => {
   
   return (
     <section 
-      className={`relative h-[300vh] bg-primary`}
+      className={`relative w-screen h-[350vh] bg-primary`}
       style={demobox}
       ref={container}
       key={1}
     >
-      
-        
 
       <Hero parentScrollYProgress={scrollYProgress} />
       
       
-      <div className={`relative w-screen h-screen flex gap-2 bg-primary`}>
+      <div className={`relative w-full h-screen flex gap-2 bg-primary`}>
         <Navbar />
         <HomePanel vidSrc={homePanels[0].vidSrc} titleEng={homePanels[0].titleEng} titleJap={homePanels[0].titleJap} link={homePanels[0].link} />
         <HomePanel vidSrc={homePanels[1].vidSrc} titleEng={homePanels[1].titleEng} titleJap={homePanels[1].titleJap} link={homePanels[1].link} />
         <HomePanel vidSrc={homePanels[2].vidSrc} titleEng={homePanels[2].titleEng} titleJap={homePanels[2].titleJap} link={homePanels[2].link} />
+        <div className={`absolute top-0 left-0 w-full h-full max-h-[100vh] ${demomode ? 'border-purple-600 border-2' : ''}`}>
+          <HannyaCanvas hScale={15} hpx={0} hpy={-0.35} hpz={0} />
+        </div>
       </div>
-      
+      <Footer />
     </section>    
   );
 };
@@ -74,6 +77,7 @@ const Hero = ({ parentScrollYProgress }) => {
   const container = useRef();
 
   const opacity = useTransform(parentScrollYProgress, [0.66, 0.75], [1, 0]);
+  const aboutTextOpacity = useTransform(parentScrollYProgress, [0, 0.25, 0.6, 0.75], [0, 1, 1, 0]);
   const imagePositionY = useTransform(parentScrollYProgress, [0, 0.33], ["0%", "100%"]);
   const titlePositionY = useTransform(parentScrollYProgress, [0, 0.33], ["0%", "-25%"]);
   const titleScale = useTransform(parentScrollYProgress, [0, 0.33], [1, 0.33]);
@@ -85,7 +89,7 @@ const Hero = ({ parentScrollYProgress }) => {
   }, []);
 
   return (
-    <motion.div className={`sticky top-0 w-screen h-[200vh] bg-primary`}
+    <motion.div className={`sticky top-0 w-screen h-[250vh] bg-primary`}
       ref={container}
     >
       <video
@@ -108,40 +112,52 @@ const Hero = ({ parentScrollYProgress }) => {
           >
             コネクション
           </motion.span>
-          <motion.span className={`absolute text-[1.5vw] text-yellow-400 font-noto-mono top-8`}
+          {/* <motion.span className={`absolute text-[1.5vw] text-yellow-400 font-noto-mono top-8`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { delay: 4.5, duration: 0 }}}
           >
             {"[CONNECTION]"}
-          </motion.span>
+          </motion.span> */}
         </motion.div>
 
-        {/* <motion.div className={`absolute flex flex-col top-0 h-screen items-center justify-center`}>
-          <motion.p className={`font-noto-mono text-[18px] max-w-6/20 font-light text-center`}>
+        <motion.div className={`absolute flex flex-col top-0 h-screen items-center justify-center`}>
+          <motion.p className={`font-noto-mono text-[18px] max-w-6/20 font-light text-center`}
+            style={{ opacity: aboutTextOpacity }}  
+          >
             {aboutText}
           </motion.p>
-        </motion.div> */}
+        </motion.div>
        
-    
-        <motion.img src={saxaphone} alt="DJ" className={`absolute bottom-0 rotate-8 -left-4 grayscale w-[30vw] brightness-60 drop-shadow-xl`} 
-          style={{ y: imagePositionY, opacity: opacity}}
-        />
+        <div className={``}>
+          <motion.img src={girlTalking} alt="DJ" className={`absolute bottom-1/20 left-[10%] grayscale w-[26vw] brightness-60 drop-shadow-xl`} 
+            style={{ y: imagePositionY, rotate: 2 }}
+          />
+
+          <motion.img src={dj} alt="DJ" className={`absolute -bottom-[8%] -left-[5%] grayscale w-[35vw] brightness-60 drop-shadow-xl`} 
+            style={{ y: imagePositionY, rotate: 2 }}
+          />
+
+          <motion.img src={saxaphone} alt="DJ" className={`absolute -bottom-44 rotate-3 right-0 grayscale w-[37vw] brightness-60 drop-shadow-xl`} 
+            style={{ y: imagePositionY, rotate: -4 }}
+          />
+
+          <motion.img src={manHoldingProduct} alt="DJ" className={`absolute -bottom-16 rotate-3 right-6/20 grayscale w-[28vw] brightness-60 drop-shadow-xl`} 
+            style={{ y: imagePositionY }}
+          />
+
+          <motion.img src={man} alt="DJ" className={`absolute rotate-3 bottom-0 -right-14 grayscale w-[32vw] brightness-60 drop-shadow-xl`}  
+            style={{ y: imagePositionY }}
+          />
+
+          <motion.img src={couple} alt="DJ" className={`absolute bottom-0 right-4/20 grayscale w-[28vw] brightness-60 drop-shadow-xl`} 
+            style={{ y: imagePositionY }}
+          />
+
+          <motion.img src={handShake} alt="DJ" className={`absolute bottom-0 rotate-8 left-4/20 grayscale w-[32vw] brightness-60 drop-shadow-xl`} 
+            style={{ y: imagePositionY }}
+          />
+        </div>
         
-        <motion.img src={handShake} alt="DJ" className={`absolute bottom-0 rotate-8 right-1/2 grayscale w-[32vw] brightness-60 drop-shadow-xl`} 
-          style={{ y: imagePositionY, opacity: opacity}}
-        />
-
-        <motion.img src={man} alt="DJ" className={`absolute rotate-3 bottom-0 -right-14 grayscale w-[37vw] brightness-60 drop-shadow-xl`}  
-          style={{ y: imagePositionY, opacity: opacity}}
-        />
-
-        <motion.img src={dj} alt="DJ" className={`absolute -bottom-44 rotate-3 right-20 grayscale w-[37vw] brightness-60 drop-shadow-xl`} 
-          style={{ y: imagePositionY, opacity: opacity}}
-        />
-
-        <motion.img src={manHoldingProduct} alt="DJ" className={`absolute -bottom-24 rotate-3 right-96 grayscale w-[28vw] brightness-60 drop-shadow-xl`} 
-          style={{ y: imagePositionY, opacity: opacity}}
-        />
       </div>
       
       

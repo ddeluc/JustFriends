@@ -31,7 +31,7 @@ const HomePanel = ({ vidSrc, titleEng, titleJap, link }) => {
     >
      
                   
-      <motion.div className={`relative mt-20 flex justify-center ${demomode ? 'border-blue-600 border-2' : ''} z-30`}>
+      <motion.div className={`relative mt-24 flex justify-center ${demomode ? 'border-blue-600 border-2' : ''} z-30`}>
         <motion.h1 className={`relative font-anton text-[110px] text-white ${demomode ? 'border-purple-600 border-2' : ''} ${hovered === 1 ? '' : 'text-gray-400 brightness-75'}`}>
           {titleEng}
         </motion.h1>
