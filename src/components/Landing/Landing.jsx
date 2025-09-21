@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
 import LandingHome from "./LandingHome";
 import LandingStatic from "./LandingStatic";
 
-const Landing = ({ setOnLanding, state, setState, setNextState }) => {
+const Landing = ({ }) => {
+  const [state, setState] = useState(1);
 
   return (
-    <>
-      {state == 1 && <LandingHome setState={setState} setNextState={setNextState} />}
-      {state == 0 && <LandingStatic setOnLanding={setOnLanding} setState={setState} setNextState={setNextState} />}
-    </>    
+    <div>
+      {state == 1 && <LandingHome setState={setState} />}
+      {state == 0 && <LandingStatic />}
+    </div>    
   );    
 };
 

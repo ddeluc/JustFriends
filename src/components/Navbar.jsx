@@ -20,13 +20,12 @@ const Navbar = ({ setSelectedItem, selectedItem }) => {
 
   return (
     <nav
-      className={`p-3 px-6 w-full flex items-center justify-between fixed top-0 bg-transparent z-50`}
+      className={`p-3 px-6 w-full flex items-center justify-between fixed top-0 bg-transparent z-50 cursor-default`}
       style={demobox}
     >
-      <motion.div 
-        style={demobox} 
-        className={`font-shrikhand text-[42px] pointer-default`}
-        onClick={() => navigate('/home')}
+      <motion.div  
+        className={`font-shrikhand text-[42px]`}
+        onClick={() => navigate('/home#menu')}
         onHoverStart={() => setHovered(true)}
         onHoverEnd={() => setHovered(false)}
         animate={{ opacity: hovered ? 1 : 0.75, transition: { duration: 0.1 } }}
@@ -34,8 +33,8 @@ const Navbar = ({ setSelectedItem, selectedItem }) => {
         JF.
       </motion.div>
       <div className={`flex gap-4 justify-evenly text-[18px]`}> 
-        <motion.div className={`font-noto-mono`}>{`EMAIL`}</motion.div>
-        <motion.div className={`font-noto-mono`}>{`INSTAGRAM`}</motion.div>
+        <motion.a href="mailto:hello@justfriends.com" target="_blank" rel="noopener noreferrer" className={`font-noto-mono cursor-default`}>{`EMAIL`}</motion.a>
+        <motion.a href="https://www.instagram.com/justfriends.zz/" target="_blank" rel="noopener noreferrer" className={`font-noto-mono cursor-default`}>{`INSTAGRAM`}</motion.a>
       </div>
     </nav>
   ); 

@@ -24,7 +24,7 @@ const HomePanel = ({ vidSrc, titleEng, titleJap, link }) => {
   const navigate = useNavigate();
   
   return (
-    <motion.div className={`flex-none flex-col relative h-full flex-grow `} style={demobox}
+    <motion.div className={`flex-none flex-col relative h-full flex-grow cursor-default`} style={demobox}
         onClick={() => navigate(link)}
         onHoverStart={() => setHovered(1)}
         onHoverEnd={() => setHovered(null)}

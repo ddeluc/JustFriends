@@ -8,7 +8,7 @@ import whiteNoise from '../../assets/videos/WhiteNoise/whiteNoise.mp4'
 
 const demobox = demomode ? styles.demo.landing : {};
 
-const LandingStatic = ({ setOnLanding, setState, setNextState }) => {
+const LandingStatic = ({  }) => {
 
   const staticVideo = useRef();
   const navigate = useNavigate();

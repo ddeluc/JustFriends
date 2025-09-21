@@ -22,8 +22,8 @@ const Connect = ({}) => {
    
     if (videoGrainRef.current) {
       videoGrainRef.current.playbackRate = 0.35;
-      window.scrollTo(0, 0);
     }
+    // window.scrollTo({ top: 0, behavior: "instant" });
   }, []);
 
 	return (

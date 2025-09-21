@@ -41,6 +41,7 @@ const VideoCard = ({ volume }) => {
       initial="initial"
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
+      onClick={() => window.open("https://www.instagram.com/justfriends.zz/", "_blank", "noopener,noreferrer")}
     >
       {hovered && (
         <video
@@ -78,9 +79,9 @@ const Volumes = ({ setSelectedIndex }) => {
     changeVideoSource();
     if (videoGrainRef.current) {
       videoGrainRef.current.playbackRate = 0.4;
-      window.scrollTo(0, 0);
     }
-  }, [videoIndex]);
+    // window.scrollTo({ top: 0, behavior: "instant"});
+  }, []);
 
   const incrementVideoIndex = () => {
     let nextIndex = Math.abs(videoIndex + 1) % 5;
@@ -147,7 +148,7 @@ const Volumes = ({ setSelectedIndex }) => {
       </div> */}
       
       <div className={`w-full`}>
-        <div className={`relative p-20 ${demomode ? 'border-purple-600 border-2' : ''}`}>
+        <div className={`relative p-20 pointr-default ${demomode ? 'border-purple-600 border-2' : ''}`}>
           {volumesVideoArray.map((volume) => (
             <VideoCard volume={volume} />
           ))}

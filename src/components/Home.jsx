@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 import { styles } from "../styles";
@@ -36,15 +36,26 @@ const demobox = demomode ? styles.demo.landing : {};
 
 const Home = ({}) => {
   const container = useRef();
+  const { pathname, hash } = useLocation();
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start start", "end end"]
   });
 
-  const opacity = useTransform(scrollYProgress, [0.6, 1], [1, 0.25]);
-
   useEffect(() => {
-    
+    // console.log(hash);
+    // if (hash) {
+    //   // Scroll to the element matching the hash
+    //   const el = document.querySelector(hash);
+    //   if (el) {
+    //     const y = el.getBoundingClientRect().top;
+    //     console.log(y);
+    //     window.scrollTo({ top: y, behavior: "instant" });
+    //   }
+    // } else {
+    //   // Default: top of page
+    //   window.scrollTo(0, 0);
+    // }
   }, []);
   
   return (
@@ -58,7 +69,7 @@ const Home = ({}) => {
       <Hero parentScrollYProgress={scrollYProgress} />
       
       
-      <div className={`relative w-full h-[100vh] flex gap-2 bg-primary`}>
+      <div id="menu" className={`relative w-full h-[100vh] flex gap-2 bg-primary`}>
         <Navbar />
         <HomePanel vidSrc={homePanels[0].vidSrc} titleEng={homePanels[0].titleEng} titleJap={homePanels[0].titleJap} link={homePanels[0].link} />
         <HomePanel vidSrc={homePanels[1].vidSrc} titleEng={homePanels[1].titleEng} titleJap={homePanels[1].titleJap} link={homePanels[1].link} />
@@ -104,7 +115,7 @@ const Hero = ({ parentScrollYProgress }) => {
       <div className={`sticky top-0 w-full h-[100vh] flex flex-col`}>
         <motion.div className={`flex justify-center h-[50vh] items-center ${demomode ? 'border-blue-600 border-2' : ''}`}
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { delay: 0.5, duration: 4 }}}
+          animate={{ opacity: 1, transition: { delay: 0.5, duration: 1 }}}
           style={{ opacity: opacity}}
         >
           <motion.span className={`font-mochiy font-bold text-[15vw] text-red-600 drop-shadow-glow-red-lg`}
@@ -139,7 +150,7 @@ const Hero = ({ parentScrollYProgress }) => {
             style={{ y: imagePositionY }}
           />
 
-          <motion.img src={man} alt="DJ" className={`absolute rotate-3 bottom-0 right-2 grayscale w-[30vw] brightness-60 drop-shadow-xl`}  
+          <motion.img src={man} alt="DJ" className={`absolute rotate-3 bottom-0 right-0 grayscale w-[30vw] brightness-60 drop-shadow-xl`}  
             style={{ y: imagePositionY }}
           />
 

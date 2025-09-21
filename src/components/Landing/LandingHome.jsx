@@ -13,7 +13,8 @@ const demobox = demomode ? styles.demo.landing : {};
 const DURATION = 0.05;
 const STAGGER = 0.025;
 
-const LandingHome = ({ setState, setNextState }) => {
+const LandingHome = ({ setState }) => {
+  const navigate = useNavigate();
 
   const homeVideo = useRef();
 
@@ -21,10 +22,6 @@ const LandingHome = ({ setState, setNextState }) => {
   const titleJap = "友情"
   const subTitleJap2 = "思 い 出 づ く り"
 
-  const updateState = (next) => {
-    setNextState(next);
-    setState(0);
-  }
 
   return (
     <section 
@@ -39,7 +36,7 @@ const LandingHome = ({ setState, setNextState }) => {
       <motion.div  
         className={`flex flex-col justify-end cursor-default absolute select-none font-shrikhand`}
         style={demobox}
-        onClick={() => {updateState(2)}}
+        onClick={() => setState(0)}
         initial="initial"
         whileHover="hovered"
       >

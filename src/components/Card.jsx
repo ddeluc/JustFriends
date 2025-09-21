@@ -108,7 +108,7 @@ const Card = ({ title, content, kanji, translation }) => {
   });
   
   return (
-    <motion.div className={`relative flex-shrink-0 max-w-10/20 flex gap-4 p-4`}
+    <motion.div className={`relative flex-shrink-0 max-w-10/20 flex gap-4 p-4 cursor-default`}
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
       initial="inactive"

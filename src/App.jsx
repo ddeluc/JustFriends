@@ -1,30 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { HannyaCanvas } from "./components/canvas";
-import Service from "./components/Service";
+import { createBrowserRouter, RouterProvider, BrowserRouter } from "react-router-dom";
 
-import {
-  Landing,
-  Navbar,
-  Home,
-} from './components';
+import LandingHome from "./components/Landing/LandingHome";
+import Service from "./components/Service";
+import Volumes from "./components/Volumes";
+import Connect from "./components/Connect";
+import Home from "./components/Home";
+
+const router = createBrowserRouter([
+  {path: "/", element: <LandingHome />},
+  {path: "/service", element: <Service />},
+  {path: "/volumes", element: <Volumes />},
+  {path: "/connect", element: <Connect />},
+  {path: "/home", element: <Home />}
+]);
 
 const App = () => {
-  const [state, setState] = useState(1);
-  const [onLanding, setOnLanding] = useState(true);
-  const [nextState, setNextState] = useState(1);
-  const [selectedItem, setSelectedItem] = useState("None");
 
   return (
     <div className={`relative z-0 bg-primary`}>
-      
-      {onLanding && <Landing setOnLanding={setOnLanding} setState={setState} state={state} nextState={nextState} setNextState={setNextState}/>}
-      {!onLanding && 
-        <>
-          {/* <Navbar setSelectedItem={setSelectedItem} selectedItem={selectedItem} /> */}
-          {/* <HannyaCanvas hScale={16} hpx={0} hpy={-0.25} hpz={0} /> */}
-          <Home setSelectedItem={setSelectedItem} selectedItem={selectedItem} />
-        </>
-      }
+      <RouterProvider router={router} />
     </div>
   )
 }

@@ -22,14 +22,14 @@ import podcastSet from '../assets/images/people/laughing.png';
 
 const demobox = demomode ? styles.demo.landing : {};
 
-const BusinessCard = ({ imgSrc, name }) => {
+const BusinessCard = ({ imgSrc, name, link }) => {
   const [hovered, setHovered] = useState(false);
 
   return (
     <motion.div className={`relative w-48 h-auto border-2 border-white p-2 ${demomode ? 'border-purple-600 border-2' : ''}`} 
       // initial={{ y: 0 }}
       animate={{ y: hovered ? 10 : 0, backgroundColor: hovered ? "#dc2626" : "#000000", transition: { duration: 0.25, type: "spring", bounce: 0 } }}
-      
+      onClick={() => window.open(link, "_blank", "noopener,noreferrer")}
       onHoverEnd={() => setHovered(false)} 
       onHoverStart={() => setHovered(true)}
     >
@@ -51,8 +51,8 @@ const Service = () => {
   useEffect(() => {
     if (videoGrainRef.current) {
       videoGrainRef.current.playbackRate = 0.4;
-      window.scrollTo(0, 0);
     }
+    // window.scrollTo({ top: 0, behavior: "instant"});
   }, []);
 
   return (
@@ -100,9 +100,9 @@ const Service = () => {
           {/* <motion.div className={`h-64 ${demomode ? 'border-purple-600 border-2' : ''}`}>
             <img src={memento} alt="Example" class="w-full h-full object-cover rounded-lg" />
           </motion.div> */}
-          <BusinessCard imgSrc={memento} name={"[MEMENTO]"} />
-          <BusinessCard imgSrc={brix} name={"[BRIX]"} />
-          <BusinessCard imgSrc={offTheTop} name={"[OFFTHETOP]"} />
+          <BusinessCard imgSrc={memento} name={"[MEMENTO]"} link={"https://www.brasseriememento.com/"} />
+          <BusinessCard imgSrc={brix} name={"[BRIX]"} link={"https://brixmtl.com/"} />
+          <BusinessCard imgSrc={offTheTop} name={"[OFFTHETOP]"} link={"https://www.studiooffthetop.com/"} />
         </motion.div>
       </div>
 
