@@ -2,7 +2,7 @@ import React,{ useRef, useEffect } from "react";
 import { styles } from "../styles";
 import { motion } from "framer-motion";
 import { demomode } from "../constants";
-import grain from "../assets/videos/Effects/grainVid1.mp4";
+import { grain } from "../constants";
 
 import { connectText } from "../constants";
 import { HannyaCanvas } from "./canvas";

@@ -10,8 +10,8 @@ import Navbar from "./Navbar";
 import Title from "./Title";
 import Footer from "./Footer";
 
-import staticNoise from "../assets/videos/WhiteNoise/whiteNoise.mp4"
-import grain from "../assets/videos/Effects/grainVid1.mp4"
+const staticNoise = 'https://github.com/ddeluc/JustFriends/releases/download/v0.1.0-alpha/whiteNoise.mp4'
+import { grain } from "../constants";
 
 const demobox = demomode ? styles.demo.landing : {};
 
