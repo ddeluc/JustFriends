@@ -10,7 +10,8 @@ import Navbar from "./Navbar";
 import Title from "./Title";
 import Footer from "./Footer";
 
-const staticNoise = 'https://github.com/ddeluc/JustFriends/releases/download/v0.1.0-alpha/whiteNoise.mp4'
+import { whiteNoise } from "../constants";
+
 import { grain } from "../constants";
 
 const demobox = demomode ? styles.demo.landing : {};
@@ -138,7 +139,7 @@ const Volumes = ({  }) => {
 
   const changeVideoSource = () => {
     if (videoRef.current) {
-      videoRef.current.src = staticNoise;
+      videoRef.current.src = whiteNoise;
       videoRef.current.volume = 0.4;
       videoRef.current.load();
       videoRef.current.play();      

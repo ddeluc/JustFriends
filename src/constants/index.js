@@ -6,6 +6,8 @@
 // import vol4 from '../assets/videos/Volumes/Vol4.mp4';
 // import vol5 from '../assets/videos/Volumes/Vol5.mp4';
 
+export const whiteNoise = "https://github.com/ddeluc/JustFriends/releases/download/v0.1.0-alpha/whiteNoise.mp4"
+
 export const grain = "https://github.com/ddeluc/JustFriends/releases/download/v0.1.0-alpha/grainVid1.mp4"
 
 const shortVol1 = 'https://github.com/ddeluc/JustFriends/releases/download/v0.1.0-alpha/shortVol1.mp4';

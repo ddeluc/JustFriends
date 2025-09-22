@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { styles } from "../../styles";
 import { demomode } from "../../constants";
 
-const whiteNoise = 'https://github.com/ddeluc/JustFriends/releases/download/v0.1.0-alpha/whiteNoise.mp4'
+import { whiteNoise } from "../../constants";
 
 const demobox = demomode ? styles.demo.landing : {};
 
