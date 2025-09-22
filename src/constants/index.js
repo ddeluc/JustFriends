@@ -1,7 +1,3 @@
-import oceanWaves1 from '../assets/videos/oceanWaves1.mp4';
-import whiteNoise from '../assets/videos/WhiteNoise/whiteNoise.mp4'
-import animatedDJ from '../assets/animatedVideos/Anime_DJ_Mixing_JF.mp4';
-import AkiraCity3 from '../assets/videos/AkiraCity3.mp4';
 
 // PROD
 // import vol1 from '../assets/videos/Volumes/Vol1.mp4';

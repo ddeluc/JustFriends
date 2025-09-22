@@ -61,7 +61,6 @@ module.exports = {
         "main": "#ffffff"
       },
       backgroundImage: {
-        "hero-pattern": "url('/src/assets/animeclouds.jpeg')",
         "custom-gradient": "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(34,34,34,0.6923144257703081) 48%, rgba(0,0,0,1) 80%)",
       },
       fontFamily: {
