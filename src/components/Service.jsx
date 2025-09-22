@@ -9,11 +9,11 @@ import Title from "./Title";
 import Footer from "./Footer";
 
 import { demomode, serviceCards } from "../constants";
-import grain from "../assets/videos/Effects/grainVid1.mp4";
+import { grain } from "../constants";
 
-import memento from '../assets/images/logos/memento.png';
-import brix from '../assets/images/logos/brixWhite.svg';
-import offTheTop from '../assets/images/logos/offthetop.png';
+const memento = 'https://github.com/ddeluc/JustFriends/releases/download/v0.1.0-alpha/memento.png';
+const brix = 'https://github.com/ddeluc/JustFriends/releases/download/v0.1.0-alpha/brixWhite.svg';
+const offTheTop = 'https://github.com/ddeluc/JustFriends/releases/download/v0.1.0-alpha/offTheTop.png';
 
 const demobox = demomode ? styles.demo.landing : {};
 

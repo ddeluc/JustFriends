@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { styles } from "../../styles";
 import { demomode } from "../../constants";
 
-import volume2 from '../../assets/videos/landingPreviewWide.mp4';
+const volume2 = 'https://github.com/ddeluc/JustFriends/releases/download/v0.1.0-alpha/landingPreviewWide.mp4';
 
 
 const demobox = demomode ? styles.demo.landing : {};

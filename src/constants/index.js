@@ -10,11 +10,13 @@ import AkiraCity3 from '../assets/videos/AkiraCity3.mp4';
 // import vol4 from '../assets/videos/Volumes/Vol4.mp4';
 // import vol5 from '../assets/videos/Volumes/Vol5.mp4';
 
-import shortVol1 from '../assets/videos/VolumesShort/shortVol1.mp4';
-import shortVol2 from '../assets/videos/VolumesShort/shortVol2.mp4';
-import shortVol3 from '../assets/videos/VolumesShort/shortVol3.mp4';
-import shortVol4 from '../assets/videos/VolumesShort/shortVol4.mp4';
-import shortVol5 from '../assets/videos/VolumesShort/shortVol5.mp4';
+export const grain = "https://github.com/ddeluc/JustFriends/releases/download/v0.1.0-alpha/grainVid1.mp4"
+
+const shortVol1 = 'https://github.com/ddeluc/JustFriends/releases/download/v0.1.0-alpha/shortVol1.mp4';
+const shortVol2 = 'https://github.com/ddeluc/JustFriends/releases/download/v0.1.0-alpha/shortVol2.mp4';
+const shortVol3 = 'https://github.com/ddeluc/JustFriends/releases/download/v0.1.0-alpha/shortVol3.mp4';
+const shortVol4 = 'https://github.com/ddeluc/JustFriends/releases/download/v0.1.0-alpha/shortVol4.mp4';
+const shortVol5 = 'https://github.com/ddeluc/JustFriends/releases/download/v0.1.0-alpha/shortVol5.mp4';
 
 export const navLinks = [
   {
@@ -123,19 +125,19 @@ export const homePanels = [
   {
     titleEng: "SERVICE",
     titleJap: "コ ミ ュ ニ テ ィ",
-    vidSrc: animatedDJ,
+    vidSrc: "https://github.com/ddeluc/JustFriends/releases/download/v0.1.0-alpha/Anime_DJ_Mixing_JF.mp4",
     link: "/service",
   },
   {
     titleEng: "VOLUMES",
     titleJap: "コ ネ ク シ ョ ン",
-    vidSrc: AkiraCity3,
+    vidSrc: "https://github.com/ddeluc/JustFriends/releases/download/v0.1.0-alpha/AkiraCity3.mp4",
     link: "/volumes",
   },
   {
     titleEng: "CONNECT",
     titleJap: "シ ナ ジ ー",
-    vidSrc: oceanWaves1,
+    vidSrc: "https://github.com/ddeluc/JustFriends/releases/download/v0.1.0-alpha/OceanWaves1.mp4",
     link: "/connect",
   }
 ]

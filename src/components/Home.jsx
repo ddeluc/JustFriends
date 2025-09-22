@@ -7,16 +7,16 @@ import { demomode } from "../constants";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
-import grain from "../assets/videos/Effects/grainVid1.mp4"
+import { grain } from "../constants";
 
-// import dj from "https://drive.google.com/uc?export=download&id=1QSZ6bvSDjYAH951atjxtYWf2BgaYoOox"
-const dj = "https://res.cloudinary.com/dkynzp3h6/image/upload/v1758502251/dj_yhczx4.png"
-import handShake from "../assets/images/people/cutout/whiteOutline/handShake.png";
-import man from "../assets/images/people/cutout/whiteOutline/man.png";
-import saxaphone from "../assets/images/people/cutout/whiteOutline/saxaphone.png";
-import girlTalking from "../assets/images/people/cutout/whiteOutline/girlTalking.png";
-import manHoldingProduct from "../assets/images/people/cutout/whiteOutline/manHoldingProduct.png";
-import couple from "../assets/images/people/cutout/whiteOutline/couple.png"
+const dj = "https://github.com/ddeluc/JustFriends/releases/download/v0.1.0-alpha/dj.png"
+const handShake = "https://github.com/ddeluc/JustFriends/releases/download/v0.1.0-alpha/handShake.png";
+const man = "https://github.com/ddeluc/JustFriends/releases/download/v0.1.0-alpha/man.png";
+const saxaphone = "https://github.com/ddeluc/JustFriends/releases/download/v0.1.0-alpha/saxaphone.png";
+const girlTalking = "https://github.com/ddeluc/JustFriends/releases/download/v0.1.0-alpha/girlTalking.png";
+const manHoldingProduct = "https://github.com/ddeluc/JustFriends/releases/download/v0.1.0-alpha/manHoldingProduct.png";
+const couple = "https://github.com/ddeluc/JustFriends/releases/download/v0.1.0-alpha/couple.png"
+
 import { aboutText } from "../constants";
 
 import { HannyaCanvas } from "./canvas";
