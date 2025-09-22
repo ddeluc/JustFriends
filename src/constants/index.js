@@ -3,11 +3,12 @@ import whiteNoise from '../assets/videos/WhiteNoise/whiteNoise.mp4'
 import animatedDJ from '../assets/animatedVideos/Anime_DJ_Mixing_JF.mp4';
 import AkiraCity3 from '../assets/videos/AkiraCity3.mp4';
 
-import vol1 from '../assets/videos/Volumes/Vol1.mp4';
-import vol2 from '../assets/videos/Volumes/Vol2.mp4';
-import vol3 from '../assets/videos/Volumes/Vol3.mp4';
-import vol4 from '../assets/videos/Volumes/Vol4.mp4';
-import vol5 from '../assets/videos/Volumes/Vol5.mp4';
+// PROD
+// import vol1 from '../assets/videos/Volumes/Vol1.mp4';
+// import vol2 from '../assets/videos/Volumes/Vol2.mp4';
+// import vol3 from '../assets/videos/Volumes/Vol3.mp4';
+// import vol4 from '../assets/videos/Volumes/Vol4.mp4';
+// import vol5 from '../assets/videos/Volumes/Vol5.mp4';
 
 import shortVol1 from '../assets/videos/VolumesShort/shortVol1.mp4';
 import shortVol2 from '../assets/videos/VolumesShort/shortVol2.mp4';
@@ -56,7 +57,8 @@ export const volumesVideoArray = [
     displayTitle: "VOLUME 1",
     date: "4/26/2025",
     location: "MEMENTO, MTL",
-    src: vol1,
+    src: null,
+    ig: "https://www.instagram.com/reel/C2dUya9AZ_F/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     shortSrc: shortVol1,
     titleJap: "第 一",
     active: true,   
@@ -66,7 +68,8 @@ export const volumesVideoArray = [
     displayTitle: "VOLUME 2",
     date: "4/26/2025",
     location: "HEXAGON, MTL",
-    src: vol2,  
+    src:  null,  
+    ig: "https://www.instagram.com/reel/CuSqi6hA3Eo/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     shortSrc: shortVol2,  
     titleJap: "第 二",
     active: true,
@@ -76,7 +79,8 @@ export const volumesVideoArray = [
     displayTitle: "VOLUME 3",
     date: "4/26/2025",
     location: "HEXAGON, MTL",
-    src: vol3,   
+    src:  null,
+    ig: "https://www.instagram.com/reel/CxYu9IqgFKT/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     shortSrc: shortVol3, 
     titleJap: "第 三",
     active: true,
@@ -86,7 +90,8 @@ export const volumesVideoArray = [
     displayTitle: "VOLUME 4",
     date: "4/26/2025",
     location: "MEMENTO, MTL",
-    src: vol4, 
+    src: null,
+    ig: "https://www.instagram.com/reel/C0PuQxxAsRb/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     shortSrc: shortVol4,   
     titleJap: "第 四",
     active: true,
@@ -96,7 +101,8 @@ export const volumesVideoArray = [
     displayTitle: "VOLUME 5",
     date: "4/26/2025",
     location: "BRIX, MTL",
-    src: vol5,  
+    src: null,  
+    ig: "https://www.instagram.com/reel/DBZj5z7yKFB/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     shortSrc: shortVol5,  
     titleJap: "第 五",
     active: true,

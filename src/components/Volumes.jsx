@@ -47,7 +47,8 @@ const VideoCard = ({ volume }) => {
         initial="initial"
         onHoverStart={() => setHovered(true)}
         onHoverEnd={() => setHovered(false)}
-        onClick={() => {if (volume.active) setPlay(true)}}
+        onClick={() => window.open(volume.ig, "_blank", "noopener,noreferrer")} // | DEV
+        // onClick={() => {if (volume.active) setPlay(true)}} | PROD
       >
         {hovered && (
           <video

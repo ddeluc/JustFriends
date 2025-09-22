@@ -9,7 +9,8 @@ import Footer from "./Footer";
 
 import grain from "../assets/videos/Effects/grainVid1.mp4"
 
-import dj from "../assets/images/people/cutout/whiteOutline/dj.png";
+// import dj from "https://drive.google.com/uc?export=download&id=1QSZ6bvSDjYAH951atjxtYWf2BgaYoOox"
+const dj = "https://res.cloudinary.com/dkynzp3h6/image/upload/v1758502251/dj_yhczx4.png"
 import handShake from "../assets/images/people/cutout/whiteOutline/handShake.png";
 import man from "../assets/images/people/cutout/whiteOutline/man.png";
 import saxaphone from "../assets/images/people/cutout/whiteOutline/saxaphone.png";
@@ -109,7 +110,7 @@ const Hero = ({ parentScrollYProgress }) => {
           <motion.img src={girlTalking} alt="DJ" className={`absolute bottom-1/20 left-[10%] grayscale w-[26vw] brightness-60 drop-shadow-xl`} 
             style={{ y: imagePositionY, rotate: 2 }}
           />
-
+          
           <motion.img src={dj} alt="DJ" className={`absolute -bottom-[8%] -left-[5%] grayscale w-[35vw] brightness-60 drop-shadow-xl`} 
             style={{ y: imagePositionY, rotate: 2 }}
           />
